@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>虎目石｜置き場所を、渡します</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --ink:#090d18; --ink2:#0d1322; --ink3:#111a2e;
+  --moon:#eae7dd; --moon-dim:#b2ad9f;
+  --gold:#c9924a; --gold-hi:#f2d79a; --gold-lo:#8a5f28;
+  --shu:#a63f34; --saffron:#e2953f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--moon);font-family:"Shippori Mincho B1",serif;font-size:16px;line-height:2.15;letter-spacing:.06em;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;padding-bottom:92px}
+img{max-width:100%;display:block}
+p{margin-bottom:1.7em}
+p:last-child{margin-bottom:0}
+em{font-style:normal;color:var(--gold-hi)}
+strong{color:var(--gold-hi);font-weight:600}
+.wrap{max-width:600px;margin:0 auto;padding:0 26px}
+.lat{font-family:"Cormorant Garamond",serif}
+
+.gg{background:linear-gradient(120deg,#f4e2b8 0%,#dcbe85 30%,#a8874e 50%,#dcbe85 70%,#f4e2b8 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
+@keyframes sheen{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1.1s cubic-bezier(.22,.61,.36,1),transform 1.1s cubic-bezier(.22,.61,.36,1)}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+section{padding:92px 0;position:relative}
+.sec-a{background:var(--ink)}
+.sec-b{background:linear-gradient(180deg,var(--ink2),var(--ink))}
+.eyebrow{text-align:center;font-size:11px;letter-spacing:.55em;color:var(--gold);margin-bottom:14px;font-family:"Cormorant Garamond",serif}
+h2{font-size:24px;font-weight:800;text-align:center;letter-spacing:.16em;line-height:1.9;margin-bottom:10px}
+.gline{width:54px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:26px auto}
+.orn{display:flex;align-items:center;gap:12px;justify-content:center;margin:28px auto}
+.orn::before,.orn::after{content:"";width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.orn i{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 10px rgba(201,146,74,.7)}
+
+.band{height:120px;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cg fill='none' stroke='%23c9a76a' stroke-opacity='.10' stroke-width='1'%3E%3Ccircle cx='0' cy='60' r='56'/%3E%3Ccircle cx='0' cy='60' r='42'/%3E%3Ccircle cx='0' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='56'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='120' cy='60' r='56'/%3E%3Ccircle cx='120' cy='60' r='42'/%3E%3Ccircle cx='120' cy='60' r='28'/%3E%3Ccircle cx='30' cy='30' r='56'/%3E%3Ccircle cx='30' cy='30' r='42'/%3E%3Ccircle cx='90' cy='30' r='56'/%3E%3Ccircle cx='90' cy='30' r='42'/%3E%3C/g%3E%3C/svg%3E");background-size:112px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 45%,transparent);mask-image:linear-gradient(180deg,transparent,#000 45%,transparent)}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:calc(5svh + 170px);position:relative;overflow:hidden;background:radial-gradient(ellipse 120% 70% at 50% -10%,#16203a 0%,var(--ink) 62%)}
+.hero .moon{position:absolute;top:7%;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#f7f4ea,#d4cebd 55%,#8f8a7a 96%);box-shadow:0 0 120px 20px rgba(240,236,224,.12);animation:moonfloat 9s ease-in-out infinite}
+@keyframes moonfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero .ring{position:absolute;top:calc(7% - 18px);right:-58px;width:256px;height:256px;border:1px solid rgba(201,146,74,.35);border-radius:50%}
+.hero .vtitle{position:absolute;left:26px;top:9%;z-index:2;display:flex;flex-direction:row-reverse;gap:20px;align-items:flex-start}
+.hero .vtitle .main{writing-mode:vertical-rl;font-size:42px;font-weight:800;letter-spacing:.2em;line-height:1;white-space:nowrap;text-shadow:0 3px 10px rgba(0,0,0,.5)}
+.hero .vtitle .sub{writing-mode:vertical-rl;font-size:12.5px;letter-spacing:.34em;color:var(--moon-dim);margin-top:34px;white-space:nowrap}
+.hero .bottom{position:relative;z-index:2;text-align:center;margin-top:40px}
+.hero .open{font-size:12px;letter-spacing:.34em;color:var(--gold-hi);border:1px solid rgba(201,146,74,.5);display:inline-block;padding:9px 22px;background:rgba(201,146,74,.07)}
+.hero .lim{margin-top:20px;font-size:12.5px;letter-spacing:.5em;color:var(--moon-dim)}
+.hero .skirt{position:absolute;left:0;right:0;bottom:0;height:26svh;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cg fill='none' stroke='%23c9a76a' stroke-opacity='.09' stroke-width='1'%3E%3Ccircle cx='0' cy='60' r='56'/%3E%3Ccircle cx='0' cy='60' r='42'/%3E%3Ccircle cx='0' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='56'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='120' cy='60' r='56'/%3E%3Ccircle cx='120' cy='60' r='42'/%3E%3Ccircle cx='120' cy='60' r='28'/%3E%3Ccircle cx='30' cy='30' r='56'/%3E%3Ccircle cx='30' cy='30' r='42'/%3E%3Ccircle cx='90' cy='30' r='56'/%3E%3Ccircle cx='90' cy='30' r='42'/%3E%3C/g%3E%3C/svg%3E");background-size:112px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 75%);mask-image:linear-gradient(180deg,transparent,#000 75%)}
+
+.tl{position:relative;padding-left:30px;margin-top:14px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--gold),rgba(201,146,74,.15));transform-origin:top;transform:scaleY(0);transition:transform 1.6s ease .2s}
+.tl.on::before{transform:scaleY(1)}
+.tl .ti{position:relative;padding:0 0 26px 16px}
+.tl .ti::before{content:"";position:absolute;left:-26px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--ink);border:1.5px solid var(--gold)}
+.tl .ti.now::before{background:var(--gold);box-shadow:0 0 12px rgba(201,146,74,.9)}
+.tl .d{font-size:12px;color:var(--gold-hi);letter-spacing:.22em;margin-bottom:2px}
+.tl p{font-size:14.5px;color:var(--moon-dim);margin-bottom:0}
+
+blockquote{border-left:2px solid var(--gold);padding:8px 0 8px 22px;margin:30px 0;font-size:15px;color:var(--moon-dim)}
+blockquote em{color:var(--gold-hi)}
+
+.ph{margin:34px auto;border:1px solid rgba(201,146,74,.3);padding:8px;background:var(--ink2)}
+.ph img{width:100%}
+.ph .cap{font-size:11.5px;color:var(--moon-dim);text-align:center;letter-spacing:.14em;padding:10px 4px 4px}
+
+.spec{width:100%;border-collapse:collapse;margin:26px 0;font-size:14px}
+.spec th{width:88px;text-align:left;color:var(--gold-hi);font-weight:500;padding:13px 8px;border-bottom:1px solid rgba(234,231,221,.1);vertical-align:top;letter-spacing:.12em}
+.spec td{padding:13px 8px;border-bottom:1px solid rgba(234,231,221,.1);color:var(--moon-dim)}
+
+.pricecard{border:1.5px double var(--gold);padding:44px 26px;text-align:center;background:linear-gradient(180deg,rgba(201,146,74,.09),rgba(201,146,74,.02));position:relative;box-shadow:0 0 70px rgba(201,146,74,.1)}
+.pricecard .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--ink);border:1px solid var(--gold);color:var(--gold-hi);font-size:11px;letter-spacing:.3em;padding:4px 18px;white-space:nowrap}
+.pricecard .was{font-size:16px;color:var(--moon-dim);text-decoration:line-through;letter-spacing:.1em}
+.pricecard .now{font-size:52px;font-weight:800;letter-spacing:.04em;line-height:1.3;font-family:"Cormorant Garamond","Shippori Mincho B1",serif}
+.pricecard .now small{font-size:18px}
+.pricecard .meta{font-size:12px;color:var(--moon-dim);letter-spacing:.14em;margin-top:4px}
+.pricecard .off{display:inline-block;margin-top:16px;border:1px solid var(--shu);color:#e8b0a6;font-size:12px;letter-spacing:.24em;padding:5px 16px}
+
+.you li{list-style:none;padding:14px 4px 14px 38px;position:relative;border-bottom:1px solid rgba(234,231,221,.09);font-size:15px}
+.you li::before{content:"";position:absolute;left:8px;top:50%;transform:translateY(-50%) rotate(45deg);width:8px;height:8px;background:var(--gold)}
+
+.step{display:flex;gap:18px;margin-bottom:24px;align-items:flex-start}
+.step .n{flex:none;width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-hi);font-size:15px;background:rgba(201,146,74,.07);margin-top:4px}
+.step h3{font-size:16px;font-weight:600;margin-bottom:2px}
+.step p{font-size:13.5px;color:var(--moon-dim);margin-bottom:0}
+.pay{border:1px solid rgba(201,146,74,.3);background:var(--ink2);padding:20px 22px;font-size:13px;color:var(--moon-dim);line-height:2;margin-top:28px}
+.pay b{color:var(--gold-hi);font-weight:600;display:block;letter-spacing:.2em;font-size:12px;margin-bottom:6px}
+
+.after-box{border:1.5px solid var(--gold);background:linear-gradient(180deg,rgba(201,146,74,.1),rgba(201,146,74,.03));padding:34px 26px}
+.after-box h3{color:var(--gold-hi);font-size:16px;letter-spacing:.2em;margin-bottom:14px;text-align:center}
+.after-box ol{margin:0 0 18px 0;padding-left:0;counter-reset:st}
+.after-box ol li{list-style:none;counter-increment:st;position:relative;padding:10px 0 10px 40px;font-size:15px;border-bottom:1px solid rgba(234,231,221,.1)}
+.after-box ol li::before{content:counter(st);position:absolute;left:4px;top:50%;transform:translateY(-50%);width:26px;height:26px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-hi);font-size:13px}
+.warn{font-size:13px;color:#e0b9b0;border-left:2px solid var(--shu);padding-left:14px;margin-top:16px}
+
+details{border-bottom:1px solid rgba(234,231,221,.1)}
+summary{cursor:pointer;list-style:none;padding:20px 34px 20px 4px;font-size:15px;font-weight:600;position:relative;letter-spacing:.06em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:10px;top:50%;width:9px;height:9px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:translateY(-70%) rotate(45deg);transition:transform .35s ease}
+details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.a{padding:0 4px 24px;font-size:14px;color:var(--moon-dim)}
+.a b{color:var(--gold-hi);font-weight:600}
+
+.last{text-align:center}
+.hanko{margin:30px auto 0;width:46px;height:46px;background:linear-gradient(160deg,#a63f34,#8c2f27);color:#f5efe2;font-size:13.5px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;letter-spacing:.12em;border-radius:4px;transform:rotate(-2.5deg);box-shadow:inset 0 0 0 1.4px rgba(245,239,226,.85),0 2px 8px rgba(0,0,0,.5);font-weight:600}
+
+.cta{display:block;text-align:center;background:linear-gradient(160deg,#e9cf96,#b8945c);color:var(--ink);font-weight:800;font-size:17px;letter-spacing:.2em;padding:21px 12px;border-radius:3px;text-decoration:none;box-shadow:0 8px 34px rgba(201,146,74,.35);margin:36px auto 10px;max-width:420px;animation:breathe 3.6s ease-in-out infinite}
+@keyframes breathe{0%,100%{box-shadow:0 8px 30px rgba(201,146,74,.3)}50%{box-shadow:0 8px 46px rgba(201,146,74,.55)}}
+.ctasub{text-align:center;font-size:11.5px;color:var(--moon-dim);letter-spacing:.1em}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(9,13,24,.92);backdrop-filter:blur(8px);border-top:1px solid rgba(201,146,74,.4);padding:12px 14px calc(12px + env(safe-area-inset-bottom))}
+.bar a{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(160deg,#e9cf96,#b8945c);color:var(--ink);text-decoration:none;font-weight:800;font-size:14.5px;letter-spacing:.08em;padding:14px 10px;border-radius:3px}
+.bar .s{font-size:10.5px;font-weight:500}
+
+footer{padding:44px 0 60px;text-align:center;font-size:11px;color:rgba(178,173,159,.55);letter-spacing:.1em;line-height:2.4}
+footer a{color:rgba(178,173,159,.75)}
+.legal{font-size:11px;color:rgba(178,173,159,.55);line-height:2.2;margin-top:26px;text-align:center}
+
+/* ── インドの聖地（夜明け前）── */
+.hero .dawn{position:absolute;left:0;right:0;bottom:0;height:52svh;background:linear-gradient(180deg,rgba(58,34,52,0) 0%,rgba(96,54,62,.20) 55%,rgba(226,149,63,.18) 100%);animation:dawnpulse 11s ease-in-out infinite;pointer-events:none}
+@keyframes dawnpulse{0%,100%{opacity:.6}50%{opacity:1}}
+.hero .shrine{position:absolute;left:0;right:0;bottom:0;z-index:1;pointer-events:none}
+.hero .shrine svg{display:block;width:100%;height:clamp(150px,26svh,250px)}
+.win{animation:flicker 4.6s ease-in-out infinite}
+.win2{animation:flicker 4.6s ease-in-out 1.8s infinite}
+@keyframes flicker{0%,100%{opacity:.3}50%{opacity:.95}}
+.hero .from{font-size:11px;letter-spacing:.4em;color:var(--saffron);margin-bottom:12px}
+.scene{margin:34px auto 6px;border:1px solid rgba(201,146,74,.3);background:var(--ink2);padding:8px}
+.scene svg{display:block;width:100%;height:auto}
+.scene .cap{font-size:11.5px;color:var(--moon-dim);text-align:center;letter-spacing:.14em;padding:10px 4px 4px;line-height:2}
+.goldpath{stroke-dasharray:1400;stroke-dashoffset:1400}
+.rv.on .goldpath{animation:golddraw 3.4s ease .5s forwards}
+@keyframes golddraw{to{stroke-dashoffset:0}}
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="moon"></div><div class="ring"></div>
+  <div class="vtitle">
+    <div class="main gg">虎目石</div>
+    <div class="sub">とらめいし ｜ 7日間、そこに置いていたもの</div>
+  </div>
+  <div class="dawn"></div>
+  <div class="skirt"></div>
+  <div class="bottom wrap">
+    <div class="from">2026.09.26 彼岸明け</div>
+    <div class="open">受付中</div>
+    <div class="lim">数に限りがあります</div>
+  </div>
+</header>
+
+<section class="sec-a">
+ <div class="wrap">
+  <div class="eyebrow">FOR YOU</div>
+  <h2 class="gg">ここまで見てくださった<br>あなたへ</h2>
+  <div class="gline"></div>
+  <p class="rv">7日間、お預かりしたものを、燃やしてきました。</p>
+  <p class="rv">一枚ずつ、お名前を書いて。まとめては、できないので。</p>
+  <p class="rv">そして、その場所に置いていたものがあります。</p>
+  <p class="rv"><strong>それが、これです。</strong></p>
+ </div>
+</section>
+
+<div class="band"></div>
+
+<section class="sec-b">
+ <div class="wrap">
+  <div class="eyebrow">TIMELINE</div>
+  <h2 class="rv">ここまでの、流れ</h2>
+  <div class="gline"></div>
+  <div class="tl">
+   <div class="ti"><div class="d">9月20日</div><p>彼岸に入る。一夜目。</p></div>
+   <div class="ti"><div class="d">9月23日</div><p>秋分。境目がいちばん薄くなる日。</p></div>
+   <div class="ti"><div class="d">9月25日</div><p>六夜目。中秋の名月。</p></div>
+   <div class="ti now"><div class="d">9月26日</div><p>7日間目。彼岸明け。大安と一粒万倍日が重なる日。前は1988年。</p></div>
+   <div class="ti"><div class="d">9月28日</div><p>仕上げを終えて、お渡しを開始。</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec-a">
+ <div class="wrap">
+  <div class="eyebrow">WHY</div>
+  <h2 class="rv gg">なぜ、何度祓っても<br>戻ってきたのか</h2>
+  <div class="gline"></div>
+  <p class="rv">草を抜くのと、同じです。</p>
+  <p class="rv">地面に落ちてる草なら、拾えば終わりです。</p>
+  <p class="rv">でも、<strong>根を張ってる草は、上だけ刈っても、また生えてきます。</strong></p>
+  <p class="rv">1週間もすれば、元通りです。</p>
+  <blockquote class="rv">何度も人に話してきた。話すたびに、一瞬は楽になる。でも次の日にはもう戻ってる。<br><em>……それ、根を張っています。</em></blockquote>
+  <p class="rv">上だけ刈られてきたんです。今まで、ずっと。</p>
+  <p class="rv">あなたが悪いんじゃありません。刈り方の問題でもありません。</p>
+  <p class="rv"><strong>根が残っていたら、また生えます。当たり前のことです。</strong></p>
+ </div>
+</section>
+
+<div class="band"></div>
+
+<section class="sec-b">
+ <div class="wrap">
+  <div class="eyebrow">THE PROBLEM</div>
+  <h2 class="rv">抜いた草は、<br>どこかに置かないといけない</h2>
+  <div class="gline"></div>
+  <p class="rv">根から抜くしかありません。</p>
+  <p class="rv">ただ、抜いた草は、どこかに置かないといけません。</p>
+  <p class="rv">そのへんに放っておいたら、また根づきます。</p>
+  <p class="rv">邪気も、同じです。</p>
+  <p class="rv"><strong>置き場所を用意しないまま抜くと、抜いた人のところに来ます。</strong></p>
+  <blockquote class="rv">私は7年前、それで倒れました。<br>朝、起き上がれなくなって。誰とも話せなくなって。<br><em>人間は、置き場所にはなれません。</em></blockquote>
+  <p class="rv">37カ国、どこの土地も、必ず置き場所を用意していました。</p>
+  <p class="rv">木は燃える。布は破れる。<strong>石だけが、残る。</strong></p>
+  <p class="rv">だから石なんだと、言われました。</p>
+ </div>
+</section>
+
+<section class="sec-a">
+ <div class="wrap">
+  <div class="eyebrow">THE STONE</div>
+  <h2 class="rv gg">虎目石</h2>
+  <div class="gline"></div>
+  <p class="rv">タイガーアイ。日本では虎目石といいます。</p>
+  <p class="rv">古くから、<strong>邪視除け</strong>に使われてきました。「見られること」から守る石だと伝えられています。</p>
+  <p class="rv">もともと、受ける側の石です。</p>
+  <div class="ph rv">
+    <img src="stone.jpg" alt="虎目石">
+    <div class="cap">7日間、そこに置いていたもの</div>
+  </div>
+  <table class="spec rv">
+   <tr><th>石</th><td>タイガーアイ（虎目石）／南アフリカ産</td></tr>
+   <tr><th>形状</th><td>ブレスレット</td></tr>
+   <tr><th>選定</th><td>現地で選定後、動画で全数確認。手に取って再度選別</td></tr>
+   <tr><th>基準</th><td>金の筋が、まっすぐ一本通っているもののみ</td></tr>
+   <tr><th>期間</th><td>2026年9月20日〜26日の7日間</td></tr>
+  </table>
+  <p class="rv">筋が途中で切れているもの、二本に分かれているものは、置き場所になりません。受けきれずに、割れます。</p>
+  <p class="rv"><strong>残ったのは、30個でした。</strong></p>
+  <blockquote class="rv">弾いたぶんは、処分しました。<br>売れば、いくらかにはなります。でも、それはできませんでした。<br><em>置き場所にならないものを、誰かが手にすることになるので。</em></blockquote>
+ </div>
+</section>
+
+<div class="band"></div>
+
+<section class="sec-b">
+ <div class="wrap">
+  <div class="eyebrow">HONESTLY</div>
+  <h2 class="rv">どこでも買える石です</h2>
+  <div class="gline"></div>
+  <p class="rv">はっきり言っておきます。</p>
+  <p class="rv">タイガーアイは、どこでも買えます。石屋にも、通販にもあります。</p>
+  <p class="rv">止めません。</p>
+  <p class="rv">でも、<strong>通していない石は、ただの石です。</strong>何も起きません。</p>
+  <p class="rv">石そのものに力があるわけじゃないんです。7日間、そこにあったから、置き場所になっただけです。</p>
+  <blockquote class="rv">値段じゃありません。<br><em>通ったかどうか。それだけです。</em></blockquote>
+ </div>
+</section>
+
+<section class="sec-a">
+ <div class="wrap">
+  <div class="eyebrow">PRICE</div>
+  <h2 class="rv">価格について</h2>
+  <div class="gline"></div>
+  <p class="rv">正直に言うと、値段をつけることに、最後まで迷いました。</p>
+  <p class="rv">7日間そこにあったものに、いくらが正しいのか。</p>
+  <p class="rv">ただ、余裕のある方だけのものにはしたくなかったので。</p>
+  <div class="pricecard rv">
+    <div class="tag">7日間を過ごした石</div>
+    <div class="was">149,800円</div>
+    <div class="now">79,800<small>円</small></div>
+    <div class="meta">税込・送料無料</div>
+    <div class="off">30個限定</div>
+  </div>
+  <div class="pay rv">
+    <b>お支払い方法</b>
+    クレジットカード（一括／分割）<br>
+    分割の場合、月々 6,650円（12回）から
+  </div>
+  <a class="cta" href="[要設定・STORES決済URL]">受け取る</a>
+  <div class="ctasub">10月1日 24時まで</div>
+ </div>
+</section>
+
+<div class="band"></div>
+
+<section class="sec-b">
+ <div class="wrap">
+  <div class="eyebrow">FOR / NOT FOR</div>
+  <h2 class="rv">こんな方に</h2>
+  <div class="gline"></div>
+  <ul class="you rv">
+   <li>何度祓っても、また戻ってきた方</li>
+   <li>寝ても取れない疲れがある方</li>
+   <li>家族の中で、いちばん先に気づいてしまう方</li>
+   <li>誰にも言わずに、飲み込んできた方</li>
+  </ul>
+  <h3 class="rv" style="margin-top:40px;font-size:16px;color:var(--gold-hi);letter-spacing:.2em;text-align:center">こんな方には、お勧めしません</h3>
+  <div class="gline"></div>
+  <p class="rv">食費や光熱費を削って、というのは、やめてください。</p>
+  <p class="rv">それをすると、また新しい重さが乗ります。本末転倒なので。</p>
+  <p class="rv">それと、「これさえあれば」と思っている方。</p>
+  <p class="rv"><strong>石は、置き場所です。あなたの代わりに生きてはくれません。</strong></p>
+  <div class="warn rv">こういうことを言うと数が出ないのは分かっています。でも、無理して持った方がどうなるかを見てきたので。</div>
+ </div>
+</section>
+
+<section class="sec-a">
+ <div class="wrap">
+  <div class="eyebrow">FLOW</div>
+  <h2 class="rv">お迎えの流れ</h2>
+  <div class="gline"></div>
+  <div class="step rv"><div class="n">1</div><div><h3>お申し込み</h3><p>下のボタンから、お手続きください。</p></div></div>
+  <div class="step rv"><div class="n">2</div><div><h3>使い方のご案内</h3><p>お手続き後、LINEに使い方をお送りします。</p></div></div>
+  <div class="step rv"><div class="n">3</div><div><h3>仕上げ</h3><p>一つずつ、私が仕上げます。まとめてはできないので、順番に。</p></div></div>
+  <div class="step rv"><div class="n">4</div><div><h3>発送</h3><p>1ヶ月ほどお時間をいただきます。発送のときに、LINEでお知らせします。</p></div></div>
+ </div>
+</section>
+
+<div class="band"></div>
+
+<section class="sec-b">
+ <div class="wrap">
+  <div class="eyebrow">AFTER</div>
+  <h2 class="rv">届いたら、<br>これだけしてください</h2>
+  <div class="gline"></div>
+  <div class="after-box rv">
+    <h3>最初の夜に</h3>
+    <ol>
+     <li>箱から出して、手のひらにのせる</li>
+     <li>置く場所を決める（枕元でも、玄関でも）</li>
+     <li>そのまま、眠る</li>
+    </ol>
+    <p style="font-size:14px;color:var(--moon-dim);margin-bottom:0">それだけです。頑張って何かをする必要は、ありません。</p>
+    <div class="warn">明日から急に何かが変わるわけではありません。ゆっくりです。半年後に振り返ったとき、今週が境目だったと分かる。そういう変わり方をします。</div>
+  </div>
+ </div>
+</section>
+
+<section class="sec-a">
+ <div class="wrap">
+  <div class="eyebrow">Q &amp; A</div>
+  <h2 class="rv">よくあるご質問</h2>
+  <div class="gline"></div>
+  <details><summary>いつ届きますか</summary><div class="a">お手続きから<b>1ヶ月ほど</b>いただきます。一つずつ仕上げるため、まとめて発送ができません。発送のときにLINEでお知らせします。</div></details>
+  <details><summary>他のパワーストーンと何が違いますか</summary><div class="a">石そのものは、どこでも買えるものです。違うのは<b>7日間、そこに置いていた</b>という点だけです。石に力があるのではなく、通したかどうかです。</div></details>
+  <details><summary>つけていないと意味がないですか</summary><div class="a">いいえ。<b>置いておくだけで大丈夫</b>です。身につけたい方はつけていただいて構いません。</div></details>
+  <details><summary>浄化は必要ですか</summary><div class="a">こちらで済ませてあります。届いてから何かをする必要はありません。</div></details>
+  <details><summary>効果はありますか</summary><div class="a">あらわれ方には<b>個人差</b>があり、何かを保証するものではありません。急に何かが変わるものでもありません。</div></details>
+  <details><summary>分割払いはできますか</summary><div class="a">はい。クレジットカードの分割払いに対応しています。月々6,650円（12回）からです。</div></details>
+ </div>
+</section>
+
+<div class="band"></div>
+
+<section class="sec-b last">
+ <div class="wrap">
+  <h2 class="rv gg">最後に</h2>
+  <div class="gline"></div>
+  <p class="rv">7日間、預かってきました。</p>
+  <p class="rv">一枚ずつ、お名前を書いて、燃やしました。全部、読みました。</p>
+  <p class="rv">読まなければよかったと思ったことも、正直、ありました。</p>
+  <p class="rv">でも読んでしまったので。<strong>なかったことには、できません。</strong></p>
+  <div class="orn"><i></i></div>
+  <p class="rv">私は、受けられません。人間なので。</p>
+  <p class="rv">私は、抜くだけです。</p>
+  <p class="rv"><strong>受けるのは、そっちです。</strong></p>
+  <div class="hanko">壱志</div>
+  <a class="cta" href="[要設定・STORES決済URL]">受け取る</a>
+  <div class="ctasub">30個限定 ｜ 10月1日 24時まで</div>
+  <div class="legal">
+   効果のあらわれ方には個人差があり、何かを保証するものではありません。<br>
+   医療行為ではありません。体調に不安のある方は、専門機関にご相談ください。
+  </div>
+ </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    スピリチュアルヒーラー いっしー<br>
+    <a href="[要設定・特商法URL]">特定商取引法に基づく表記</a> ｜ <a href="[要設定・プライバシーポリシーURL]">プライバシーポリシー</a>
+  </div>
+</footer>
+
+<div class="bar"><a href="[要設定・STORES決済URL]">受け取る<span class="s">30個限定 ｜ 10/1 24時まで</span></a></div>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv,.tl').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
