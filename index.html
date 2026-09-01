@@ -2,400 +2,449 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>虎目石｜置き場所を、渡します</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
 :root{
-  --ink:#090d18; --ink2:#0d1322; --ink3:#111a2e;
-  --moon:#eae7dd; --moon-dim:#b2ad9f;
-  --gold:#c9924a; --gold-hi:#f2d79a; --gold-lo:#8a5f28;
-  --shu:#a63f34; --saffron:#e2953f;
+  --bk:#0a0705; --bk2:#120c08; --bk3:#1a110b;
+  --ash:#e8e2d8; --ash-dim:#a89e90;
+  --amb:#c8873c; --amb-hi:#f5c87a; --amb-lo:#8a5522;
+  --ember:#e05a2b; --deep:#5c1f10;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--moon);font-family:"Shippori Mincho B1",serif;font-size:16px;line-height:2.15;letter-spacing:.06em;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;padding-bottom:92px}
+body{background:var(--bk);color:var(--ash);font-family:"Zen Old Mincho","Shippori Mincho B1",serif;font-size:16px;line-height:2.2;letter-spacing:.05em;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;padding-bottom:94px;overflow-x:hidden}
 img{max-width:100%;display:block}
-p{margin-bottom:1.7em}
+p{margin-bottom:1.75em}
 p:last-child{margin-bottom:0}
-em{font-style:normal;color:var(--gold-hi)}
-strong{color:var(--gold-hi);font-weight:600}
-.wrap{max-width:600px;margin:0 auto;padding:0 26px}
-.lat{font-family:"Cormorant Garamond",serif}
+strong{color:var(--amb-hi);font-weight:600}
+em{font-style:normal;color:var(--ember)}
+.wrap{max-width:620px;margin:0 auto;padding:0 24px}
+.lat{font-family:"Cormorant Garamond",serif;letter-spacing:.2em}
 
-.gg{background:linear-gradient(120deg,#f4e2b8 0%,#dcbe85 30%,#a8874e 50%,#dcbe85 70%,#f4e2b8 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 7s ease-in-out infinite}
-@keyframes sheen{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+/* 炎のグラデ文字 */
+.fire{background:linear-gradient(100deg,#f7d9a0 0%,#e0a24e 25%,#c8873c 45%,#f5c87a 60%,#e05a2b 80%,#f7d9a0 100%);background-size:280% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:burn 9s ease-in-out infinite}
+@keyframes burn{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
 
-.rv{opacity:0;transform:translateY(26px);transition:opacity 1.1s cubic-bezier(.22,.61,.36,1),transform 1.1s cubic-bezier(.22,.61,.36,1)}
+/* 出現 */
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1.2s cubic-bezier(.19,1,.22,1),transform 1.2s cubic-bezier(.19,1,.22,1)}
 .rv.on{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+/* 左右から */
+.rl{opacity:0;transform:translateX(-34px);transition:opacity 1.1s cubic-bezier(.19,1,.22,1),transform 1.1s cubic-bezier(.19,1,.22,1)}
+.rl.on{opacity:1;transform:none}
+/* 文字が浮き上がる */
+.up span{display:inline-block;opacity:0;transform:translateY(24px) rotate(3deg);transition:opacity .9s cubic-bezier(.19,1,.22,1),transform .9s cubic-bezier(.19,1,.22,1)}
+.up.on span{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv,.rl,.up span{opacity:1;transform:none;transition:none}*{animation:none!important}}
 
-section{padding:92px 0;position:relative}
-.sec-a{background:var(--ink)}
-.sec-b{background:linear-gradient(180deg,var(--ink2),var(--ink))}
-.eyebrow{text-align:center;font-size:11px;letter-spacing:.55em;color:var(--gold);margin-bottom:14px;font-family:"Cormorant Garamond",serif}
-h2{font-size:24px;font-weight:800;text-align:center;letter-spacing:.16em;line-height:1.9;margin-bottom:10px}
-.gline{width:54px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:26px auto}
-.orn{display:flex;align-items:center;gap:12px;justify-content:center;margin:28px auto}
-.orn::before,.orn::after{content:"";width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
-.orn::after{background:linear-gradient(90deg,var(--gold),transparent)}
-.orn i{width:8px;height:8px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 10px rgba(201,146,74,.7)}
+section{padding:100px 0;position:relative}
+.sa{background:var(--bk)}
+.sb{background:linear-gradient(180deg,var(--bk2) 0%,var(--bk) 100%)}
+.sc{background:radial-gradient(ellipse 90% 60% at 50% 0%,rgba(200,135,60,.09),transparent 70%),var(--bk)}
 
-.band{height:120px;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cg fill='none' stroke='%23c9a76a' stroke-opacity='.10' stroke-width='1'%3E%3Ccircle cx='0' cy='60' r='56'/%3E%3Ccircle cx='0' cy='60' r='42'/%3E%3Ccircle cx='0' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='56'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='120' cy='60' r='56'/%3E%3Ccircle cx='120' cy='60' r='42'/%3E%3Ccircle cx='120' cy='60' r='28'/%3E%3Ccircle cx='30' cy='30' r='56'/%3E%3Ccircle cx='30' cy='30' r='42'/%3E%3Ccircle cx='90' cy='30' r='56'/%3E%3Ccircle cx='90' cy='30' r='42'/%3E%3C/g%3E%3C/svg%3E");background-size:112px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 45%,transparent);mask-image:linear-gradient(180deg,transparent,#000 45%,transparent)}
+.eyebrow{text-align:center;font-size:10.5px;letter-spacing:.6em;color:var(--amb);margin-bottom:16px;font-family:"Cormorant Garamond",serif}
+h2{font-size:25px;font-weight:700;text-align:center;letter-spacing:.14em;line-height:1.95;margin-bottom:12px}
+.rule{width:1px;height:52px;background:linear-gradient(180deg,transparent,var(--amb),transparent);margin:26px auto}
+.orn{display:flex;align-items:center;gap:14px;justify-content:center;margin:34px auto}
+.orn::before,.orn::after{content:"";width:64px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,135,60,.6))}
+.orn::after{background:linear-gradient(90deg,rgba(200,135,60,.6),transparent)}
+.orn i{width:6px;height:6px;background:var(--amb);border-radius:50%;box-shadow:0 0 14px var(--ember)}
 
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:calc(5svh + 170px);position:relative;overflow:hidden;background:radial-gradient(ellipse 120% 70% at 50% -10%,#16203a 0%,var(--ink) 62%)}
-.hero .moon{position:absolute;top:7%;right:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#f7f4ea,#d4cebd 55%,#8f8a7a 96%);box-shadow:0 0 120px 20px rgba(240,236,224,.12);animation:moonfloat 9s ease-in-out infinite}
-@keyframes moonfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.hero .ring{position:absolute;top:calc(7% - 18px);right:-58px;width:256px;height:256px;border:1px solid rgba(201,146,74,.35);border-radius:50%}
-.hero .vtitle{position:absolute;left:26px;top:9%;z-index:2;display:flex;flex-direction:row-reverse;gap:20px;align-items:flex-start}
-.hero .vtitle .main{writing-mode:vertical-rl;font-size:42px;font-weight:800;letter-spacing:.2em;line-height:1;white-space:nowrap;text-shadow:0 3px 10px rgba(0,0,0,.5)}
-.hero .vtitle .sub{writing-mode:vertical-rl;font-size:12.5px;letter-spacing:.34em;color:var(--moon-dim);margin-top:34px;white-space:nowrap}
-.hero .bottom{position:relative;z-index:2;text-align:center;margin-top:40px}
-.hero .open{font-size:12px;letter-spacing:.34em;color:var(--gold-hi);border:1px solid rgba(201,146,74,.5);display:inline-block;padding:9px 22px;background:rgba(201,146,74,.07)}
-.hero .lim{margin-top:20px;font-size:12.5px;letter-spacing:.5em;color:var(--moon-dim)}
-.hero .skirt{position:absolute;left:0;right:0;bottom:0;height:26svh;background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cg fill='none' stroke='%23c9a76a' stroke-opacity='.09' stroke-width='1'%3E%3Ccircle cx='0' cy='60' r='56'/%3E%3Ccircle cx='0' cy='60' r='42'/%3E%3Ccircle cx='0' cy='60' r='28'/%3E%3Ccircle cx='60' cy='60' r='56'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3Ccircle cx='60' cy='60' r='28'/%3E%3Ccircle cx='120' cy='60' r='56'/%3E%3Ccircle cx='120' cy='60' r='42'/%3E%3Ccircle cx='120' cy='60' r='28'/%3E%3Ccircle cx='30' cy='30' r='56'/%3E%3Ccircle cx='30' cy='30' r='42'/%3E%3Ccircle cx='90' cy='30' r='56'/%3E%3Ccircle cx='90' cy='30' r='42'/%3E%3C/g%3E%3C/svg%3E");background-size:112px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 75%);mask-image:linear-gradient(180deg,transparent,#000 75%)}
+/* 火の粉 */
+.sparks{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sp{position:absolute;bottom:-12px;width:3px;height:3px;border-radius:50%;background:var(--amb-hi);box-shadow:0 0 8px 2px rgba(224,90,43,.55);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{opacity:0;transform:translateY(0) translateX(0) scale(.6)}
+ 12%{opacity:.95}
+ 70%{opacity:.55}
+ 100%{opacity:0;transform:translateY(-104vh) translateX(var(--dx)) scale(.25)}}
 
-.tl{position:relative;padding-left:30px;margin-top:14px}
-.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--gold),rgba(201,146,74,.15));transform-origin:top;transform:scaleY(0);transition:transform 1.6s ease .2s}
+/* HERO */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse 100% 60% at 50% 108%,#3a1a0c 0%,#1a0f07 40%,var(--bk) 75%)}
+.hero .glow{position:absolute;left:50%;bottom:-24vh;transform:translateX(-50%);width:150vw;height:60vh;background:radial-gradient(ellipse at center,rgba(224,90,43,.30),rgba(200,135,60,.10) 42%,transparent 68%);filter:blur(28px);animation:breathe2 6.5s ease-in-out infinite}
+@keyframes breathe2{0%,100%{opacity:.62;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.09)}}
+.hero .stack{position:relative;z-index:3;text-align:center;padding:0 24px}
+.hero .kanji{font-size:clamp(58px,17vw,104px);font-weight:700;letter-spacing:.24em;text-indent:.24em;line-height:1.12;margin-bottom:22px}
+.hero .yomi{font-size:11px;letter-spacing:.62em;color:var(--amb);margin-bottom:34px;font-family:"Cormorant Garamond",serif}
+.hero .lead{font-size:15px;color:var(--ash-dim);letter-spacing:.14em;line-height:2.5}
+.hero .badge{display:inline-block;margin-top:38px;font-size:11px;letter-spacing:.4em;color:var(--amb-hi);border:1px solid rgba(200,135,60,.45);padding:11px 26px;background:rgba(200,135,60,.06);backdrop-filter:blur(3px)}
+.hero .scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;font-size:9.5px;letter-spacing:.42em;color:var(--ash-dim);font-family:"Cormorant Garamond",serif}
+.hero .scroll::after{content:"";display:block;width:1px;height:44px;background:linear-gradient(180deg,var(--amb),transparent);margin:12px auto 0;animation:drip 2.3s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* 帯 */
+.band{height:2px;background:linear-gradient(90deg,transparent,rgba(200,135,60,.55),transparent)}
+.bandwide{height:130px;background:radial-gradient(ellipse 60% 100% at 50% 100%,rgba(224,90,43,.14),transparent 70%)}
+
+/* 縦の年表 */
+.tl{position:relative;padding-left:26px;margin-top:20px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,var(--amb),rgba(200,135,60,.12));transform-origin:top;transform:scaleY(0);transition:transform 1.8s cubic-bezier(.19,1,.22,1) .2s}
 .tl.on::before{transform:scaleY(1)}
-.tl .ti{position:relative;padding:0 0 26px 16px}
-.tl .ti::before{content:"";position:absolute;left:-26px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--ink);border:1.5px solid var(--gold)}
-.tl .ti.now::before{background:var(--gold);box-shadow:0 0 12px rgba(201,146,74,.9)}
-.tl .d{font-size:12px;color:var(--gold-hi);letter-spacing:.22em;margin-bottom:2px}
-.tl p{font-size:14.5px;color:var(--moon-dim);margin-bottom:0}
+.tl .ti{position:relative;padding:0 0 30px 18px}
+.tl .ti::before{content:"";position:absolute;left:-24px;top:13px;width:9px;height:9px;border-radius:50%;background:var(--bk);border:1.5px solid var(--amb)}
+.tl .ti.now::before{background:var(--ember);border-color:var(--ember);box-shadow:0 0 16px var(--ember);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 10px var(--ember)}50%{box-shadow:0 0 24px var(--ember)}}
+.tl .d{font-size:12px;color:var(--amb-hi);letter-spacing:.24em;margin-bottom:3px;font-weight:600}
+.tl p{font-size:14px;color:var(--ash-dim);margin-bottom:0;line-height:2}
 
-blockquote{border-left:2px solid var(--gold);padding:8px 0 8px 22px;margin:30px 0;font-size:15px;color:var(--moon-dim)}
-blockquote em{color:var(--gold-hi)}
+/* 引用 */
+blockquote{position:relative;padding:22px 0 22px 26px;margin:34px 0;font-size:15.5px;color:var(--ash-dim);line-height:2.4}
+blockquote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--ember),var(--amb),transparent)}
+blockquote em{color:var(--amb-hi)}
 
-.ph{margin:34px auto;border:1px solid rgba(201,146,74,.3);padding:8px;background:var(--ink2)}
-.ph img{width:100%}
-.ph .cap{font-size:11.5px;color:var(--moon-dim);text-align:center;letter-spacing:.14em;padding:10px 4px 4px}
+/* 草→根の図 */
+.rootfig{margin:38px auto;max-width:340px}
+.rootfig svg{width:100%;height:auto;overflow:visible}
+.rootline{stroke-dasharray:300;stroke-dashoffset:300;transition:stroke-dashoffset 2.2s ease .3s}
+.on .rootline{stroke-dashoffset:0}
 
-.spec{width:100%;border-collapse:collapse;margin:26px 0;font-size:14px}
-.spec th{width:88px;text-align:left;color:var(--gold-hi);font-weight:500;padding:13px 8px;border-bottom:1px solid rgba(234,231,221,.1);vertical-align:top;letter-spacing:.12em}
-.spec td{padding:13px 8px;border-bottom:1px solid rgba(234,231,221,.1);color:var(--moon-dim)}
+/* 写真 */
+.ph{margin:38px auto;position:relative}
+.ph::before{content:"";position:absolute;inset:-1px;background:linear-gradient(135deg,var(--amb),transparent 40%,transparent 60%,var(--ember));opacity:.45}
+.ph img{position:relative;width:100%;filter:saturate(1.05)}
+.ph .cap{font-size:11.5px;color:var(--ash-dim);text-align:center;letter-spacing:.16em;padding:14px 4px 0}
+.phbox{position:relative;background:var(--bk2);padding:9px}
 
-.pricecard{border:1.5px double var(--gold);padding:44px 26px;text-align:center;background:linear-gradient(180deg,rgba(201,146,74,.09),rgba(201,146,74,.02));position:relative;box-shadow:0 0 70px rgba(201,146,74,.1)}
-.pricecard .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--ink);border:1px solid var(--gold);color:var(--gold-hi);font-size:11px;letter-spacing:.3em;padding:4px 18px;white-space:nowrap}
-.pricecard .was{font-size:16px;color:var(--moon-dim);text-decoration:line-through;letter-spacing:.1em}
-.pricecard .now{font-size:52px;font-weight:800;letter-spacing:.04em;line-height:1.3;font-family:"Cormorant Garamond","Shippori Mincho B1",serif}
-.pricecard .now small{font-size:18px}
-.pricecard .meta{font-size:12px;color:var(--moon-dim);letter-spacing:.14em;margin-top:4px}
-.pricecard .off{display:inline-block;margin-top:16px;border:1px solid var(--shu);color:#e8b0a6;font-size:12px;letter-spacing:.24em;padding:5px 16px}
+/* 仕様表 */
+.spec{width:100%;border-collapse:collapse;margin:30px 0;font-size:14px}
+.spec th{width:82px;text-align:left;color:var(--amb-hi);font-weight:500;padding:15px 8px;border-bottom:1px solid rgba(232,226,216,.08);vertical-align:top;letter-spacing:.14em;font-size:12.5px}
+.spec td{padding:15px 8px;border-bottom:1px solid rgba(232,226,216,.08);color:var(--ash-dim);line-height:1.95}
 
-.you li{list-style:none;padding:14px 4px 14px 38px;position:relative;border-bottom:1px solid rgba(234,231,221,.09);font-size:15px}
-.you li::before{content:"";position:absolute;left:8px;top:50%;transform:translateY(-50%) rotate(45deg);width:8px;height:8px;background:var(--gold)}
+/* 価格 */
+.price{position:relative;border:1px solid rgba(200,135,60,.4);padding:52px 26px 44px;text-align:center;background:radial-gradient(ellipse 100% 80% at 50% 0%,rgba(224,90,43,.12),transparent 60%),var(--bk2);overflow:hidden}
+.price::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(245,200,122,.10),transparent);animation:sweep 5s ease-in-out infinite}
+@keyframes sweep{0%,72%{left:-100%}100%{left:100%}}
+.price .tag{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--ember);color:#fff;font-size:10.5px;letter-spacing:.3em;padding:7px 22px;white-space:nowrap}
+.price .was{font-size:15px;color:var(--ash-dim);text-decoration:line-through;letter-spacing:.1em;opacity:.75}
+.price .now{font-size:clamp(46px,13vw,62px);font-weight:700;letter-spacing:.02em;line-height:1.25;font-family:"Cormorant Garamond","Zen Old Mincho",serif}
+.price .now small{font-size:19px;letter-spacing:.1em}
+.price .meta{font-size:12px;color:var(--ash-dim);letter-spacing:.16em;margin-top:6px}
+.price .lim{display:inline-block;margin-top:20px;border:1px solid var(--ember);font-size:11.5px;letter-spacing:.26em;padding:6px 18px;color:#f3a882}
 
-.step{display:flex;gap:18px;margin-bottom:24px;align-items:flex-start}
-.step .n{flex:none;width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-hi);font-size:15px;background:rgba(201,146,74,.07);margin-top:4px}
-.step h3{font-size:16px;font-weight:600;margin-bottom:2px}
-.step p{font-size:13.5px;color:var(--moon-dim);margin-bottom:0}
-.pay{border:1px solid rgba(201,146,74,.3);background:var(--ink2);padding:20px 22px;font-size:13px;color:var(--moon-dim);line-height:2;margin-top:28px}
-.pay b{color:var(--gold-hi);font-weight:600;display:block;letter-spacing:.2em;font-size:12px;margin-bottom:6px}
+/* リスト */
+.ul li{list-style:none;padding:16px 4px 16px 34px;position:relative;border-bottom:1px solid rgba(232,226,216,.07);font-size:15px;line-height:2}
+.ul li::before{content:"";position:absolute;left:6px;top:26px;width:7px;height:7px;background:var(--amb);border-radius:50%;box-shadow:0 0 10px rgba(224,90,43,.6)}
 
-.after-box{border:1.5px solid var(--gold);background:linear-gradient(180deg,rgba(201,146,74,.1),rgba(201,146,74,.03));padding:34px 26px}
-.after-box h3{color:var(--gold-hi);font-size:16px;letter-spacing:.2em;margin-bottom:14px;text-align:center}
-.after-box ol{margin:0 0 18px 0;padding-left:0;counter-reset:st}
-.after-box ol li{list-style:none;counter-increment:st;position:relative;padding:10px 0 10px 40px;font-size:15px;border-bottom:1px solid rgba(234,231,221,.1)}
-.after-box ol li::before{content:counter(st);position:absolute;left:4px;top:50%;transform:translateY(-50%);width:26px;height:26px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-hi);font-size:13px}
-.warn{font-size:13px;color:#e0b9b0;border-left:2px solid var(--shu);padding-left:14px;margin-top:16px}
+/* ステップ */
+.step{display:flex;gap:20px;margin-bottom:30px;align-items:flex-start}
+.step .n{flex:none;width:40px;height:40px;border:1px solid var(--amb);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--amb-hi);font-size:15px;background:rgba(200,135,60,.06);margin-top:3px;font-family:"Cormorant Garamond",serif}
+.step h3{font-size:16px;font-weight:600;margin-bottom:4px;letter-spacing:.08em}
+.step p{font-size:13.5px;color:var(--ash-dim);margin-bottom:0;line-height:2}
 
-details{border-bottom:1px solid rgba(234,231,221,.1)}
-summary{cursor:pointer;list-style:none;padding:20px 34px 20px 4px;font-size:15px;font-weight:600;position:relative;letter-spacing:.06em}
+.pay{border:1px solid rgba(200,135,60,.25);background:var(--bk2);padding:24px;font-size:13px;color:var(--ash-dim);line-height:2.1;margin-top:30px}
+.pay b{color:var(--amb-hi);font-weight:600;display:block;letter-spacing:.22em;font-size:11.5px;margin-bottom:8px}
+
+.card{border:1px solid rgba(200,135,60,.35);background:linear-gradient(180deg,rgba(200,135,60,.07),transparent);padding:38px 26px}
+.card h3{color:var(--amb-hi);font-size:16px;letter-spacing:.22em;margin-bottom:18px;text-align:center}
+.card ol{margin:0 0 20px;padding:0;counter-reset:st}
+.card ol li{list-style:none;counter-increment:st;position:relative;padding:13px 0 13px 44px;font-size:15px;border-bottom:1px solid rgba(232,226,216,.08)}
+.card ol li::before{content:counter(st);position:absolute;left:2px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:1px solid var(--amb);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--amb-hi);font-size:13px;font-family:"Cormorant Garamond",serif}
+.warn{font-size:13px;color:#e8b8a4;border-left:2px solid var(--ember);padding-left:16px;margin-top:20px;line-height:2.1}
+
+details{border-bottom:1px solid rgba(232,226,216,.08)}
+summary{cursor:pointer;list-style:none;padding:22px 36px 22px 4px;font-size:15px;font-weight:600;position:relative;letter-spacing:.05em}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"";position:absolute;right:10px;top:50%;width:9px;height:9px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:translateY(-70%) rotate(45deg);transition:transform .35s ease}
+summary::after{content:"";position:absolute;right:8px;top:50%;width:9px;height:9px;border-right:1.5px solid var(--amb);border-bottom:1.5px solid var(--amb);transform:translateY(-70%) rotate(45deg);transition:transform .4s cubic-bezier(.19,1,.22,1)}
 details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
-.a{padding:0 4px 24px;font-size:14px;color:var(--moon-dim)}
-.a b{color:var(--gold-hi);font-weight:600}
+.ans{padding:0 4px 26px;font-size:14px;color:var(--ash-dim);line-height:2.2}
+.ans b{color:var(--amb-hi);font-weight:600}
 
 .last{text-align:center}
-.hanko{margin:30px auto 0;width:46px;height:46px;background:linear-gradient(160deg,#a63f34,#8c2f27);color:#f5efe2;font-size:13.5px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;letter-spacing:.12em;border-radius:4px;transform:rotate(-2.5deg);box-shadow:inset 0 0 0 1.4px rgba(245,239,226,.85),0 2px 8px rgba(0,0,0,.5);font-weight:600}
+.seal{margin:34px auto 0;width:50px;height:50px;background:linear-gradient(150deg,var(--deep),#7a2a15);color:#f3e6d6;font-size:14px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;letter-spacing:.14em;border-radius:5px;transform:rotate(-2deg);box-shadow:inset 0 0 0 1.5px rgba(243,230,214,.8),0 3px 12px rgba(0,0,0,.6);font-weight:600}
 
-.cta{display:block;text-align:center;background:linear-gradient(160deg,#e9cf96,#b8945c);color:var(--ink);font-weight:800;font-size:17px;letter-spacing:.2em;padding:21px 12px;border-radius:3px;text-decoration:none;box-shadow:0 8px 34px rgba(201,146,74,.35);margin:36px auto 10px;max-width:420px;animation:breathe 3.6s ease-in-out infinite}
-@keyframes breathe{0%,100%{box-shadow:0 8px 30px rgba(201,146,74,.3)}50%{box-shadow:0 8px 46px rgba(201,146,74,.55)}}
-.ctasub{text-align:center;font-size:11.5px;color:var(--moon-dim);letter-spacing:.1em}
+.cta{display:block;text-align:center;background:linear-gradient(150deg,#f0c07a,#c8873c 55%,#a8642a);color:#1a0f07;font-weight:700;font-size:17px;letter-spacing:.22em;padding:23px 12px;text-decoration:none;box-shadow:0 10px 40px rgba(224,90,43,.3);margin:40px auto 12px;max-width:430px;position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.cta::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);animation:shine 3.4s ease-in-out infinite}
+@keyframes shine{0%,66%{left:-120%}100%{left:130%}}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 50px rgba(224,90,43,.45)}
+.ctasub{text-align:center;font-size:11.5px;color:var(--ash-dim);letter-spacing:.12em}
 
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(9,13,24,.92);backdrop-filter:blur(8px);border-top:1px solid rgba(201,146,74,.4);padding:12px 14px calc(12px + env(safe-area-inset-bottom))}
-.bar a{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(160deg,#e9cf96,#b8945c);color:var(--ink);text-decoration:none;font-weight:800;font-size:14.5px;letter-spacing:.08em;padding:14px 10px;border-radius:3px}
-.bar .s{font-size:10.5px;font-weight:500}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(10,7,5,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(200,135,60,.35);padding:12px 14px calc(12px + env(safe-area-inset-bottom))}
+.bar a{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(150deg,#f0c07a,#c8873c 55%,#a8642a);color:#1a0f07;text-decoration:none;font-weight:700;font-size:14.5px;letter-spacing:.1em;padding:15px 10px}
+.bar .s{font-size:10.5px;font-weight:500;opacity:.85}
 
-footer{padding:44px 0 60px;text-align:center;font-size:11px;color:rgba(178,173,159,.55);letter-spacing:.1em;line-height:2.4}
-footer a{color:rgba(178,173,159,.75)}
-.legal{font-size:11px;color:rgba(178,173,159,.55);line-height:2.2;margin-top:26px;text-align:center}
+footer{padding:50px 0 66px;text-align:center;font-size:11px;color:rgba(168,158,144,.5);letter-spacing:.1em;line-height:2.5}
+footer a{color:rgba(168,158,144,.72)}
+.legal{font-size:11px;color:rgba(168,158,144,.5);line-height:2.2;margin-top:30px;text-align:center}
 
-/* ── インドの聖地（夜明け前）── */
-.hero .dawn{position:absolute;left:0;right:0;bottom:0;height:52svh;background:linear-gradient(180deg,rgba(58,34,52,0) 0%,rgba(96,54,62,.20) 55%,rgba(226,149,63,.18) 100%);animation:dawnpulse 11s ease-in-out infinite;pointer-events:none}
-@keyframes dawnpulse{0%,100%{opacity:.6}50%{opacity:1}}
-.hero .shrine{position:absolute;left:0;right:0;bottom:0;z-index:1;pointer-events:none}
-.hero .shrine svg{display:block;width:100%;height:clamp(150px,26svh,250px)}
-.win{animation:flicker 4.6s ease-in-out infinite}
-.win2{animation:flicker 4.6s ease-in-out 1.8s infinite}
-@keyframes flicker{0%,100%{opacity:.3}50%{opacity:.95}}
-.hero .from{font-size:11px;letter-spacing:.4em;color:var(--saffron);margin-bottom:12px}
-.scene{margin:34px auto 6px;border:1px solid rgba(201,146,74,.3);background:var(--ink2);padding:8px}
-.scene svg{display:block;width:100%;height:auto}
-.scene .cap{font-size:11.5px;color:var(--moon-dim);text-align:center;letter-spacing:.14em;padding:10px 4px 4px;line-height:2}
-.goldpath{stroke-dasharray:1400;stroke-dashoffset:1400}
-.rv.on .goldpath{animation:golddraw 3.4s ease .5s forwards}
-@keyframes golddraw{to{stroke-dashoffset:0}}
+/* カレンダー */
+.cal .mo{font-size:14px;letter-spacing:.34em;color:var(--amb-hi);text-align:center;margin:44px 0 6px;position:relative}
+.cal .mo::before,.cal .mo::after{content:"";position:absolute;top:50%;width:56px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,135,60,.5))}
+.cal .mo::before{left:0}.cal .mo::after{right:0;background:linear-gradient(90deg,rgba(200,135,60,.5),transparent)}
+.cal .row{display:flex;gap:16px;padding:18px 6px;border-bottom:1px solid rgba(232,226,216,.06);align-items:flex-start;transition:background .4s ease}
+.cal .row:hover{background:rgba(200,135,60,.04)}
+.cal .dt{flex:none;width:70px;font-size:15px;color:var(--amb-hi);letter-spacing:.05em;font-weight:600}
+.cal .bd{flex:1}
+.cal .tg{font-size:10.5px;letter-spacing:.18em;color:var(--amb);margin-bottom:6px}
+.cal .ds{font-size:13.5px;color:var(--ash-dim);line-height:2.05}
+.cal .row.top{background:linear-gradient(90deg,rgba(224,90,43,.10),transparent 70%);border-left:2px solid var(--ember)}
 
 </style>
 </head>
 <body>
+<div class="sparks" id="sp"></div>
 
 <header class="hero">
-  <div class="moon"></div><div class="ring"></div>
-  <div class="vtitle">
-    <div class="main gg">虎目石</div>
-    <div class="sub">とらめいし ｜ 7日間、そこに置いていたもの</div>
+  <div class="glow"></div>
+  <div class="stack">
+    <div class="kanji fire up">虎目石</div>
+    <div class="yomi lat">T O R A M E I S H I</div>
+    <p class="lead rv d1">7日間、そこに置いていました。<br>抜いたものを、受けるために。</p>
+    <div class="badge rv d2">2026.09.26 彼岸明け</div>
   </div>
-  <div class="dawn"></div>
-  <div class="skirt"></div>
-  <div class="bottom wrap">
-    <div class="from">2026.09.26 彼岸明け</div>
-    <div class="open">受付中</div>
-    <div class="lim">数に限りがあります</div>
-  </div>
+  <div class="scroll lat">SCROLL</div>
 </header>
 
-<section class="sec-a">
+<section class="sc">
  <div class="wrap">
-  <div class="eyebrow">FOR YOU</div>
-  <h2 class="gg">ここまで見てくださった<br>あなたへ</h2>
-  <div class="gline"></div>
-  <p class="rv">7日間、お預かりしたものを、燃やしてきました。</p>
-  <p class="rv">一枚ずつ、お名前を書いて。まとめては、できないので。</p>
-  <p class="rv">そして、その場所に置いていたものがあります。</p>
-  <p class="rv"><strong>それが、これです。</strong></p>
+  <div class="eyebrow lat">FOR YOU</div>
+  <h2 class="rv">ここまで見てくださった<br><span class="fire">あなたへ</span></h2>
+  <div class="rule"></div>
+  <p class="rv">7日間、お預かりしたものを燃やしてきました。</p>
+  <p class="rv d1">一枚ずつ、お名前を書いて。まとめては、できないので。</p>
+  <p class="rv d2">そして、その場所に置いていたものがあります。</p>
+  <p class="rv d3"><strong>それが、これです。</strong></p>
  </div>
 </section>
 
-<div class="band"></div>
+<div class="bandwide"></div>
 
-<section class="sec-b">
+<section class="sb">
  <div class="wrap">
-  <div class="eyebrow">TIMELINE</div>
+  <div class="eyebrow lat">TIMELINE</div>
   <h2 class="rv">ここまでの、流れ</h2>
-  <div class="gline"></div>
+  <div class="rule"></div>
   <div class="tl">
-   <div class="ti"><div class="d">9月20日</div><p>彼岸に入る。一夜目。</p></div>
-   <div class="ti"><div class="d">9月23日</div><p>秋分。境目がいちばん薄くなる日。</p></div>
-   <div class="ti"><div class="d">9月25日</div><p>六夜目。中秋の名月。</p></div>
-   <div class="ti now"><div class="d">9月26日</div><p>7日間目。彼岸明け。大安と一粒万倍日が重なる日。前は1988年。</p></div>
-   <div class="ti"><div class="d">9月28日</div><p>仕上げを終えて、お渡しを開始。</p></div>
+   <div class="ti rl"><div class="d">9月20日</div><p>彼岸に入る。一夜目。</p></div>
+   <div class="ti rl"><div class="d">9月23日</div><p>秋分。境目がいちばん薄くなる日。</p></div>
+   <div class="ti rl"><div class="d">9月25日</div><p>六夜目。中秋の名月。</p></div>
+   <div class="ti now rl"><div class="d">9月26日</div><p>七夜目。彼岸明け。大安と一粒万倍日が重なる日。前は1988年。</p></div>
+   <div class="ti rl"><div class="d">9月28日</div><p>仕上げを終えて、お渡しを開始。</p></div>
   </div>
  </div>
 </section>
 
-<section class="sec-a">
+<section class="sa">
  <div class="wrap">
-  <div class="eyebrow">WHY</div>
-  <h2 class="rv gg">なぜ、何度祓っても<br>戻ってきたのか</h2>
-  <div class="gline"></div>
+  <div class="eyebrow lat">WHY</div>
+  <h2 class="rv">なぜ、何度祓っても<br><span class="fire">戻ってきたのか</span></h2>
+  <div class="rule"></div>
   <p class="rv">草を抜くのと、同じです。</p>
-  <p class="rv">地面に落ちてる草なら、拾えば終わりです。</p>
-  <p class="rv">でも、<strong>根を張ってる草は、上だけ刈っても、また生えてきます。</strong></p>
-  <p class="rv">1週間もすれば、元通りです。</p>
+  <p class="rv d1">地面に落ちてる草なら、拾えば終わりです。</p>
+  <p class="rv d2">でも、<strong>根を張ってる草は、上だけ刈っても、また生えてきます。</strong></p>
+  <div class="rootfig rv">
+   <svg viewBox="0 0 320 190" fill="none">
+    <line x1="20" y1="88" x2="300" y2="88" stroke="#8a5522" stroke-width="1" stroke-dasharray="4 5" opacity=".6"/>
+    <path class="rootline" d="M160 88 L160 34 M160 52 L142 36 M160 60 L180 44" stroke="#c8873c" stroke-width="2" stroke-linecap="round"/>
+    <path class="rootline" d="M160 88 L160 150 M160 106 L134 128 M160 118 L188 142 M160 132 L146 158 M160 128 L178 160" stroke="#e05a2b" stroke-width="2" stroke-linecap="round"/>
+    <text x="196" y="40" fill="#a89e90" font-size="11" font-family="Zen Old Mincho">刈った部分</text>
+    <text x="196" y="140" fill="#f5c87a" font-size="11" font-family="Zen Old Mincho">残った根</text>
+   </svg>
+  </div>
+  <p class="rv">1週間もすれば、元通りです。邪気も、まったく同じです。</p>
   <blockquote class="rv">何度も人に話してきた。話すたびに、一瞬は楽になる。でも次の日にはもう戻ってる。<br><em>……それ、根を張っています。</em></blockquote>
   <p class="rv">上だけ刈られてきたんです。今まで、ずっと。</p>
-  <p class="rv">あなたが悪いんじゃありません。刈り方の問題でもありません。</p>
-  <p class="rv"><strong>根が残っていたら、また生えます。当たり前のことです。</strong></p>
+  <p class="rv d1">あなたが悪いんじゃありません。刈り方の問題でもありません。</p>
+  <p class="rv d2"><strong>根が残っていたら、また生えます。当たり前のことです。</strong></p>
  </div>
 </section>
 
 <div class="band"></div>
 
-<section class="sec-b">
+<section class="sb">
  <div class="wrap">
-  <div class="eyebrow">THE PROBLEM</div>
+  <div class="eyebrow lat">THE PROBLEM</div>
   <h2 class="rv">抜いた草は、<br>どこかに置かないといけない</h2>
-  <div class="gline"></div>
+  <div class="rule"></div>
   <p class="rv">根から抜くしかありません。</p>
-  <p class="rv">ただ、抜いた草は、どこかに置かないといけません。</p>
-  <p class="rv">そのへんに放っておいたら、また根づきます。</p>
-  <p class="rv">邪気も、同じです。</p>
-  <p class="rv"><strong>置き場所を用意しないまま抜くと、抜いた人のところに来ます。</strong></p>
+  <p class="rv d1">ただ、抜いた草は、どこかに置かないといけません。</p>
+  <p class="rv d2">そのへんに放っておいたら、また根づきます。邪気も、同じです。</p>
+  <p class="rv d3"><strong>置き場所を用意しないまま抜くと、抜いた人のところに来ます。</strong></p>
   <blockquote class="rv">私は7年前、それで倒れました。<br>朝、起き上がれなくなって。誰とも話せなくなって。<br><em>人間は、置き場所にはなれません。</em></blockquote>
   <p class="rv">37カ国、どこの土地も、必ず置き場所を用意していました。</p>
-  <p class="rv">木は燃える。布は破れる。<strong>石だけが、残る。</strong></p>
-  <p class="rv">だから石なんだと、言われました。</p>
+  <p class="rv d1">木は燃える。布は破れる。<strong>石だけが、残る。</strong></p>
+  <p class="rv d2">だから石なんだと、言われました。</p>
  </div>
 </section>
 
-<section class="sec-a">
+<section class="sc">
  <div class="wrap">
-  <div class="eyebrow">THE STONE</div>
-  <h2 class="rv gg">虎目石</h2>
-  <div class="gline"></div>
+  <div class="eyebrow lat">THE STONE</div>
+  <h2 class="rv"><span class="fire">虎目石</span></h2>
+  <div class="rule"></div>
   <p class="rv">タイガーアイ。日本では虎目石といいます。</p>
-  <p class="rv">古くから、<strong>邪視除け</strong>に使われてきました。「見られること」から守る石だと伝えられています。</p>
-  <p class="rv">もともと、受ける側の石です。</p>
-  <div class="ph rv">
-    <img src="stone.jpg" alt="虎目石">
-    <div class="cap">7日間、そこに置いていたもの</div>
-  </div>
+  <p class="rv d1">古くから、<strong>邪視除け</strong>に使われてきました。「見られること」から守る石だと伝えられています。</p>
+  <p class="rv d2">もともと、受ける側の石です。</p>
+  <div class="ph rv"><div class="phbox"><img src="stone.jpg" alt="虎目石"></div>
+    <div class="cap">7日間、そこに置いていたもの</div></div>
   <table class="spec rv">
    <tr><th>石</th><td>タイガーアイ（虎目石）／南アフリカ産</td></tr>
    <tr><th>形状</th><td>ブレスレット</td></tr>
    <tr><th>選定</th><td>現地で選定後、動画で全数確認。手に取って再度選別</td></tr>
    <tr><th>基準</th><td>金の筋が、まっすぐ一本通っているもののみ</td></tr>
-   <tr><th>期間</th><td>2026年9月20日〜26日の7日間</td></tr>
+   <tr><th>期間</th><td>2026年9月20日〜26日</td></tr>
   </table>
   <p class="rv">筋が途中で切れているもの、二本に分かれているものは、置き場所になりません。受けきれずに、割れます。</p>
-  <p class="rv"><strong>残ったのは、30個でした。</strong></p>
+  <p class="rv d1"><strong>残ったのは、30個でした。</strong></p>
   <blockquote class="rv">弾いたぶんは、処分しました。<br>売れば、いくらかにはなります。でも、それはできませんでした。<br><em>置き場所にならないものを、誰かが手にすることになるので。</em></blockquote>
  </div>
 </section>
 
 <div class="band"></div>
 
-<section class="sec-b">
+<section class="sb">
  <div class="wrap">
-  <div class="eyebrow">HONESTLY</div>
+  <div class="eyebrow lat">HONESTLY</div>
   <h2 class="rv">どこでも買える石です</h2>
-  <div class="gline"></div>
+  <div class="rule"></div>
   <p class="rv">はっきり言っておきます。</p>
-  <p class="rv">タイガーアイは、どこでも買えます。石屋にも、通販にもあります。</p>
-  <p class="rv">止めません。</p>
-  <p class="rv">でも、<strong>通していない石は、ただの石です。</strong>何も起きません。</p>
-  <p class="rv">石そのものに力があるわけじゃないんです。7日間、そこにあったから、置き場所になっただけです。</p>
+  <p class="rv d1">タイガーアイは、どこでも買えます。石屋にも、通販にもあります。止めません。</p>
+  <p class="rv d2">でも、<strong>通していない石は、ただの石です。</strong>何も起きません。</p>
+  <p class="rv d3">石そのものに力があるわけじゃないんです。7日間、そこにあったから、置き場所になっただけです。</p>
   <blockquote class="rv">値段じゃありません。<br><em>通ったかどうか。それだけです。</em></blockquote>
  </div>
 </section>
 
-<section class="sec-a">
+<section class="sa">
  <div class="wrap">
-  <div class="eyebrow">PRICE</div>
+  <div class="eyebrow lat">PRICE</div>
   <h2 class="rv">価格について</h2>
-  <div class="gline"></div>
+  <div class="rule"></div>
   <p class="rv">正直に言うと、値段をつけることに、最後まで迷いました。</p>
-  <p class="rv">7日間そこにあったものに、いくらが正しいのか。</p>
-  <p class="rv">ただ、余裕のある方だけのものにはしたくなかったので。</p>
-  <div class="pricecard rv">
+  <p class="rv d1">7日間そこにあったものに、いくらが正しいのか。</p>
+  <p class="rv d2">ただ、余裕のある方だけのものにはしたくなかったので。</p>
+  <div class="price rv">
     <div class="tag">7日間を過ごした石</div>
     <div class="was">149,800円</div>
     <div class="now">79,800<small>円</small></div>
     <div class="meta">税込・送料無料</div>
-    <div class="off">30個限定</div>
+    <div class="lim">30個限定</div>
   </div>
-  <div class="pay rv">
-    <b>お支払い方法</b>
-    クレジットカード（一括／分割）<br>
-    分割の場合、月々 6,650円（12回）から
-  </div>
-  <a class="cta" href="[要設定・STORES決済URL]">受け取る</a>
+  <div class="pay rv"><b>お支払い方法</b>クレジットカード（一括／分割）<br>分割の場合、月々 6,650円（12回）から</div>
+  <a class="cta" href="[決済URL]">受け取る</a>
   <div class="ctasub">10月1日 24時まで</div>
  </div>
 </section>
 
-<div class="band"></div>
+<div class="bandwide"></div>
 
-<section class="sec-b">
+<section class="sb">
  <div class="wrap">
-  <div class="eyebrow">FOR / NOT FOR</div>
+  <div class="eyebrow lat">FOR / NOT FOR</div>
   <h2 class="rv">こんな方に</h2>
-  <div class="gline"></div>
-  <ul class="you rv">
-   <li>何度祓っても、また戻ってきた方</li>
-   <li>寝ても取れない疲れがある方</li>
-   <li>家族の中で、いちばん先に気づいてしまう方</li>
-   <li>誰にも言わずに、飲み込んできた方</li>
+  <div class="rule"></div>
+  <ul class="ul">
+   <li class="rl">何度祓っても、また戻ってきた方</li>
+   <li class="rl">寝ても取れない疲れがある方</li>
+   <li class="rl">家族の中で、いちばん先に気づいてしまう方</li>
+   <li class="rl">誰にも言わずに、飲み込んできた方</li>
   </ul>
-  <h3 class="rv" style="margin-top:40px;font-size:16px;color:var(--gold-hi);letter-spacing:.2em;text-align:center">こんな方には、お勧めしません</h3>
-  <div class="gline"></div>
+  <h3 class="rv" style="margin-top:52px;font-size:16px;color:var(--amb-hi);letter-spacing:.22em;text-align:center">こんな方には、お勧めしません</h3>
+  <div class="rule"></div>
   <p class="rv">食費や光熱費を削って、というのは、やめてください。</p>
-  <p class="rv">それをすると、また新しい重さが乗ります。本末転倒なので。</p>
-  <p class="rv">それと、「これさえあれば」と思っている方。</p>
-  <p class="rv"><strong>石は、置き場所です。あなたの代わりに生きてはくれません。</strong></p>
+  <p class="rv d1">それをすると、また新しい重さが乗ります。本末転倒なので。</p>
+  <p class="rv d2">それと、「これさえあれば」と思っている方。</p>
+  <p class="rv d3"><strong>石は、置き場所です。あなたの代わりに生きてはくれません。</strong></p>
   <div class="warn rv">こういうことを言うと数が出ないのは分かっています。でも、無理して持った方がどうなるかを見てきたので。</div>
  </div>
 </section>
 
-<section class="sec-a">
+<section class="sa">
  <div class="wrap">
-  <div class="eyebrow">FLOW</div>
+  <div class="eyebrow lat">FLOW</div>
   <h2 class="rv">お迎えの流れ</h2>
-  <div class="gline"></div>
-  <div class="step rv"><div class="n">1</div><div><h3>お申し込み</h3><p>下のボタンから、お手続きください。</p></div></div>
-  <div class="step rv"><div class="n">2</div><div><h3>使い方のご案内</h3><p>お手続き後、LINEに使い方をお送りします。</p></div></div>
-  <div class="step rv"><div class="n">3</div><div><h3>仕上げ</h3><p>一つずつ、私が仕上げます。まとめてはできないので、順番に。</p></div></div>
-  <div class="step rv"><div class="n">4</div><div><h3>発送</h3><p>1ヶ月ほどお時間をいただきます。発送のときに、LINEでお知らせします。</p></div></div>
+  <div class="rule"></div>
+  <div class="step rl"><div class="n lat">1</div><div><h3>お申し込み</h3><p>下のボタンから、お手続きください。</p></div></div>
+  <div class="step rl"><div class="n lat">2</div><div><h3>使い方のご案内</h3><p>お手続き後、LINEに使い方をお送りします。</p></div></div>
+  <div class="step rl"><div class="n lat">3</div><div><h3>仕上げ</h3><p>一つずつ、私が仕上げます。まとめてはできないので、順番に。</p></div></div>
+  <div class="step rl"><div class="n lat">4</div><div><h3>発送</h3><p>1ヶ月ほどお時間をいただきます。発送のときに、LINEでお知らせします。</p></div></div>
  </div>
 </section>
 
 <div class="band"></div>
 
-<section class="sec-b">
+<section class="sb">
  <div class="wrap">
-  <div class="eyebrow">AFTER</div>
+  <div class="eyebrow lat">AFTER</div>
   <h2 class="rv">届いたら、<br>これだけしてください</h2>
-  <div class="gline"></div>
-  <div class="after-box rv">
+  <div class="rule"></div>
+  <div class="card rv">
     <h3>最初の夜に</h3>
-    <ol>
-     <li>箱から出して、手のひらにのせる</li>
-     <li>置く場所を決める（枕元でも、玄関でも）</li>
-     <li>そのまま、眠る</li>
-    </ol>
-    <p style="font-size:14px;color:var(--moon-dim);margin-bottom:0">それだけです。頑張って何かをする必要は、ありません。</p>
+    <ol><li>箱から出して、手のひらにのせる</li><li>置く場所を決める（枕元でも、玄関でも）</li><li>そのまま、眠る</li></ol>
+    <p style="font-size:14px;color:var(--ash-dim);margin-bottom:0">それだけです。頑張って何かをする必要は、ありません。</p>
     <div class="warn">明日から急に何かが変わるわけではありません。ゆっくりです。半年後に振り返ったとき、今週が境目だったと分かる。そういう変わり方をします。</div>
   </div>
  </div>
 </section>
 
-<section class="sec-a">
+<section class="sa">
  <div class="wrap">
-  <div class="eyebrow">Q &amp; A</div>
+  <div class="eyebrow lat">Q &amp; A</div>
   <h2 class="rv">よくあるご質問</h2>
-  <div class="gline"></div>
-  <details><summary>いつ届きますか</summary><div class="a">お手続きから<b>1ヶ月ほど</b>いただきます。一つずつ仕上げるため、まとめて発送ができません。発送のときにLINEでお知らせします。</div></details>
-  <details><summary>他のパワーストーンと何が違いますか</summary><div class="a">石そのものは、どこでも買えるものです。違うのは<b>7日間、そこに置いていた</b>という点だけです。石に力があるのではなく、通したかどうかです。</div></details>
-  <details><summary>つけていないと意味がないですか</summary><div class="a">いいえ。<b>置いておくだけで大丈夫</b>です。身につけたい方はつけていただいて構いません。</div></details>
-  <details><summary>浄化は必要ですか</summary><div class="a">こちらで済ませてあります。届いてから何かをする必要はありません。</div></details>
-  <details><summary>効果はありますか</summary><div class="a">あらわれ方には<b>個人差</b>があり、何かを保証するものではありません。急に何かが変わるものでもありません。</div></details>
-  <details><summary>分割払いはできますか</summary><div class="a">はい。クレジットカードの分割払いに対応しています。月々6,650円（12回）からです。</div></details>
+  <div class="rule"></div>
+  <details><summary>いつ届きますか</summary><div class="ans">お手続きから<b>1ヶ月ほど</b>いただきます。一つずつ仕上げるため、まとめて発送ができません。発送のときにLINEでお知らせします。</div></details>
+  <details><summary>他のパワーストーンと何が違いますか</summary><div class="ans">石そのものは、どこでも買えるものです。違うのは<b>7日間、そこに置いていた</b>という点だけです。石に力があるのではなく、通したかどうかです。</div></details>
+  <details><summary>つけていないと意味がないですか</summary><div class="ans">いいえ。<b>置いておくだけで大丈夫</b>です。身につけたい方はつけていただいて構いません。</div></details>
+  <details><summary>浄化は必要ですか</summary><div class="ans">こちらで済ませてあります。届いてから何かをする必要はありません。</div></details>
+  <details><summary>効果はありますか</summary><div class="ans">あらわれ方には<b>個人差</b>があり、何かを保証するものではありません。急に何かが変わるものでもありません。</div></details>
+  <details><summary>分割払いはできますか</summary><div class="ans">はい。クレジットカードの分割払いに対応しています。月々6,650円（12回）からです。</div></details>
  </div>
 </section>
 
-<div class="band"></div>
+<div class="bandwide"></div>
 
-<section class="sec-b last">
+<section class="sb last">
  <div class="wrap">
-  <h2 class="rv gg">最後に</h2>
-  <div class="gline"></div>
+  <h2 class="rv"><span class="fire">最後に</span></h2>
+  <div class="rule"></div>
   <p class="rv">7日間、預かってきました。</p>
-  <p class="rv">一枚ずつ、お名前を書いて、燃やしました。全部、読みました。</p>
-  <p class="rv">読まなければよかったと思ったことも、正直、ありました。</p>
-  <p class="rv">でも読んでしまったので。<strong>なかったことには、できません。</strong></p>
+  <p class="rv d1">一枚ずつ、お名前を書いて、燃やしました。全部、読みました。</p>
+  <p class="rv d2">読まなければよかったと思ったことも、正直、ありました。</p>
+  <p class="rv d3">でも読んでしまったので。<strong>なかったことには、できません。</strong></p>
   <div class="orn"><i></i></div>
   <p class="rv">私は、受けられません。人間なので。</p>
-  <p class="rv">私は、抜くだけです。</p>
-  <p class="rv"><strong>受けるのは、そっちです。</strong></p>
-  <div class="hanko">壱志</div>
-  <a class="cta" href="[要設定・STORES決済URL]">受け取る</a>
+  <p class="rv d1">私は、抜くだけです。</p>
+  <p class="rv d2"><strong>受けるのは、そっちです。</strong></p>
+  <div class="seal">壱志</div>
+  <a class="cta" href="[決済URL]">受け取る</a>
   <div class="ctasub">30個限定 ｜ 10月1日 24時まで</div>
-  <div class="legal">
-   効果のあらわれ方には個人差があり、何かを保証するものではありません。<br>
-   医療行為ではありません。体調に不安のある方は、専門機関にご相談ください。
-  </div>
+  <div class="legal">効果のあらわれ方には個人差があり、何かを保証するものではありません。<br>医療行為ではありません。体調に不安のある方は、専門機関にご相談ください。</div>
  </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    スピリチュアルヒーラー いっしー<br>
-    <a href="[要設定・特商法URL]">特定商取引法に基づく表記</a> ｜ <a href="[要設定・プライバシーポリシーURL]">プライバシーポリシー</a>
-  </div>
-</footer>
-
-<div class="bar"><a href="[要設定・STORES決済URL]">受け取る<span class="s">30個限定 ｜ 10/1 24時まで</span></a></div>
+<footer><div class="wrap">スピリチュアルヒーラー いっしー<br>
+<a href="[特商法URL]">特定商取引法に基づく表記</a> ｜ <a href="[プライバシーURL]">プライバシーポリシー</a></div></footer>
+<div class="bar"><a href="[決済URL]">受け取る<span class="s">30個限定 ｜ 10/1 24時まで</span></a></div>
 
 <script>
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.rv,.tl').forEach(el=>io.observe(el));
+// 火の粉
+(function(){
+  const c=document.getElementById('sp'); if(!c) return;
+  const n=window.innerWidth<600?18:28;
+  for(let i=0;i<n;i++){
+    const s=document.createElement('i');
+    s.className='sp';
+    s.style.left=(Math.random()*100)+'%';
+    s.style.setProperty('--dx',(Math.random()*80-40)+'px');
+    s.style.animationDuration=(7+Math.random()*9)+'s';
+    s.style.animationDelay=(-Math.random()*14)+'s';
+    const sc=.5+Math.random()*1.5;
+    s.style.width=s.style.height=(sc*3)+'px';
+    c.appendChild(s);
+  }
+})();
+// 出現
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.rv,.rl,.tl,.up,.rootfig').forEach(el=>io.observe(el));
+// 文字ごと
+document.querySelectorAll('.up').forEach(el=>{
+  const t=el.textContent; el.textContent='';
+  [...t].forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch;s.style.transitionDelay=(i*.045)+'s';el.appendChild(s)});
+});
 </script>
 </body>
 </html>
