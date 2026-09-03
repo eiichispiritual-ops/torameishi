@@ -283,11 +283,14 @@ strong{font-weight:600;background:none;color:var(--am-hi)}
 blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .an,.st2 p,.tl .ti p,.sp td,.cd ol li,.after-box ol li,.ul li,.cal .ds{font-family:"Noto Sans JP","Hiragino Sans",sans-serif}
 .rl{width:1px!important;height:40px!important;background:linear-gradient(180deg,transparent,var(--am),transparent)!important;margin:20px auto!important}
+.hero-ph{background-size:cover;background-position:center 40%}
+.hero-ph::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,248,244,.72),rgba(250,248,244,.55) 45%,rgba(250,248,244,.96))}
+.hero.hero-ph{background-image:url(../stone_hero_light.jpg)!important;background-size:cover!important;background-position:center 40%!important}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
 
-<header class="hero" style="min-height:72svh">
+<header class="hero hero-ph" style="min-height:72svh;background-image:url(../stone_hero_light.jpg)">
   <div class="gl"></div>
   <div class="st">
     <div class="kj fire up" style="font-size:clamp(46px,14vw,84px)">開運暦</div>
