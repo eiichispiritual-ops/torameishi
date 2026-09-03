@@ -237,6 +237,22 @@ footer{color:var(--tx2)}
 .fb.sq{min-height:auto}
 .fb.sq .in{padding:88px 28px}
 @media(min-width:600px){.fb{min-height:70vh}.fb h3{font-size:36px}}
+.illust{margin:30px auto;max-width:560px;border:1px solid rgba(176,138,74,.35);padding:8px;background:#fff}
+.illust svg{width:100%;height:auto;display:block}
+.illcap{font-size:12px;color:var(--tx2);text-align:center;letter-spacing:.14em;padding:12px 6px 4px}
+.flame{transform-origin:292px 262px;animation:fl 1.8s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.08) translateY(-2px)}}
+.cloth-move{animation:cm 4s ease-in-out infinite}
+@keyframes cm{0%,100%{transform:translate(0,0)}50%{transform:translate(220px,40px) rotate(6deg);opacity:.6}}
+/* みづき品質の細部 */
+.after-box{border:1.5px solid var(--am);background:linear-gradient(180deg,rgba(176,138,74,.08),rgba(176,138,74,.02));padding:34px 26px;border-radius:0}
+.after-box h3{font-size:16px;letter-spacing:.2em}
+.after-box ol li::before{background:transparent;border:1px solid var(--am);color:var(--am-hi);width:28px;height:28px;font-size:13px;font-weight:400}
+.st2 .n{width:40px;height:40px;font-size:15px;border-color:var(--am);color:var(--am-hi);background:rgba(176,138,74,.06)}
+.st2 h3{font-size:16.5px;font-weight:600}
+.cta{font-size:17px;letter-spacing:.2em;padding:21px 12px;border-radius:3px;max-width:420px;margin:36px auto 10px;font-weight:800}
+.eb{letter-spacing:.55em;font-size:11px}
+.rl{width:54px}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
@@ -300,6 +316,35 @@ footer{color:var(--tx2)}
   <p class="r d2">置き場所がないと、いちばん近い人のところに戻ります。剥がしてもらった、本人です。</p>
   <p class="r d3">今まで何度祓っても戻ってきたのは、これが理由でした。</p>
   <div class="ph r"><div class="phb"><img src="../stone_wide.jpg" alt="七夜の器"></div><div class="cap">受けるためのものです</div></div>
+  <div class="illust r">
+<svg viewBox="0 0 584 320" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="cbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3efe8"/><stop offset="1" stop-color="#e6dfd3"/></linearGradient>
+  <radialGradient id="cst" cx="40%" cy="35%" r="60%"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#e8e2d8"/><stop offset="1" stop-color="#b8ae9f"/></radialGradient>
+ </defs>
+ <rect width="584" height="320" fill="url(#cbg)"/>
+ <path d="M120 300 C120 200 150 150 200 150 C250 150 280 200 280 300Z" fill="#c9bfb2"/>
+ <ellipse cx="200" cy="130" rx="34" ry="40" fill="#d6cdc0"/>
+ <g opacity=".95">
+  <rect x="140" y="170" width="120" height="26" rx="6" fill="#9a9086" transform="rotate(-3 200 183)"/>
+  <rect x="146" y="196" width="120" height="26" rx="6" fill="#857b71" transform="rotate(2 206 209)"/>
+  <rect x="138" y="222" width="120" height="26" rx="6" fill="#6f665c" transform="rotate(-2 198 235)"/>
+ </g>
+ <g class="cloth-move">
+  <rect x="150" y="146" width="120" height="26" rx="6" fill="#b0a69a" transform="rotate(-8 210 159)"/>
+ </g>
+ <path class="rt" d="M300 170 C340 150 380 150 420 170" stroke="#b08a4a" stroke-width="1.4" fill="none" stroke-dasharray="4 4"/>
+ <path d="M414 164 l8 6 l-9 3" stroke="#b08a4a" stroke-width="1.4" fill="none"/>
+ <g transform="translate(470 210)">
+  <circle cx="0" cy="0" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
+  <circle cx="28" cy="6" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
+  <circle cx="14" cy="28" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
+  <circle cx="42" cy="32" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
+ </g>
+ <ellipse cx="490" cy="270" rx="60" ry="8" fill="#b8ae9f" opacity=".35"/>
+</svg>
+<div class="illcap">剥がした布は、動かない物に移す。</div>
+</div>
   <blockquote class="r">水晶は、何の色も持っていません。<br><em>何も持っていないから、受ける側になれます。</em></blockquote>
  </div>
 </section>
@@ -366,6 +411,31 @@ footer{color:var(--tx2)}
   <h2 class="r">お届けするもの</h2>
   <div class="rl"></div>
   <div class="ph r"><div class="phb"><img src="../stone_close.jpg" alt="クリスタルクォーツ"></div><div class="cap">クラックの入った水晶。ひびは、受けた跡です</div></div>
+  <div class="illust r">
+<svg viewBox="0 0 584 320" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="isky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a120c"/><stop offset="1" stop-color="#3a2415"/></linearGradient>
+  <radialGradient id="ifire" cx="50%" cy="100%" r="55%"><stop offset="0" stop-color="#f7ce85" stop-opacity=".95"/><stop offset=".35" stop-color="#e0562a" stop-opacity=".55"/><stop offset="1" stop-color="#e0562a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="istone" cx="40%" cy="35%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".6" stop-color="#e8e2d8" stop-opacity=".5"/><stop offset="1" stop-color="#9d9184" stop-opacity=".2"/></radialGradient>
+ </defs>
+ <rect width="584" height="320" fill="url(#isky)"/>
+ <ellipse cx="292" cy="300" rx="260" ry="60" fill="url(#ifire)"/>
+ <g class="flame">
+  <path d="M292 262 C270 236 268 214 292 190 C316 214 314 236 292 262Z" fill="#e0562a" opacity=".85"/>
+  <path d="M292 254 C280 238 280 224 292 208 C304 224 304 238 292 254Z" fill="#f7ce85" opacity=".9"/>
+ </g>
+ <g opacity=".85"><rect x="150" y="254" width="72" height="44" rx="2" fill="#f3efe8" transform="rotate(-6 186 276)"/><rect x="164" y="258" width="72" height="44" rx="2" fill="#ebe5db" transform="rotate(3 200 280)"/></g>
+ <g transform="translate(372 262)">
+  <circle cx="0" cy="0" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
+  <circle cx="22" cy="4" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
+  <circle cx="44" cy="0" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
+  <circle cx="11" cy="20" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
+  <circle cx="33" cy="22" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
+ </g>
+ <g fill="#f7ce85" opacity=".7"><circle cx="230" cy="120" r="1.2"/><circle cx="350" cy="90" r="1"/><circle cx="410" cy="150" r="1.4"/><circle cx="180" cy="170" r=".9"/><circle cx="300" cy="60" r="1.1"/></g>
+</svg>
+<div class="illcap">七夜、2000の一行を燃やした火のそばに。</div>
+</div>
   <table class="sp r">
    <tr><th>石</th><td>クリスタルクォーツ（水晶）／クラック入り</td></tr>
    <tr><th>形</th><td>ブレスレット（ゴム紐仕立て）</td></tr>
