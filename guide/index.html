@@ -226,6 +226,17 @@ footer{color:var(--tx2)}
 .hero .sc{background:none!important;color:var(--tx2)}
 .hero .ym{color:var(--am-hi);opacity:.85;font-size:11px;letter-spacing:.5em}
 .hero .kj{text-shadow:0 2px 24px rgba(250,248,244,.9)}
+
+/* フルブリード：写真の上にコピー */
+.fb{position:relative;margin:0;padding:0;min-height:62vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center;overflow:hidden}
+.fb::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,8,6,.25),rgba(11,8,6,.45) 50%,rgba(11,8,6,.25))}
+.fb .in{position:relative;z-index:2;text-align:center;padding:64px 28px;max-width:560px}
+.fb .k{font-size:11px;letter-spacing:.5em;color:#e8cf9a;margin-bottom:18px;font-family:"Cormorant Garamond",serif}
+.fb h3{font-size:clamp(24px,6.4vw,34px);font-weight:700;line-height:1.7;letter-spacing:.08em;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.5);margin:0 0 16px}
+.fb p{font-size:15px;line-height:2;color:rgba(255,255,255,.88);margin:0;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.fb.sq{min-height:auto}
+.fb.sq .in{padding:88px 28px}
+@media(min-width:600px){.fb{min-height:70vh}.fb h3{font-size:36px}}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
@@ -272,6 +283,12 @@ footer{color:var(--tx2)}
 </section>
 
 <div class="bw"></div>
+
+<section class="fb" style="background-image:url(../fb_blur.jpg)"><div class="in">
+ <div class="k">WHAT IS THIS</div>
+ <h3>これは、<br>置き場所です。</h3>
+ <p>石が、あなたを変えるわけではありません。<br>あなたが持っていたものを、石が受けるだけです。</p>
+</div></section>
 
 <section class="sa">
  <div class="w">
@@ -410,6 +427,12 @@ footer{color:var(--tx2)}
   <details><summary>紐が切れました</summary><div class="an">受けきった合図です。直せますので、<b>LINEでご連絡</b>ください。</div></details>
  </div>
 </section>
+
+<section class="fb" style="background-image:url(../fb_bottom.jpg)"><div class="in">
+ <div class="k">FROM ISSHI</div>
+ <h3>届いたら、<br>教えてくださいね。</h3>
+ <p>それだけで、いいので。</p>
+</div></section>
 
 <section class="sa last">
  <div class="w">

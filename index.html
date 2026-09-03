@@ -226,6 +226,17 @@ footer{color:var(--tx2)}
 .hero .sc{background:none!important;color:var(--tx2)}
 .hero .ym{color:var(--am-hi);opacity:.85;font-size:11px;letter-spacing:.5em}
 .hero .kj{text-shadow:0 2px 24px rgba(250,248,244,.9)}
+
+/* フルブリード：写真の上にコピー */
+.fb{position:relative;margin:0;padding:0;min-height:62vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center;overflow:hidden}
+.fb::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,8,6,.25),rgba(11,8,6,.45) 50%,rgba(11,8,6,.25))}
+.fb .in{position:relative;z-index:2;text-align:center;padding:64px 28px;max-width:560px}
+.fb .k{font-size:11px;letter-spacing:.5em;color:#e8cf9a;margin-bottom:18px;font-family:"Cormorant Garamond",serif}
+.fb h3{font-size:clamp(24px,6.4vw,34px);font-weight:700;line-height:1.7;letter-spacing:.08em;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.5);margin:0 0 16px}
+.fb p{font-size:15px;line-height:2;color:rgba(255,255,255,.88);margin:0;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.fb.sq{min-height:auto}
+.fb.sq .in{padding:88px 28px}
+@media(min-width:600px){.fb{min-height:70vh}.fb h3{font-size:36px}}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
@@ -255,7 +266,11 @@ footer{color:var(--tx2)}
  <div class="ph r d3"><div class="phb"><img src="stone.jpg" alt="七夜の器"></div><div class="cap">七夜が明けた朝に</div></div>
 </div></section>
 
-<div class="bw"></div>
+<section class="fb" style="background-image:url(fb_top.jpg)"><div class="in">
+ <div class="k">2026.09.26</div>
+ <h3>38年ぶり。<br>次は、2150年。</h3>
+ <p>彼岸が明ける日に、大安と一粒万倍日が重なる。<br>あなたの人生で、一度きりです。</p>
+</div></section>
 
 <section class="sb"><div class="w">
  <div class="eb">TIMELINE</div>
@@ -296,7 +311,11 @@ footer{color:var(--tx2)}
  <p class="r d3">それに、枚数が多い方を視ると、そのほとんどが<strong>あなたのものではありません。</strong>誰かから預かったものです。だから、自分では下ろせない。持ち主が、違うので。</p>
 </div></section>
 
-<div class="bd"></div>
+<section class="fb" style="background-image:url(fb_blur.jpg)"><div class="in">
+ <div class="k">NOT YOUR FAULT</div>
+ <h3>あなたのせいじゃ、<br>なかった。</h3>
+ <p>心がけが足りないとか、行いが悪いとか。<br>そう思ってきたと思います。違います。<br>枚数が、多すぎただけです。</p>
+</div></section>
 
 <section class="sb"><div class="w">
  <div class="eb">THE PROBLEM</div>
@@ -351,7 +370,13 @@ footer{color:var(--tx2)}
    <text x="176" y="128" fill="#f7ce85" font-size="10">七晩、そば</text>
   </svg>
  </div>
- <p class="r">燃やした一行から出てくるものを、七晩、石が受け続ける。そうやって、置き場所になっていきます。</p>
+</div></section>
+<section class="fb sq" style="background-image:url(fb_close.jpg)"><div class="in">
+ <div class="k">CRACK</div>
+ <h3>ひびは、<br>受けた跡です。</h3>
+ <p>燃やした一行から出てくるものを、七晩、石が受け続ける。<br>そうやって、置き場所になっていきます。</p>
+</div></section>
+<section class="sc"><div class="w">
  <p class="r d1">中に入っているひびは、割れているのではありません。<strong>受けた跡です。</strong></p>
  <p class="r d1">濁りのあるもの、うっすら色を帯びたものは、置き場所になりません。すでに何かを受けているので、受けきれずに割れます。</p>
  <p class="r d2"><strong>残ったのは、30個でした。</strong></p>
@@ -368,8 +393,11 @@ footer{color:var(--tx2)}
  <p class="r d1">水晶は、どこでも買えます。石屋にも、通販にもあります。止めません。</p>
  <p class="r d2">でも、<strong>通していない石は、ただの石です。</strong>何も起きません。</p>
  <p class="r d3">石そのものに力があるわけじゃないんです。<strong>七夜、あなたの一行を燃やした火のそばにあったから、</strong>置き場所になっただけです。あとから買ってきて同じ場所に置くこともできません。七夜は、昨夜で終わったので。</p>
- <div class="phw r"><img src="stone_top.jpg" alt="七夜の器"></div>
- <blockquote class="r">値段じゃありません。<br><em>通ったかどうか。それだけです。</em></blockquote>
+</div></section>
+<section class="fb" style="background-image:url(fb_dark.jpg)"><div class="in">
+ <div class="k">HONESTLY</div>
+ <h3>値段じゃ、ありません。<br>通ったかどうか。</h3>
+ <p>水晶は、どこでも買えます。<br>でも、七夜を通した石は、これだけです。</p>
 </div></section>
 
 <section class="sa"><div class="w">
@@ -439,6 +467,12 @@ footer{color:var(--tx2)}
   <p class="r">新しく何かを引き寄せる必要はありません。頑張って何かを足す必要もない。</p>
   <p class="r d1">今まで、逆のことをしてきたんです。足りないから足そうとしてきた。<strong>でも足りなかったんじゃなくて、ふさがってただけだった。</strong></p>
  </div>
+</div></section>
+
+<section class="fb" style="background-image:url(fb_bottom.jpg)"><div class="in">
+ <div class="k">AFTER</div>
+ <h3>置いた人から、<br>動きます。</h3>
+ <p>3日後に、眠れるようになった方。<br>3週間後に、20年止まっていたものが動いた方。<br>何が起きるかは、私にも選べません。</p>
 </div></section>
 
 <section class="sa"><div class="w">
