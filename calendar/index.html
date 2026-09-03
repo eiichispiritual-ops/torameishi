@@ -355,6 +355,13 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .hx .sc{bottom:26px;color:#e8c072;z-index:4}
 .hx .sc::after{background:linear-gradient(180deg,#e8c072,transparent)}
 @media(max-width:520px){.hx .vt{display:none}.hx .st{padding:0 30px}.hx .chips{gap:16px}}
+.hx .pf{display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:18px}
+.hx .pf .pr2{width:92px;height:92px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#f6e3b0,#c99a3f 50%,#f9e7b8);box-shadow:0 0 0 1px rgba(232,192,114,.35),0 0 30px rgba(232,192,114,.35),0 14px 30px -10px rgba(0,0,0,.8);position:relative;animation:pfin 1.2s cubic-bezier(.2,.9,.3,1) both}
+.hx .pf .pr2::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px dashed rgba(232,192,114,.45);animation:spinr 60s linear infinite}
+.hx .pf img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 22%;background:#fbf6ea;display:block}
+.hx .pf small{font-size:10px;letter-spacing:.4em;text-indent:.4em;color:#e8c072;font-family:"Zen Old Mincho",serif}
+@keyframes pfin{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+.hx .sun{top:39%}
 /* ===== 月間カレンダーグリッド ===== */
 .cg{margin:26px 0 34px;background:#fff;border:1px solid rgba(176,138,74,.35);padding:18px 12px 14px;border-radius:2px}
 .cg-t{text-align:center;font-family:"Zen Old Mincho",serif;font-size:22px;letter-spacing:.2em;color:var(--tx);margin-bottom:12px}
@@ -391,6 +398,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
   <div class="vt vl" aria-hidden="true">二〇二六年　秋彼岸より</div>
   <div class="vt vr" aria-hidden="true">師走　大晦日まで</div>
   <div class="st">
+    <div class="pf r"><span class="pr2"><img src="../isshi_illust.png" alt="いっしー" onerror="this.closest('.pf').hidden=true"></span><small>いっしー</small></div>
     <div class="ym">2026 · AUTUMN – WINTER</div>
     <div class="kj gold up"><span>開</span><span>運</span><span>暦</span></div>
     <div class="ul2 r d1"><i></i><em>彼岸から年末まで</em><i></i></div>
