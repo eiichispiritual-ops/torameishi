@@ -302,16 +302,16 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 @keyframes tw{0%,100%{opacity:.9}50%{opacity:.45}}
 .hx .moon{position:absolute;right:9%;top:9%;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 40% 38%,#fff9e8,#f2e2b6 60%,#d9c48e);box-shadow:0 0 30px 8px rgba(255,236,190,.35),0 0 90px 30px rgba(255,220,150,.15);z-index:1;animation:brm 7s ease-in-out infinite}
 @keyframes brm{0%,100%{box-shadow:0 0 30px 8px rgba(255,236,190,.35),0 0 90px 30px rgba(255,220,150,.15)}50%{box-shadow:0 0 40px 12px rgba(255,236,190,.5),0 0 120px 40px rgba(255,220,150,.22)}}
-.hx .wm{position:absolute;right:-8vw;bottom:-6vh;font-size:80vw;line-height:1;font-weight:700;color:rgba(232,192,114,.05);z-index:1;pointer-events:none;user-select:none;letter-spacing:0}
-.hx .sun{position:absolute;left:50%;top:37%;transform:translate(-50%,-50%);width:min(74vw,320px);aspect-ratio:1;z-index:1;pointer-events:none}
+.hx .wm{position:absolute;right:-6vw;bottom:-8vh;font-size:min(80vw,560px);line-height:1;font-weight:700;color:rgba(232,192,114,.035);z-index:1;pointer-events:none;user-select:none;letter-spacing:0}
+.hx .sun{position:absolute;left:50%;top:34%;transform:translate(-50%,-50%);width:min(64vw,300px);aspect-ratio:1;z-index:1;pointer-events:none}
 .hx .sun i{position:absolute;inset:0;border-radius:50%;display:block}
 .hx .sun .core{background:radial-gradient(circle at 50% 45%,rgba(255,226,160,.28),rgba(232,192,114,.10) 40%,rgba(232,192,114,0) 70%);animation:pulse 6s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.06);opacity:1}}
 .hx .sun .ring{inset:-4%;border:1px solid rgba(232,192,114,.55);box-shadow:0 0 24px rgba(232,192,114,.15),inset 0 0 24px rgba(232,192,114,.08)}
 .hx .sun .ring::after{content:"";position:absolute;inset:7%;border-radius:50%;border:1px dashed rgba(232,192,114,.28);animation:spinr 90s linear infinite}
 @keyframes spinr{to{transform:rotate(-360deg)}}
-.hx .sun .tick{inset:-12%;background:repeating-conic-gradient(from 0deg,rgba(232,192,114,.75) 0deg .7deg,transparent .7deg 6deg);-webkit-mask:radial-gradient(circle,transparent 61%,#000 62%,#000 66%,transparent 67%);mask:radial-gradient(circle,transparent 61%,#000 62%,#000 66%,transparent 67%);animation:spin 140s linear infinite}
-.hx .sun .tick2{inset:-16%;background:repeating-conic-gradient(from 0deg,rgba(232,192,114,.9) 0deg 1.2deg,transparent 1.2deg 30deg);-webkit-mask:radial-gradient(circle,transparent 60%,#000 61%,#000 69%,transparent 70%);mask:radial-gradient(circle,transparent 60%,#000 61%,#000 69%,transparent 70%);animation:spin 140s linear infinite}
+.hx .sun .tick{inset:-11%;background:repeating-conic-gradient(from 0deg,rgba(232,192,114,.55) 0deg .5deg,transparent .5deg 6deg);-webkit-mask:radial-gradient(circle,transparent 61%,#000 62%,#000 66%,transparent 67%);mask:radial-gradient(circle,transparent 61%,#000 62%,#000 66%,transparent 67%);animation:spin 140s linear infinite}
+.hx .sun .tick2{inset:-14%;background:repeating-conic-gradient(from 0deg,rgba(232,192,114,.85) 0deg .8deg,transparent .8deg 30deg);-webkit-mask:radial-gradient(circle,transparent 60%,#000 61%,#000 69%,transparent 70%);mask:radial-gradient(circle,transparent 60%,#000 61%,#000 69%,transparent 70%);animation:spin 140s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hx .spk{position:absolute;inset:0;z-index:2;opacity:.9}
 .hx .spk i{background:#f4dc9a;box-shadow:0 0 8px 2px rgba(244,220,154,.7);width:3px;height:3px}
@@ -320,7 +320,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .hx .frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(232,192,114,.22)}
 .hx .frame b{position:absolute;width:9px;height:9px;background:#0f1220;border:1px solid #e8c072;transform:rotate(45deg);box-shadow:0 0 10px rgba(232,192,114,.6)}
 .hx .frame .c1{left:-5px;top:-5px}.hx .frame .c2{right:-5px;top:-5px}.hx .frame .c3{left:-5px;bottom:-5px}.hx .frame .c4{right:-5px;bottom:-5px}
-.hx .vt{position:absolute;top:24%;writing-mode:vertical-rl;font-size:9.5px;letter-spacing:.4em;color:rgba(232,192,114,.85);z-index:3}
+.hx .vt{position:absolute;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:9.5px;letter-spacing:.4em;color:rgba(232,192,114,.85);z-index:3}
 .hx .vl{left:26px}.hx .vr{right:26px}
 .hx .st{padding:0 46px;z-index:4}
 .hx .ym{font-size:9.5px;letter-spacing:.34em;color:#e8c072;margin-bottom:22px;white-space:nowrap;font-family:"Cormorant Garamond",serif;opacity:.9}
@@ -334,7 +334,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .hx .ul2 em{font-style:normal;font-size:11.5px;letter-spacing:.36em;color:#e8c072;text-indent:.36em}
 .hx .ld{font-size:15px;color:#efe7d6;letter-spacing:.08em;margin:0 0 20px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
 .hx .ld strong{color:#f3d48a;background:none}
-.hx .chips{display:flex;justify-content:center;gap:20px;margin-bottom:28px}
+.hx .chips{display:flex;justify-content:center;gap:20px;margin:6px 0 28px}
 .hx .chip{display:flex;flex-direction:column;align-items:center;gap:9px;animation:bob 5s ease-in-out infinite}
 .hx .chip:nth-child(2){animation-delay:.8s}.hx .chip:nth-child(3){animation-delay:1.6s}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
@@ -354,7 +354,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .hx .fade{position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(180deg,transparent,var(--bk));z-index:3;pointer-events:none}
 .hx .sc{bottom:26px;color:#e8c072;z-index:4}
 .hx .sc::after{background:linear-gradient(180deg,#e8c072,transparent)}
-@media(max-width:360px){.hx .vt{display:none}.hx .st{padding:0 30px}.hx .chips{gap:12px}}
+@media(max-width:520px){.hx .vt{display:none}.hx .st{padding:0 30px}.hx .chips{gap:16px}}
 /* ===== 月間カレンダーグリッド ===== */
 .cg{margin:26px 0 34px;background:#fff;border:1px solid rgba(176,138,74,.35);padding:18px 12px 14px;border-radius:2px}
 .cg-t{text-align:center;font-family:"Zen Old Mincho",serif;font-size:22px;letter-spacing:.2em;color:var(--tx);margin-bottom:12px}
