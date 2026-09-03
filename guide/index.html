@@ -254,6 +254,54 @@ footer{color:var(--tx2)}
 .cta{font-size:17px;letter-spacing:.2em;padding:21px 12px;border-radius:3px;max-width:420px;margin:36px auto 10px;font-weight:800}
 .eb{letter-spacing:.55em;font-size:11px}
 .rl{width:54px}
+
+/* ===== 高級感・タイポ・スマホ最適化 ===== */
+body{font-size:16.5px;line-height:2.15;letter-spacing:.04em;word-break:keep-all;overflow-wrap:anywhere}
+@media(min-width:600px){body{font-size:17.5px}}
+p{margin-bottom:1.7em}
+.w{max-width:540px;padding:0 24px}
+h2{font-size:24px;line-height:1.85;letter-spacing:.12em;font-weight:600}
+@media(min-width:600px){h2{font-size:28px}}
+.eb{font-size:10px;letter-spacing:.6em;margin-bottom:16px}
+.rl{height:44px;margin:22px auto}
+strong{font-weight:600;background:linear-gradient(transparent 62%,rgba(176,138,74,.22) 62%)}
+blockquote{padding:20px 0 20px 22px;margin:30px 0;font-size:16px;line-height:2.1}
+blockquote::before{width:1.5px}
+section{padding:72px 0}
+@media(min-width:600px){section{padding:96px 0}}
+.hero .kj{font-size:clamp(50px,15vw,88px);letter-spacing:.22em;font-weight:600}
+.hero .ld{font-size:15px;line-height:2.3;letter-spacing:.12em}
+.hero .bg{font-size:10px;letter-spacing:.36em;padding:11px 24px}
+.fb .in{padding:76px 28px}
+.fb h3{font-size:clamp(25px,6.6vw,36px);line-height:1.75;letter-spacing:.1em;font-weight:600}
+.fb p{font-size:14.5px;line-height:2.1;letter-spacing:.06em}
+.fb .k{font-size:10px;letter-spacing:.6em}
+/* いっしー：プロフィール */
+.prof{display:flex;flex-direction:column;align-items:center;gap:18px;margin:34px auto 10px}
+.prof .av{width:132px;height:132px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(176,138,74,.5);box-shadow:0 10px 30px rgba(42,36,32,.12)}
+.prof .av img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.prof .nm{text-align:center}
+.prof .nm b{display:block;font-size:19px;letter-spacing:.2em;font-weight:600;color:var(--tx)}
+.prof .nm small{display:block;font-size:11px;letter-spacing:.2em;color:var(--tx2);margin-top:4px}
+/* いっしー：横長・テキスト載せ */
+.fb.person{min-height:auto}
+.fb.person::before{background:linear-gradient(90deg,rgba(11,8,6,.72),rgba(11,8,6,.35) 60%,rgba(11,8,6,.15))}
+.fb.person .in{text-align:left;padding:76px 28px;max-width:600px;margin-right:auto}
+.fb.person h3{font-size:clamp(22px,5.8vw,30px)}
+/* 署名ブロック */
+.sig{display:flex;align-items:center;gap:16px;justify-content:center;margin:30px auto 8px}
+.sig .av{width:64px;height:64px;border-radius:50%;overflow:hidden;border:1px solid rgba(176,138,74,.5)}
+.sig .av img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.sig .t{font-size:13px;letter-spacing:.14em;color:var(--tx2);line-height:1.8}
+.sig .t b{display:block;font-size:16px;color:var(--tx);letter-spacing:.2em;font-weight:600}
+.seal{display:none}
+.cta{font-size:16.5px;letter-spacing:.24em;padding:22px 12px;font-weight:600;border-radius:2px}
+.bar a{font-size:15px;letter-spacing:.18em}
+.cd,.after-box,.pr,.perday,.py,.case{border-radius:2px}
+.sp th{letter-spacing:.14em;font-size:11.5px}
+.sp td{font-size:15px}
+details summary{font-size:15.5px;padding:20px 34px 20px 2px;letter-spacing:.05em;font-weight:600}
+.an{font-size:14.5px;line-height:2}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
@@ -274,6 +322,7 @@ footer{color:var(--tx2)}
   <div class="eb">THANK YOU</div>
   <h2 class="r"><span class="fire">ありがとうございます</span></h2>
   <div class="rl"></div>
+  <div class="prof r"><div class="av"><img src="../isshi.jpg" alt="いっしー"></div><div class="nm"><b>いっしー</b><small>スピリチュアルヒーラー</small></div></div>
   <p class="r">スクリーンショット、確認しました。あなたの一行を、結びました。</p>
   <p class="r d1">七夜、火のそばに置いていた石です。これから、一つずつ仕上げていきます。</p>
   <p class="r d2">まとめてはできないので、<strong>一つずつ、順番に</strong>お送りします。</p>
@@ -492,7 +541,7 @@ footer{color:var(--tx2)}
  </div>
 </section>
 
-<section class="fb" style="background-image:url(../fb_bottom.jpg)"><div class="in">
+<section class="fb person" style="background-image:url(../fb_isshi.jpg)"><div class="in">
  <div class="k">FROM ISSHI</div>
  <h3>届いたら、<br>教えてくださいね。</h3>
  <p>それだけで、いいので。</p>
@@ -509,6 +558,7 @@ footer{color:var(--tx2)}
   <div class="orn"><i></i></div>
   <p class="r">届いたら、教えてくださいね。</p>
   <p class="r d1">それだけで、いいので。</p>
+  <div class="sig r"><div class="av"><img src="../isshi.jpg" alt="いっしー"></div><div class="t"><b>いっしー</b>スピリチュアルヒーラー</div></div>
   <div class="seal">いっしー</div>
   <div class="lg">効果のあらわれ方には個人差があり、何かを保証するものではありません。<br>医療行為ではありません。体調に不安のある方は、専門機関にご相談ください。</div>
  </div>
