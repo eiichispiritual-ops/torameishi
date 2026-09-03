@@ -287,6 +287,47 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .hero-ph::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,248,244,.72),rgba(250,248,244,.55) 45%,rgba(250,248,244,.96))}
 .hero.hero-ph{background-image:url(../cal_hero.jpg)!important;background-size:cover!important;background-position:center 40%!important}
 
+
+/* ===== ヒーロー作り込み ===== */
+.hx{justify-content:center}
+.hx::before{background:linear-gradient(180deg,rgba(250,248,244,.55),rgba(250,248,244,.42) 45%,rgba(250,248,244,.96))}
+.hx .wm{position:absolute;right:-6vw;bottom:-4vh;font-size:78vw;line-height:1;font-weight:700;color:rgba(176,138,74,.045);z-index:1;pointer-events:none;user-select:none;letter-spacing:0}
+.hx .sun{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);width:min(78vw,340px);aspect-ratio:1;z-index:1;pointer-events:none}
+.hx .sun i{position:absolute;inset:0;border-radius:50%;display:block}
+.hx .sun .core{background:radial-gradient(circle at 50% 42%,rgba(255,236,196,.95),rgba(246,220,166,.55) 38%,rgba(240,214,160,0) 70%);filter:blur(2px)}
+.hx .sun .ring{inset:-6%;border:1px solid rgba(176,138,74,.45)}
+.hx .sun .ring::after{content:"";position:absolute;inset:8%;border-radius:50%;border:1px solid rgba(176,138,74,.22)}
+.hx .sun .tick{inset:-13%;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(176,138,74,.55) 0deg .6deg,transparent .6deg 6deg);-webkit-mask:radial-gradient(circle,transparent 62%,#000 63%,#000 66%,transparent 67%);mask:radial-gradient(circle,transparent 62%,#000 63%,#000 66%,transparent 67%);animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hx .frame{position:absolute;inset:18px 14px;border:1px solid rgba(176,138,74,.42);z-index:2;pointer-events:none}
+.hx .frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(176,138,74,.18)}
+.hx .frame b{position:absolute;width:9px;height:9px;background:var(--bk);border:1px solid var(--am);transform:rotate(45deg)}
+.hx .frame .c1{left:-5px;top:-5px}.hx .frame .c2{right:-5px;top:-5px}.hx .frame .c3{left:-5px;bottom:-5px}.hx .frame .c4{right:-5px;bottom:-5px}
+.hx .vt{position:absolute;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:10px;letter-spacing:.42em;color:var(--am-hi);z-index:3;opacity:.85}
+.hx .vl{left:26px}.hx .vr{right:26px}
+.hx .st{padding:0 44px}
+.hx .ym{font-size:9.5px;letter-spacing:.42em;margin-bottom:22px}
+.hx .kj{font-size:clamp(58px,17vw,96px);letter-spacing:.16em;text-indent:.16em;margin-bottom:10px;text-shadow:0 2px 24px rgba(255,255,255,.9)}
+.hx .kj span:nth-child(1){transition-delay:.05s}.hx .kj span:nth-child(2){transition-delay:.2s}.hx .kj span:nth-child(3){transition-delay:.35s}
+.hx .ul2{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px}
+.hx .ul2 i{width:38px;height:1px;background:linear-gradient(90deg,transparent,var(--am));display:block}
+.hx .ul2 i:last-child{background:linear-gradient(90deg,var(--am),transparent)}
+.hx .ul2 em{font-style:normal;font-size:11.5px;letter-spacing:.34em;color:var(--am-hi);text-indent:.34em}
+.hx .ld{font-size:15px;color:var(--tx);letter-spacing:.08em;margin:0 0 18px}
+.hx .ld strong{color:var(--am-hi)}
+.hx .chips{display:flex;justify-content:center;gap:18px;margin-bottom:26px}
+.hx .chip{display:flex;flex-direction:column;align-items:center;gap:7px}
+.hx .chip b{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600;color:#fff;letter-spacing:0;box-shadow:0 8px 22px -8px rgba(60,40,10,.45),inset 0 0 0 3px rgba(255,255,255,.35);position:relative}
+.hx .chip b::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid currentColor;opacity:.35}
+.hx .chip small{font-size:10.5px;letter-spacing:.2em;color:var(--tx2)}
+.hx .chip.ug b{background:linear-gradient(145deg,#c9a45e,#a67c32);color:#a67c32}.hx .chip.ma b{background:linear-gradient(145deg,#6f8fc0,#4a6fa5);color:#4a6fa5}.hx .chip.ok b{background:linear-gradient(145deg,#d97c52,#c4643a);color:#c4643a}
+.hx .mo2{display:flex;align-items:center;justify-content:center;gap:10px;font-size:11.5px;letter-spacing:.2em;color:var(--tx);margin-bottom:16px}
+.hx .mo2 i{width:4px;height:4px;border-radius:50%;background:var(--am);display:block;box-shadow:0 0 8px rgba(196,100,58,.5)}
+.hx .bg{margin-top:0;font-size:10.5px;letter-spacing:.18em;padding:9px 18px;border-color:rgba(176,138,74,.5);background:rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.hx .gl{background:radial-gradient(ellipse at center,rgba(232,205,150,.35),rgba(208,145,63,.08) 40%,transparent 66%)}
+.hx .sc{bottom:30px}
+@media(max-width:360px){.hx .vt{display:none}.hx .st{padding:0 30px}.hx .chips{gap:12px}}
+
 /* ===== 月間カレンダーグリッド ===== */
 .cg{margin:26px 0 34px;background:#fff;border:1px solid rgba(176,138,74,.35);padding:18px 12px 14px;border-radius:2px}
 .cg-t{text-align:center;font-family:"Zen Old Mincho",serif;font-size:22px;letter-spacing:.2em;color:var(--tx);margin-bottom:12px}
@@ -312,13 +353,26 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
 
-<header class="hero hero-ph" style="min-height:72svh;background-image:url(../cal_hero.jpg)">
+<header class="hero hero-ph hx" style="min-height:100svh;background-image:url(../cal_hero.jpg)">
   <div class="gl"></div>
+  <div class="wm" aria-hidden="true">暦</div>
+  <div class="sun" aria-hidden="true"><i class="ring"></i><i class="tick"></i><i class="core"></i></div>
+  <div class="spk" aria-hidden="true"><i style="left:8%;--dx:12px;animation-duration:9s;animation-delay:0s"></i><i style="left:16%;--dx:-16px;animation-duration:11s;animation-delay:2s"></i><i style="left:27%;--dx:8px;animation-duration:8s;animation-delay:4s"></i><i style="left:38%;--dx:-10px;animation-duration:12s;animation-delay:1s"></i><i style="left:49%;--dx:14px;animation-duration:10s;animation-delay:6s"></i><i style="left:58%;--dx:-6px;animation-duration:9s;animation-delay:3s"></i><i style="left:67%;--dx:10px;animation-duration:13s;animation-delay:5s"></i><i style="left:76%;--dx:-14px;animation-duration:8s;animation-delay:7s"></i><i style="left:85%;--dx:6px;animation-duration:11s;animation-delay:2.5s"></i><i style="left:93%;--dx:-8px;animation-duration:10s;animation-delay:4.5s"></i></div>
+  <div class="frame" aria-hidden="true"><b class="c1"></b><b class="c2"></b><b class="c3"></b><b class="c4"></b></div>
+  <div class="vt vl" aria-hidden="true">二〇二六年　秋彼岸より</div>
+  <div class="vt vr" aria-hidden="true">師走　大晦日まで</div>
   <div class="st">
-    <div class="kj fire up" style="font-size:clamp(46px,14vw,84px)">開運暦</div>
-    <div class="ym">2 0 2 6 &nbsp; 彼 岸 か ら 年 末 ま で</div>
-    <p class="ld r d1">動く日と、待つ日と、置く日</p>
-    <div class="bg r d2">9月 ｜ 10月 ｜ 11月 ｜ 12月</div>
+    <div class="ym">2 0 2 6 &nbsp;·&nbsp; A U T U M N &nbsp;—&nbsp; W I N T E R</div>
+    <div class="kj up"><span>開</span><span>運</span><span>暦</span></div>
+    <div class="ul2 r d1"><i></i><em>彼岸から年末まで</em><i></i></div>
+    <p class="ld r d2">下半期は、<strong>三つの日</strong>でできています。</p>
+    <div class="chips r d3">
+      <div class="chip ug"><b>動</b><small>動く日</small></div>
+      <div class="chip ma"><b>待</b><small>待つ日</small></div>
+      <div class="chip ok"><b>置</b><small>置く日</small></div>
+    </div>
+    <div class="mo2 r d3"><span>9月</span><i></i><span>10月</span><i></i><span>11月</span><i></i><span>12月</span></div>
+    <div class="bg r d3">あなたのお生まれの日から出した、日付だけ</div>
   </div>
   <div class="sc lat">SCROLL</div>
 </header>
