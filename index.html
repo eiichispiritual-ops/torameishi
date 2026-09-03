@@ -2,7 +2,7 @@
 <html lang="ja"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0806">
+<meta name="theme-color" content="#faf8f4">
 <meta name="robots" content="noindex">
 <title>七夜の器｜置き場所を、渡します</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,10 +10,10 @@
 <style>
 
 :root{
-  --bk:#0b0806;--bk2:#140d09;--bk3:#1c130c;
-  --tx:#ece6dc;--tx2:#9d9184;
-  --am:#d0913f;--am-hi:#f7ce85;--em:#e0562a;--deep:#5e2011;
-  --pad:20px;
+  --bk:#faf8f4;--bk2:#f3efe8;--bk3:#ebe5db;
+  --tx:#2a2420;--tx2:#6b6058;
+  --am:#b08a4a;--am-hi:#8f6a2e;--em:#c4643a;--deep:#5e2011;
+  --pad:22px;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -178,11 +178,55 @@ footer a{color:rgba(157,145,132,.72)}
 .ph2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px auto}
 .ph2 .phb{padding:5px}
 .phw{margin:26px -20px}.phw img{width:100%;display:block}
+
+body{font-size:17px;line-height:2.05}
+@media(min-width:600px){body{font-size:18px}}
+h2{font-size:25px}
+@media(min-width:600px){h2{font-size:29px}}
+.hero .kj{color:var(--tx)}
+.hero .ld{font-size:16px;color:var(--tx2)}
+.hero .bg{color:var(--am-hi);border-color:rgba(176,138,74,.5);background:rgba(255,255,255,.55)}
+.hero-ph::before{background:linear-gradient(180deg,rgba(250,248,244,.72),rgba(250,248,244,.55) 45%,rgba(250,248,244,.96))}
+.fire{background:linear-gradient(100deg,#8f6a2e,#b08a4a 40%,#c4643a 70%,#8f6a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
+strong{color:var(--am-hi)}
+em{color:var(--em)}
+blockquote{color:var(--tx)}
+blockquote::before{background:linear-gradient(180deg,var(--em),var(--am),transparent)}
+.phb{background:#fff;border:1px solid rgba(176,138,74,.28);box-shadow:0 8px 28px rgba(42,36,32,.08)}
+.ph .cap,.cap{color:var(--tx2)}
+.sp th{color:var(--am-hi)}.sp td{color:var(--tx)}.sp th,.sp td{border-bottom-color:rgba(42,36,32,.08)}
+.pr{background:#fff;border-color:rgba(176,138,74,.45)}
+.pr .nw{color:var(--tx)}.pr .mt{color:var(--tx2)}
+.cd{background:#fff;border-color:rgba(176,138,74,.35)}
+.cd ol li{border-bottom-color:rgba(42,36,32,.08)}
+.ul li{border-bottom-color:rgba(42,36,32,.08)}
+.st2 h3{color:var(--tx)}.st2 p{color:var(--tx2)}
+.tl .ti p{color:var(--tx2)}.tl .ti::before{background:var(--bk)}
+.py{background:#fff;border-color:rgba(176,138,74,.3);color:var(--tx2)}
+.wn{color:#8a4a2c;border-left-color:var(--em)}
+details{border-bottom-color:rgba(42,36,32,.08)}
+summary{color:var(--tx)}
+.an{color:var(--tx2)}
+.bd{background:linear-gradient(90deg,transparent,rgba(176,138,74,.5),transparent)}
+.bw{background:radial-gradient(ellipse 55% 100% at 50% 100%,rgba(196,100,58,.10),transparent 68%)}
+.sc{background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(176,138,74,.10),transparent 70%),var(--bk)}
+.hero{background:var(--bk2)}
+.hero .gl{background:radial-gradient(ellipse at center,rgba(196,100,58,.16),rgba(176,138,74,.06) 40%,transparent 66%)}
+.spk i{background:var(--am);box-shadow:0 0 6px 1.5px rgba(196,100,58,.35)}
+.seal{background:linear-gradient(150deg,#7d2b16,#a8412a);color:#fff}
+.cal .mo{color:var(--am-hi)}.cal .dt{color:var(--am-hi)}.cal .tg2{color:var(--am)}.cal .ds{color:var(--tx)}
+.cal .rw{border-bottom-color:rgba(42,36,32,.07)}
+.cal .rw.top{background:linear-gradient(90deg,rgba(196,100,58,.08),transparent 72%)}
+.bar{background:#fff;border-top:1px solid rgba(176,138,74,.35)}
+.bar a{color:var(--tx)}
+.cta{background:linear-gradient(135deg,#8f6a2e,#c4643a);color:#fff;box-shadow:0 8px 24px rgba(196,100,58,.28)}
+footer{color:var(--tx2)}
+.lg{color:var(--tx2)}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
 
-<header class="hero hero-ph" style="background-image:url(stone_hero.jpg)">
+<header class="hero hero-ph" style="background-image:url(stone_hero_light.jpg)">
  <div class="gl"></div>
  <div class="st">
   <div class="kj fire up">七夜の器</div>
