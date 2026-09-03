@@ -328,6 +328,20 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .rl{width:1px!important;height:40px!important;background:linear-gradient(180deg,transparent,var(--am),transparent)!important;margin:20px auto!important}
 .illust{margin-bottom:12px}
 section:has(> .w > .illust:last-child){padding-bottom:40px}
+
+/* ===== 二重価格（実売150,000円→今回79,800円） ===== */
+.hero .pb{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin-top:16px;padding:12px 22px;border:1px solid rgba(196,100,58,.5);background:rgba(255,255,255,.72);backdrop-filter:blur(6px);position:relative}
+.hero .pb::before{content:"";position:absolute;inset:4px;border:1px solid rgba(176,138,74,.3);pointer-events:none}
+.hero .pb s{font-size:12px;color:var(--tx2);letter-spacing:.12em;text-decoration:line-through;text-decoration-color:var(--em);text-decoration-thickness:1.5px}
+.hero .pb b{font-size:13px;letter-spacing:.14em;color:var(--deep);font-weight:600;display:flex;align-items:baseline;gap:4px}
+.hero .pb b em{font-style:normal;font-size:30px;line-height:1;font-family:"Cormorant Garamond","Zen Old Mincho",serif;font-weight:700;color:var(--em);letter-spacing:.02em}
+.hero .pb b small{font-size:13px}
+.hero .pb span{font-size:10px;letter-spacing:.24em;color:var(--am-hi)}
+.pr .ws{font-size:15px;color:var(--tx2);opacity:1;text-decoration:none;letter-spacing:.08em;margin-bottom:6px}
+.pr .ws b{font-weight:500;text-decoration:line-through;text-decoration-color:var(--em);text-decoration-thickness:2px;font-size:20px;color:var(--tx);font-family:"Cormorant Garamond","Zen Old Mincho",serif}
+.pr .nw{color:var(--em)!important}
+.pr .off{display:inline-block;margin:8px 0 6px;background:var(--em);color:#fff;font-size:11px;letter-spacing:.2em;padding:5px 14px}
+.pr .nt{font-size:10px;color:var(--tx2);letter-spacing:.06em;margin-top:12px;opacity:.8}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
@@ -339,6 +353,7 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
   <div class="ym">N A N A Y O &nbsp; N O &nbsp; U T S U W A</div>
   <p class="ld r d1">七夜、火のそばに置いていました。<br>剥がしたものを、受けるために。</p>
   <div class="bg r d2">2026.09.26 彼岸明け</div>
+  <div class="pb r d3"><s>通常価格 150,000円</s><b>今回限り <em>79,800</em><small>円</small></b><span>七夜を通した30個だけ</span></div>
  </div>
  <div class="sc lat">SCROLL</div>
 </header>
@@ -580,20 +595,27 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
  <p class="r d2">1枚剥がして、また来る。その繰り返しなので。</p>
  <p class="r d3"><strong>でも、これは一度きりです。</strong>そばに、ひとつ置くだけ。</p>
  <div class="orn"><i></i></div>
- <p class="r">正直に言います。79,800円は、安くありません。</p>
+ <p class="r">この石は、これまで<strong>150,000円</strong>でお渡ししてきました。</p>
+ <p class="r d1">今回は、七夜を通した30個だけ、<strong>79,800円</strong>にします。半額以下です。</p>
+ <p class="r d2">理由は、ひとつだけ。38年ぶりの彼岸に、いちばん重い方へ届けたいからです。次の彼岸に、この値段はありません。</p>
+ <div class="orn"><i></i></div>
+ <p class="r">正直に言います。それでも79,800円は、安くありません。</p>
  <p class="r d1">でも、5人分を一人で背負って、何十年も自分を後回しにしてきた方が、はじめて自分のために置くものです。</p>
  <p class="r d2"><strong>今回だけは、自分の順番を先にしてください。</strong></p>
  <div class="ph r"><div class="phb"><img src="stone_sepia.jpg" alt="七夜の器"></div><div class="cap">七夜を過ごした、30のうちの1つ</div></div>
  <div class="pr r">
-  <div class="tg">七夜を過ごした石</div>
-    <div class="nw">79,800<small>円</small></div>
+  <div class="tg">今回限りの価格</div>
+  <div class="ws">通常価格 <b>150,000</b>円（税込）</div>
+  <div class="nw">79,800<small>円</small></div>
+  <div class="off">70,200円引き ｜ 半額以下</div>
   <div class="mt">税込・送料無料</div>
+  <div class="nt">通常価格は、当ストアでの過去の販売価格です。</div>
   <div class="lm">30個限定 ｜ なくなり次第終了</div>
  </div>
  <div class="perday r"><small>3年そばに置けば</small><b>1日あたり、約73円</b><small>不安になるたびに占いに通えば、月1万円、年10万円以上。それがこの先ずっと続きます。この石は、一度きりです。</small></div>
  <div class="pay r"><span>クレジットカード</span><span>コンビニ決済</span><span>銀行振込</span><span>PayPay</span><span>楽天ペイ</span><span>PayPal</span><span>キャリア決済</span></div>
  <a class="cta" href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">受け取る</a>
- <div class="cs">30個限定 ｜ なくなり次第終了</div>
+ <div class="cs">30個限定 ｜ 今回限り 79,800円（通常150,000円）</div>
 </div></section>
 
 <div class="bw"></div>
@@ -715,7 +737,7 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 
 <footer><div class="w">スピリチュアルヒーラー いっしー<br>
 <a href="[特商法URL]">特定商取引法に基づく表記</a> ｜ <a href="[プライバシーURL]">プライバシーポリシー</a></div></footer>
-<div class="bar"><a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">受け取る<span class="s">30個限定 ｜ なくなり次第終了</span></a></div>
+<div class="bar"><a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">受け取る<span class="s">今回限り 79,800円 ｜ 通常150,000円</span></a></div>
 
 <script>
 (function(){
