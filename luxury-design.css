@@ -118,3 +118,8 @@ a:focus-visible,summary:focus-visible{outline-color:#497d9e}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 @media print{.luxury-stage::after{display:none}.sales-hero .hero-copy{position:static}.sales-hero{display:block}.hero-image-window{max-height:400px}.sales-hero .hero-product img{object-fit:contain;max-height:400px}}
+/* User-supplied artwork contains its own lettering: no crop or text overlay. */
+.sales-hero .customer-art .hero-copy{position:static;padding-bottom:28px}
+.customer-art .hero-image-window{padding-top:0}
+.sales-hero .customer-art .hero-product img{aspect-ratio:1;object-fit:contain}
+.customer-art::after{display:none}
