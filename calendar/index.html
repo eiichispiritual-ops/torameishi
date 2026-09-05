@@ -384,11 +384,15 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .cg-lg span{font-size:11px;color:var(--tx2);display:flex;align-items:center;gap:5px}
 .cg-lg span::before{content:"";width:10px;height:10px;border-radius:2px;display:inline-block}
 .cg-lg .mv::before{background:#b08a4a}.cg-lg .ok::before{background:#c4643a}.cg-lg .wt::before{background:#4a6fa5}.cg-lg .hg::before{background:#785a8c}
-</style></head><body>
+</style>
+<link rel="stylesheet" href="../mobile-design.css?v=20260905">
+<script src="../mobile-design.js?v=20260905" defer></script>
+</head><body class="page-calendar">
+<a class="skip-link" href="#month-9">カレンダーへ移動</a>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
 
-<header class="hero hx">
+<header class="hero hx calendar-hero">
   <div class="au a1"></div><div class="au a2"></div><div class="au a3"></div>
   <div class="moon" aria-hidden="true"></div>
   <div class="stars" aria-hidden="true"></div>
@@ -399,9 +403,9 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
   <div class="vt vl" aria-hidden="true">二〇二六年　秋彼岸より</div>
   <div class="vt vr" aria-hidden="true">師走　大晦日まで</div>
   <div class="st">
-    <div class="pf r"><span class="pr2"><img src="../isshi_illust.png" alt="いっしー" onerror="this.closest('.pf').hidden=true"></span><small>いっしー</small></div>
+    <div class="pf r"><span class="pr2"><img src="../isshi.jpg" alt="いっしー" width="92" height="92" decoding="async"></span><small>いっしー</small></div>
     <div class="ym">2026 · AUTUMN – WINTER</div>
-    <div class="kj gold up"><span>開</span><span>運</span><span>暦</span></div>
+    <h1 class="kj gold">開運暦</h1>
     <div class="ul2 r d1"><i></i><em>彼岸から年末まで</em><i></i></div>
     <p class="ld r d2">下半期は、<strong>三つの日</strong>でできています。</p>
     <div class="chips r d3">
@@ -411,10 +415,12 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
     </div>
     <div class="mo2 r d3"><span>9月</span><i></i><span>10月</span><i></i><span>11月</span><i></i><span>12月</span></div>
     <div class="bg r d3">あなたのお生まれの日から出した、日付だけ</div>
+    <a class="calendar-start" href="#month-9">カレンダーを見る <span aria-hidden="true">↓</span></a>
   </div>
   <div class="fade"></div>
   <div class="sc lat">SCROLL</div>
 </header>
+<nav class="page-nav month-nav" aria-label="カレンダーの月を選ぶ"><div><a href="#month-9">9月</a><a href="#month-10">10月</a><a href="#month-11">11月</a><a href="#month-12">12月</a></div></nav>
 
 <section class="sc">
  <div class="w">
@@ -446,7 +452,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 <section class="sb">
  <div class="w">
   <div class="eb">SEPTEMBER</div>
-  <h2 class="r"><span class="fire">9月</span></h2>
+  <h2 class="r" id="month-9"><span class="fire">9月</span></h2>
   <div class="rl"></div>
   <p class="r">先に、ひとつだけ言っておきます。</p>
   <p class="r d1"><strong>2026年の下半期は、9月26日で決まります。</strong></p>
@@ -469,7 +475,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 <section class="sa">
  <div class="w">
   <div class="eb">OCTOBER</div>
-  <h2 class="r">10月</h2>
+  <h2 class="r" id="month-10">10月</h2>
   <div class="rl"></div>
   <div class="cg r">
  <div class="cg-t">10月 <small>2026</small></div>
@@ -486,7 +492,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 <section class="sa">
  <div class="w">
   <div class="eb">NOVEMBER</div>
-  <h2 class="r">11月</h2>
+  <h2 class="r" id="month-11">11月</h2>
   <div class="rl"></div>
   <div class="cg r">
  <div class="cg-t">11月 <small>2026</small></div>
@@ -505,7 +511,7 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 <section class="sb">
  <div class="w">
   <div class="eb">DECEMBER</div>
-  <h2 class="r">12月</h2>
+  <h2 class="r" id="month-12">12月</h2>
   <div class="rl"></div>
   <div class="cg r">
  <div class="cg-t">12月 <small>2026</small></div>

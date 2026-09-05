@@ -314,20 +314,21 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .illust{margin-bottom:12px}
 section:has(> .w > .illust:last-child){padding-bottom:40px}
 .rl{width:1px!important;height:40px!important;background:linear-gradient(180deg,transparent,var(--am),transparent)!important;margin:20px auto!important}
-</style></head><body>
+</style>
+<link rel="stylesheet" href="../mobile-design.css?v=20260905">
+<script src="../mobile-design.js?v=20260905" defer></script>
+</head><body class="page-guide">
+<a class="skip-link" href="#first-night">最初の夜の使い方へ移動</a>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
 
-<header class="hero hero-ph" style="background-image:url(../stone_hero_light.jpg)">
-  <div class="gl"></div>
-  <div class="st">
-    <div class="kj fire up">七夜の器</div>
-    <div class="ym">H O W &nbsp; T O &nbsp; U S E</div>
-    <p class="ld r d1">迎える前に、3つだけ。<br>読んでおいてください。</p>
-    <div class="bg r d2">お手続き、ありがとうございました</div>
-  </div>
-  <div class="sc lat">SCROLL</div>
+<header class="editorial-hero guide-hero">
+ <div class="brand-line"><span>いっしー</span><span>七夜の器 · 使い方ノート</span></div>
+ <div class="hero-copy"><p class="eyebrow">WELCOME HOME</p><h1>迎える前に、<br>3つだけ。</h1><p class="hero-lead">お手続き、ありがとうございました。</p></div>
+ <figure class="guide-photo"><img src="../stone.jpg" width="1400" height="1050" alt="七夜の器・水晶のブレスレット" fetchpriority="high" decoding="async"></figure>
+ <div class="guide-first"><p class="eyebrow">届いた最初の夜に</p><ol><li>手のひらにのせる</li><li>置く場所を決める</li><li>そのまま、眠る</li></ol><p>特別な準備は、いりません。</p></div>
 </header>
+<nav class="page-nav" aria-label="使い方ノートの目次"><div><a href="#first-night">届いたら</a><a href="#place">置く場所</a><a href="#care">お手入れ</a><a href="#faq">ご質問</a></div></nav>
 
 <section class="sc">
  <div class="w">
@@ -416,7 +417,7 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 <section class="sb">
  <div class="w">
   <div class="eb">01</div>
-  <h2 class="r">届いたら</h2>
+  <h2 class="r" id="first-night">届いたら</h2>
   <div class="rl"></div>
   <div class="cd r">
     <h3>最初の夜にすること</h3>
@@ -433,7 +434,7 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 <section class="sa">
  <div class="w">
   <div class="eb">02</div>
-  <h2 class="r">置く場所</h2>
+  <h2 class="r" id="place">置く場所</h2>
   <div class="rl"></div>
   <p class="r">いちばん落ち着く場所で大丈夫です。</p>
   <ul class="ul"><li class="rx">枕元</li><li class="rx">玄関</li><li class="rx">身につける（ブレスレットとして）</li></ul>
@@ -507,7 +508,7 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 <section class="sc">
  <div class="w">
   <div class="eb">CARE</div>
-  <h2 class="r">お手入れ</h2>
+  <h2 class="r" id="care">お手入れ</h2>
   <div class="rl"></div>
   <table class="sp r">
    <tr><th>汚れ</th><td>乾いた柔らかい布で拭いてください</td></tr>
@@ -543,7 +544,7 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 <section class="sb">
  <div class="w">
   <div class="eb">Q &amp; A</div>
-  <h2 class="r">よくあるご質問</h2>
+  <h2 class="r" id="faq">よくあるご質問</h2>
   <div class="rl"></div>
   <details><summary>いつ届きますか</summary><div class="an">お手続きから<b>1ヶ月ほど</b>です。一つずつ仕上げるため、まとめて発送ができません。発送のときにLINEでお知らせします。</div></details>
   <details><summary>何も感じません</summary><div class="an">それで大丈夫です。深く受け取っている方ほど、その日は分かりません。<b>3日後くらいに、ふっと気づく</b>方が多いです。</div></details>
