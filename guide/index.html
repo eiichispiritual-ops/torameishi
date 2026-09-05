@@ -344,6 +344,10 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 .hero .pb::before{border-color:rgba(232,192,114,.25)!important}
 .hero .pb s{color:rgba(239,231,214,.72)!important}.hero .pb b{color:#f3d48a!important}.hero .pb b em{color:#f6c58a!important}.hero .pb span{color:#e8c072!important}
 .hero .sc{color:#e8c072!important}.hero .sc::after{background:linear-gradient(180deg,#e8c072,transparent)!important}
+
+/* 横はみ出し防止（写真ズーム演出のクリップ） */
+html,body{overflow-x:hidden}
+.ph .phb,.ph2 .phb,.phw,.kv,.hero{overflow:hidden}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>

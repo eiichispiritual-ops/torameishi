@@ -396,6 +396,10 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .kv{margin:0;padding:0;position:relative;overflow:hidden;background:#0b0f1c}
 .kv img{display:block;width:100%;height:auto;transform:scale(1.08);clip-path:inset(10% 0 10% 0);opacity:.55;transition:transform 2s cubic-bezier(.2,.9,.3,1),clip-path 1.4s cubic-bezier(.2,.9,.3,1),opacity 1.2s}
 .kv.on img{transform:none;clip-path:inset(0);opacity:1}
+
+/* 横はみ出し防止（写真ズーム演出のクリップ） */
+html,body{overflow-x:hidden}
+.ph .phb,.ph2 .phb,.phw,.kv,.hero{overflow:hidden}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
