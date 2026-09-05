@@ -376,6 +376,70 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 /* 横はみ出し防止（写真ズーム演出のクリップ） */
 html,body{overflow-x:hidden}
 .ph .phb,.ph2 .phb,.phw,.kv,.hero{overflow:hidden}
+
+/* ===== typography v2 2026-09-05：本文を明朝に統一・強調1色・枠線を減らす ===== */
+body,.an,.st2 p,.tl .ti p,.sp td,.cd ol li,.after-box ol li,.ul li,.cal .ds,p,summary,.cs,.ph .cap,.cap,.perday small,.pay span,.wn,.q,.tl p{font-family:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif!important}
+body{font-size:16.5px!important;line-height:2.08!important;letter-spacing:.055em!important;color:#2b2623!important;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+p{margin-bottom:1.65em!important;font-weight:400}
+.w{max-width:520px!important;padding:0 26px!important}
+section{padding:76px 0!important}
+strong{font-weight:500!important;color:#8f6a2e!important;background:none!important;letter-spacing:.06em}
+h2{font-family:"Zen Old Mincho",serif!important;font-size:25px!important;font-weight:500!important;letter-spacing:.16em!important;line-height:1.8!important;color:#2b2623!important;margin-bottom:6px!important}
+h2 .fire,h2 span.fire{background:none!important;-webkit-text-fill-color:#8f6a2e;color:#8f6a2e!important;animation:none!important}
+.eb{font-size:10px!important;letter-spacing:.6em!important;color:#b08a4a!important;margin-bottom:18px!important;font-weight:500}
+.rl{width:1px!important;height:36px!important;margin:22px auto 34px!important;background:linear-gradient(180deg,transparent,#b08a4a,transparent)!important}
+.orn{margin:34px auto!important}
+blockquote{font-size:16px!important;line-height:2.1!important;color:#3a332e!important;padding:6px 0 6px 22px!important;margin:34px 0!important}
+blockquote::before{width:1px!important;background:linear-gradient(180deg,#b08a4a,rgba(176,138,74,.15))!important}
+blockquote em{color:#8f6a2e!important;font-style:normal}
+.wn{font-size:14.5px!important;line-height:2!important;color:#5a4a3c!important;border-left:1px solid #b08a4a!important;padding-left:18px!important;margin-top:26px!important}
+.cd{border:none!important;background:#fff!important;box-shadow:0 10px 40px -24px rgba(60,40,10,.25)!important;padding:34px 24px!important}
+.cd h3{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.18em!important;font-size:15px!important}
+.cd ol li,.after-box ol li{font-size:15.5px!important;line-height:1.9!important;border-bottom:1px solid rgba(176,138,74,.18)!important}
+.st2 h3{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;font-size:16.5px!important;letter-spacing:.1em!important}
+.st2 p{font-size:14.5px!important;line-height:1.95!important}
+.st2 .n{font-family:"Cormorant Garamond",serif!important;font-weight:500!important;border-color:rgba(176,138,74,.5)!important;background:none!important}
+.tl .dd{font-family:"Cormorant Garamond","Zen Old Mincho",serif!important;font-size:12.5px!important;letter-spacing:.24em!important;font-weight:500!important}
+.tl .ti p{font-size:15px!important;line-height:1.95!important}
+.ph{border:none!important;box-shadow:0 18px 50px -30px rgba(40,25,5,.45)!important;padding:0!important;background:none!important}
+.ph .phb{border-radius:2px;overflow:hidden}
+.ph .cap,.cap{font-size:11.5px!important;letter-spacing:.2em!important;color:#8a7d70!important;padding:14px 4px 0!important}
+.illust{display:none!important}
+.fb{min-height:56vh!important}
+.fb::before{background:linear-gradient(180deg,rgba(11,8,6,.42),rgba(11,8,6,.55) 50%,rgba(11,8,6,.42))!important}
+.fb .k{font-size:10px!important;letter-spacing:.6em!important;color:#e0c68e!important;margin-bottom:22px!important}
+.fb h3{font-family:"Zen Old Mincho",serif!important;font-weight:400!important;font-size:clamp(24px,6.4vw,32px)!important;letter-spacing:.16em!important;line-height:1.85!important;text-shadow:0 2px 24px rgba(0,0,0,.6)!important}
+.fb p{font-family:"Zen Old Mincho",serif!important;font-size:15px!important;line-height:2.15!important;letter-spacing:.06em!important;color:rgba(255,255,255,.9)!important}
+.pr{border:none!important;background:#fff!important;box-shadow:0 22px 60px -34px rgba(60,40,10,.35)!important;padding:48px 22px 38px!important}
+.pr .tg{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.3em!important;font-size:10.5px!important;background:#8f6a2e!important}
+.pr .ws{font-family:"Zen Old Mincho",serif!important;font-size:14px!important;color:#6b6058!important}
+.pr .ws b{font-family:"Cormorant Garamond",serif!important;font-size:22px!important;font-weight:500!important;color:#3a332e!important;text-decoration-color:#8f6a2e!important;text-decoration-thickness:1.5px!important}
+.pr .nw{font-family:"Cormorant Garamond",serif!important;font-weight:500!important;color:#8f6a2e!important;letter-spacing:.02em;font-size:clamp(56px,17vw,72px)!important;line-height:1.1!important}
+.pr .nw small{font-family:"Zen Old Mincho",serif!important;font-size:18px!important;margin-left:4px}
+.pr .off{background:none!important;color:#8f6a2e!important;border:1px solid rgba(143,106,46,.5)!important;font-family:"Zen Old Mincho",serif!important;letter-spacing:.24em!important;font-size:11px!important;padding:7px 18px!important}
+.pr .mt,.pr .nt{font-family:"Zen Old Mincho",serif!important;letter-spacing:.14em!important}
+.pr .lm{border-color:rgba(143,106,46,.45)!important;color:#8f6a2e!important;font-family:"Zen Old Mincho",serif!important;letter-spacing:.24em!important;font-size:11px!important}
+.perday{border:none!important;background:#fff!important;box-shadow:0 10px 40px -26px rgba(60,40,10,.25)!important;padding:26px 20px!important}
+.perday b{font-family:"Cormorant Garamond","Zen Old Mincho",serif!important;font-weight:500!important;font-size:30px!important;color:#8f6a2e!important;letter-spacing:.04em}
+.perday small{font-size:13px!important;line-height:1.95!important;color:#6b6058!important;display:block;margin-top:6px}
+.pay span{font-size:11.5px!important;letter-spacing:.1em!important;border-color:rgba(176,138,74,.3)!important;color:#6b6058!important;padding:6px 13px!important}
+.cta{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.34em!important;font-size:16px!important;background:linear-gradient(135deg,#a67c32,#8f6a2e 55%,#6e4f20)!important;color:#fff!important;border-radius:2px!important;box-shadow:0 14px 34px -14px rgba(90,60,20,.6)!important;padding:22px 12px!important}
+.cs{font-size:11px!important;letter-spacing:.2em!important;color:#8a7d70!important}
+.bar a{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.2em!important;background:linear-gradient(135deg,#a67c32,#8f6a2e 55%,#6e4f20)!important;color:#fff!important}
+.bar .s{font-size:10.5px!important;letter-spacing:.12em!important;opacity:.9!important}
+summary{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;font-size:15px!important;letter-spacing:.06em!important;padding:20px 34px 20px 2px!important}
+.an{font-size:15px!important;line-height:2.05!important;color:#4a423b!important}
+.an b{font-weight:500!important;color:#8f6a2e!important}
+details{border-bottom:1px solid rgba(176,138,74,.18)!important}
+.prof .nm b,.sig .t b{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.2em!important;font-size:18px!important}
+.prof .nm small,.sig .t{font-family:"Zen Old Mincho",serif!important;letter-spacing:.16em!important;font-size:11px!important}
+.hero .ld{font-family:"Zen Old Mincho",serif!important;font-size:16px!important;letter-spacing:.12em!important;line-height:2.3!important;font-weight:400}
+.hero .ym{font-size:10px!important;letter-spacing:.5em!important}
+.hero .bg,.hero .pb{font-family:"Zen Old Mincho",serif!important}
+.hero .pb b{font-weight:500!important}
+.sp th,.sp td{font-size:14.5px!important;line-height:1.9!important}
+.sp th{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;color:#8f6a2e!important;letter-spacing:.14em!important}
+.lg{font-size:11px!important;line-height:1.9!important;letter-spacing:.06em!important;color:#8a7d70!important}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
