@@ -140,6 +140,15 @@ footer a{display:inline-block;color:#555950;min-height:44px;padding:10px 3px}
 .bar-price small{font-size:.875rem;margin-left:3px}
 .bar-price>span{display:block;font-size:.75rem;color:var(--tx2)}
 .bar a{flex:1;background:#765523;color:#fff;font-size:.9375rem;min-height:50px;line-height:1.5;letter-spacing:.02em;padding:12px 10px;border-radius:5px;gap:10px}
+.page-sales .bar{transform:none}
+.page-sales .bar[data-enhanced="true"]:not(.on){transform:translateY(110%);visibility:hidden}
+.bar-inner,.bar a,.prof .nm,.st2>div:last-child{min-width:0}
+.bar a{overflow-wrap:anywhere;text-align:center}
+.py{font-size:1rem;line-height:1.85}.py b{font-size:.9375rem;letter-spacing:.04em}
+.body-note{font-size:1rem;color:var(--tx2)}
+.section-note{font-size:1.0625rem;letter-spacing:.06em;line-height:1.7}
+.cd>p,.after-box>p{font-size:1rem;line-height:1.85}
+@supports not (backdrop-filter:blur(12px)){.page-nav{background:var(--bk)}}
 
 /* Calendar: compact cover, month navigation and readable day notes. */
 .page-calendar .calendar-hero{min-height:0;padding:44px 20px 40px;background:#172d28;color:#fff;max-width:none}

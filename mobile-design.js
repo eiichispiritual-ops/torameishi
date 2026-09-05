@@ -4,18 +4,38 @@
   const body = document.body;
   const hero = document.querySelector('.editorial-hero, .hero');
   const bar = document.querySelector('.bar');
+  const progress = document.getElementById('pg');
+  const navLinks = [...document.querySelectorAll('.page-nav a')];
+  const navTargets = navLinks.map(link => ({ link, target: document.getElementById(link.hash.slice(1)) })).filter(item => item.target);
+  if (bar) bar.dataset.enhanced = 'true';
   let queued = false;
-  const updateBar = () => {
-    if (bar && hero) bar.classList.toggle('on', hero.getBoundingClientRect().bottom < 60);
+  const updatePosition = () => {
+    if (bar && hero) {
+      const visible = hero.getBoundingClientRect().bottom < 60;
+      bar.classList.toggle('on', visible);
+      bar.inert = !visible;
+      bar.setAttribute('aria-hidden', String(!visible));
+    }
+    if (progress) {
+      const distance = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = distance > 0 ? Math.min(100, Math.max(0, window.scrollY / distance * 100)) : 0;
+      progress.style.width = `${percent}%`;
+    }
+    let current;
+    navTargets.forEach(item => { if (item.target.getBoundingClientRect().top <= 100) current = item.link; });
+    navLinks.forEach(link => {
+      if (link === current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
     queued = false;
   };
-  if (bar) {
-    updateBar();
-    window.addEventListener('scroll', () => {
-      if (!queued) { queued = true; requestAnimationFrame(updateBar); }
-    }, { passive: true });
-    window.addEventListener('resize', updateBar, { passive: true });
-  }
+  const scheduleUpdate = () => {
+    if (!queued) { queued = true; requestAnimationFrame(updatePosition); }
+  };
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  window.addEventListener('pageshow', scheduleUpdate);
+  window.addEventListener('load', scheduleUpdate);
 
   if (body.classList.contains('page-calendar')) {
     document.querySelectorAll('[id^="month-"]').forEach(heading => {
@@ -32,7 +52,8 @@
         }
       });
       let linked = 0;
-      section.querySelectorAll('.cg-d:has(.m)').forEach(cell => {
+      section.querySelectorAll('.cg-d').forEach(cell => {
+        if (!cell.querySelector('.m')) return;
         const day = Number(cell.querySelector('.n')?.textContent);
         const target = targets.get(day);
         if (!target) return;
@@ -51,18 +72,5 @@
     });
   }
 
-  const navLinks = [...document.querySelectorAll('.page-nav a')];
-  const targets = navLinks.map(link => document.getElementById(link.hash.slice(1))).filter(Boolean);
-  if ('IntersectionObserver' in window && targets.length) {
-    const observer = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        navLinks.forEach(link => {
-          if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-      }
-    }, { rootMargin: '-64px 0px -55% 0px', threshold: 0 });
-    targets.forEach(target => observer.observe(target));
-  }
+  updatePosition();
 })();

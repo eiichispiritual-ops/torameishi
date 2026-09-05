@@ -385,8 +385,8 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .cg-lg span::before{content:"";width:10px;height:10px;border-radius:2px;display:inline-block}
 .cg-lg .mv::before{background:#b08a4a}.cg-lg .ok::before{background:#c4643a}.cg-lg .wt::before{background:#4a6fa5}.cg-lg .hg::before{background:#785a8c}
 </style>
-<link rel="stylesheet" href="../mobile-design.css?v=20260905">
-<script src="../mobile-design.js?v=20260905" defer></script>
+<link rel="stylesheet" href="../mobile-design.css?v=20260905-2">
+<script src="../mobile-design.js?v=20260905-2" defer></script>
 </head><body class="page-calendar">
 <a class="skip-link" href="#month-9">カレンダーへ移動</a>
 <div class="prog" id="pg"></div>
@@ -543,37 +543,11 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
   <p class="r">動く日に動いて、待つ日に待つ。そして、置く日に置く。</p>
   <p class="r d1">今まで、置く日がなかったんです。だから、何度も戻ってきた。</p>
   <p class="r d2"><strong>置く場所さえあれば、あとは何もしなくていい。</strong>それだけで、下半期の流れは変わります。</p>
-  <div class="sig r"><div class="av"><img src="../isshi.jpg" alt="いっしー"></div><div class="t"><b>いっしー</b>スピリチュアルヒーラー</div></div>
+  <div class="sig r"><div class="av"><img src="../isshi.jpg" alt="いっしー" width="800" height="800" decoding="async" loading="lazy"></div><div class="t"><b>いっしー</b>スピリチュアルヒーラー</div></div>
   <div class="seal">いっしー</div>
   <div class="lg">六曜・一粒万倍日・天赦日・寅の日・巳の日は民間暦に基づく参考値です。<br>効果のあらわれ方には個人差があり、何かを保証するものではありません。</div>
  </div>
 </section>
 <footer><div class="w">スピリチュアルヒーラー いっしー</div></footer>
 
-<script>
-(function(){
- var k=document.getElementById('sk');
- if(k&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  var n=window.innerWidth<600?8:14;
-  for(var i=0;i<n;i++){var s=document.createElement('i');
-   s.style.left=(Math.random()*100)+'%';
-   s.style.setProperty('--dx',(Math.random()*70-35)+'px');
-   s.style.animationDuration=(9+Math.random()*8)+'s';
-   s.style.animationDelay=(-Math.random()*16)+'s';
-   k.appendChild(s)}}
- var pg=document.getElementById('pg'),bar=document.querySelector('.bar'),h=document.querySelector('.hero'),tk=false;
- function tick(){
-  var st=window.scrollY,dh=document.body.scrollHeight-innerHeight;
-  if(pg)pg.style.width=(dh>0?st/dh*100:0)+'%';
-  if(bar&&h)bar.classList.toggle('on',st>h.offsetHeight*.65);
-  tk=false}
- addEventListener('scroll',function(){if(!tk){requestAnimationFrame(tick);tk=true}},{passive:true});
- tick();
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -8% 0px'});
- document.querySelectorAll('.r,.rx,.tl,.up,.fig').forEach(function(el){io.observe(el)});
- document.querySelectorAll('.up').forEach(function(el){
-  var t=el.textContent;el.textContent='';
-  [].forEach.call(t,function(c,i){var s=document.createElement('span');s.textContent=c;s.style.transitionDelay=(i*.05)+'s';el.appendChild(s)})});
-})();
-</script>
 </body></html>
