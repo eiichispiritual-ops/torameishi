@@ -384,6 +384,18 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
 .cg-lg span{font-size:11px;color:var(--tx2);display:flex;align-items:center;gap:5px}
 .cg-lg span::before{content:"";width:10px;height:10px;border-radius:2px;display:inline-block}
 .cg-lg .mv::before{background:#b08a4a}.cg-lg .ok::before{background:#c4643a}.cg-lg .wt::before{background:#4a6fa5}.cg-lg .hg::before{background:#785a8c}
+
+/* ===== motion+ 2026-09-05（追加のみ・レイアウト非依存） ===== */
+.r{transition:opacity .9s cubic-bezier(.2,.9,.3,1),transform .9s cubic-bezier(.2,.9,.3,1),filter .9s cubic-bezier(.2,.9,.3,1);filter:blur(5px)}
+.r.on{filter:blur(0)}
+.ph .phb img,.ph2 .phb img,.phw img{transform:scale(1.07);transition:transform 1.8s cubic-bezier(.2,.9,.3,1)}
+.ph.on .phb img,.ph2.on .phb img,.phw.on img{transform:scale(1)}
+.fb{background-position:center calc(50% + var(--py,0px))}
+.fb .k,.fb h3,.fb p{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.2,.9,.3,1),transform 1s cubic-bezier(.2,.9,.3,1)}
+.fb.on .k{opacity:1;transform:none}.fb.on h3{opacity:1;transform:none;transition-delay:.15s}.fb.on p{opacity:1;transform:none;transition-delay:.3s}
+.kv{margin:0;padding:0;position:relative;overflow:hidden;background:#0b0f1c}
+.kv img{display:block;width:100%;height:auto;transform:scale(1.08);clip-path:inset(10% 0 10% 0);opacity:.55;transition:transform 2s cubic-bezier(.2,.9,.3,1),clip-path 1.4s cubic-bezier(.2,.9,.3,1),opacity 1.2s}
+.kv.on img{transform:none;clip-path:inset(0);opacity:1}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
@@ -568,6 +580,20 @@ blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
  document.querySelectorAll('.up').forEach(function(el){
   var t=el.textContent;el.textContent='';
   [].forEach.call(t,function(c,i){var s=document.createElement('span');s.textContent=c;s.style.transitionDelay=(i*.05)+'s';el.appendChild(s)})});
+})();
+</script>
+<script>
+(function(){
+ var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ var hs=document.getElementById('hsp');
+ if(hs&&!rm){for(var i=0;i<12;i++){var s=document.createElement('i');s.style.left=(Math.random()*100)+'%';s.style.setProperty('--dx',(Math.random()*60-30)+'px');s.style.animationDuration=(9+Math.random()*8)+'s';s.style.animationDelay=(-Math.random()*16)+'s';hs.appendChild(s)}}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+ document.querySelectorAll('.fb,.kv').forEach(function(el){io.observe(el)});
+ var fbs=[].slice.call(document.querySelectorAll('.fb')),t=false;
+ function px(){fbs.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.setProperty('--py',(p*-44).toFixed(1)+'px')});t=false}
+ if(!rm){addEventListener('scroll',function(){if(!t){requestAnimationFrame(px);t=true}},{passive:true});px()}
+ var nw=document.querySelector('.pr .nw');
+ if(nw&&!rm&&nw.firstChild&&nw.firstChild.nodeType===3){var io2=new IntersectionObserver(function(es){if(es[0].isIntersecting){io2.disconnect();var st=null;nw.firstChild.nodeValue='0';function step(ts){if(!st)st=ts;var k=Math.min(1,(ts-st)/1500);k=1-Math.pow(1-k,3);nw.firstChild.nodeValue=Math.round(79800*k).toLocaleString();if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)}},{threshold:.5});io2.observe(nw)}
 })();
 </script>
 </body></html>

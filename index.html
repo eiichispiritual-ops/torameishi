@@ -342,11 +342,42 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 .pr .nw{color:var(--em)!important}
 .pr .off{display:inline-block;margin:8px 0 6px;background:var(--em);color:#fff;font-size:11px;letter-spacing:.2em;padding:5px 14px}
 .pr .nt{font-size:10px;color:var(--tx2);letter-spacing:.06em;margin-top:12px;opacity:.8}
+
+/* ===== motion+ 2026-09-05（追加のみ・レイアウト非依存） ===== */
+.r{transition:opacity .9s cubic-bezier(.2,.9,.3,1),transform .9s cubic-bezier(.2,.9,.3,1),filter .9s cubic-bezier(.2,.9,.3,1);filter:blur(5px)}
+.r.on{filter:blur(0)}
+.ph .phb img,.ph2 .phb img,.phw img{transform:scale(1.07);transition:transform 1.8s cubic-bezier(.2,.9,.3,1)}
+.ph.on .phb img,.ph2.on .phb img,.phw.on img{transform:scale(1)}
+.fb{background-position:center calc(50% + var(--py,0px))}
+.fb .k,.fb h3,.fb p{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.2,.9,.3,1),transform 1s cubic-bezier(.2,.9,.3,1)}
+.fb.on .k{opacity:1;transform:none}.fb.on h3{opacity:1;transform:none;transition-delay:.15s}.fb.on p{opacity:1;transform:none;transition-delay:.3s}
+.kv{margin:0;padding:0;position:relative;overflow:hidden;background:#0b0f1c}
+.kv img{display:block;width:100%;height:auto;transform:scale(1.08);clip-path:inset(10% 0 10% 0);opacity:.55;transition:transform 2s cubic-bezier(.2,.9,.3,1),clip-path 1.4s cubic-bezier(.2,.9,.3,1),opacity 1.2s}
+.kv.on img{transform:none;clip-path:inset(0);opacity:1}
+/* ヒーロー：月明かりの実写＋金箔タイトル */
+.hero.hero-ph{background-image:none!important;background:#0b0f1c!important}
+.hero .hbg{position:absolute;inset:-6%;background:url(moon_hero.jpg) center 42%/cover no-repeat;z-index:0;animation:kb 22s cubic-bezier(.2,.6,.2,1) both;transform-origin:center}
+@keyframes kb{from{transform:scale(1.16)}to{transform:scale(1)}}
+.hero-ph::before{background:linear-gradient(180deg,rgba(8,12,24,.28),rgba(8,12,24,.12) 42%,rgba(8,12,24,.72) 80%,var(--bk) 100%)!important;z-index:1}
+.hero .gl{display:none}
+.hero .hsp{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.hero .hsp i{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:#f4dc9a;box-shadow:0 0 8px 2px rgba(244,220,154,.7);opacity:0;animation:hup linear infinite}
+@keyframes hup{0%{opacity:0;transform:translate3d(0,0,0) scale(.6)}15%{opacity:.9}75%{opacity:.4}100%{opacity:0;transform:translate3d(var(--dx),-100vh,0) scale(.2)}}
+.hero .kj{color:transparent!important;background:linear-gradient(100deg,#8a6420 0%,#f6e3b0 18%,#d4a852 34%,#fff4cf 50%,#c99a3f 64%,#f9e7b8 80%,#8a6420 100%)!important;background-size:260% 100%!important;-webkit-background-clip:text!important;background-clip:text!important;animation:foil 7s ease-in-out infinite;text-shadow:none!important;filter:drop-shadow(0 6px 24px rgba(232,192,114,.32));font-weight:700}
+@keyframes foil{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.hero .ym{color:#e8c072!important;opacity:.95!important}
+.hero .ld{color:#efe7d6!important;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.hero .bg{color:#f3d48a!important;border-color:rgba(232,192,114,.55)!important;background:rgba(10,14,28,.38)!important;backdrop-filter:blur(6px)}
+.hero .pb{background:rgba(10,14,28,.5)!important;border-color:rgba(232,192,114,.6)!important;backdrop-filter:blur(8px)}
+.hero .pb::before{border-color:rgba(232,192,114,.25)!important}
+.hero .pb s{color:rgba(239,231,214,.72)!important}.hero .pb b{color:#f3d48a!important}.hero .pb b em{color:#f6c58a!important}.hero .pb span{color:#e8c072!important}
+.hero .sc{color:#e8c072!important}.hero .sc::after{background:linear-gradient(180deg,#e8c072,transparent)!important}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
 
 <header class="hero hero-ph" style="background-image:url(stone_hero_light.jpg)">
+ <div class="hbg"></div><div class="hsp" id="hsp"></div>
  <div class="gl"></div>
  <div class="st">
   <div class="kj fire up">七夜の器</div>
@@ -584,6 +615,8 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
  <p>水晶は、どこでも買えます。<br>でも、七夜を通した石は、これだけです。</p>
 </div></section>
 
+<section class="kv"><img src="key_visual.jpg" alt="極上クリスタルクォーツ。残り30個。特別なご縁を、あなたに" loading="lazy"></section>
+
 <section class="sa"><div class="w">
  <div class="eb">PRICE</div>
  <h2 class="r">価格について</h2>
@@ -763,6 +796,20 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
  document.querySelectorAll('.up').forEach(function(el){
   var t=el.textContent;el.textContent='';
   [].forEach.call(t,function(c,i){var s=document.createElement('span');s.textContent=c;s.style.transitionDelay=(i*.05)+'s';el.appendChild(s)})});
+})();
+</script>
+<script>
+(function(){
+ var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ var hs=document.getElementById('hsp');
+ if(hs&&!rm){for(var i=0;i<12;i++){var s=document.createElement('i');s.style.left=(Math.random()*100)+'%';s.style.setProperty('--dx',(Math.random()*60-30)+'px');s.style.animationDuration=(9+Math.random()*8)+'s';s.style.animationDelay=(-Math.random()*16)+'s';hs.appendChild(s)}}
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+ document.querySelectorAll('.fb,.kv').forEach(function(el){io.observe(el)});
+ var fbs=[].slice.call(document.querySelectorAll('.fb')),t=false;
+ function px(){fbs.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.setProperty('--py',(p*-44).toFixed(1)+'px')});t=false}
+ if(!rm){addEventListener('scroll',function(){if(!t){requestAnimationFrame(px);t=true}},{passive:true});px()}
+ var nw=document.querySelector('.pr .nw');
+ if(nw&&!rm&&nw.firstChild&&nw.firstChild.nodeType===3){var io2=new IntersectionObserver(function(es){if(es[0].isIntersecting){io2.disconnect();var st=null;nw.firstChild.nodeValue='0';function step(ts){if(!st)st=ts;var k=Math.min(1,(ts-st)/1500);k=1-Math.pow(1-k,3);nw.firstChild.nodeValue=Math.round(79800*k).toLocaleString();if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)}},{threshold:.5});io2.observe(nw)}
 })();
 </script>
 </body></html>
