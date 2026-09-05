@@ -648,7 +648,7 @@ html,body{overflow-x:hidden}
  var fbs=[].slice.call(document.querySelectorAll('.fb')),t=false;
  function px(){fbs.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.setProperty('--py',(p*-44).toFixed(1)+'px')});t=false}
  var rest=[].slice.call(document.querySelectorAll('.r,.rx,.tl,.up,.fig,.fb,.kv'));
- function fs(){var vh=innerHeight*0.96;rest=rest.filter(function(el){if(el.classList.contains('on'))return false;var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0){el.classList.add('on');return false}return true})}
+ function fs(){var vh=innerHeight*0.96;rest=rest.filter(function(el){if(el.classList.contains('on'))return false;var r=el.getBoundingClientRect();if(r.top<vh&&r.height>0){el.classList.add('on');return false}return true})}
  function onscroll(){if(!t){requestAnimationFrame(function(){px();fs()});t=true}}
  addEventListener('scroll',onscroll,{passive:true});addEventListener('resize',onscroll);px();fs();setTimeout(fs,1200);
  var nw=document.querySelector('.pr .nw');
