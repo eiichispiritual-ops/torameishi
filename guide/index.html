@@ -316,7 +316,7 @@ section:has(> .w > .illust:last-child){padding-bottom:40px}
 .rl{width:1px!important;height:40px!important;background:linear-gradient(180deg,transparent,var(--am),transparent)!important;margin:20px auto!important}
 
 /* ===== motion+ 2026-09-05（追加のみ・レイアウト非依存） ===== */
-.r{transition:opacity .9s cubic-bezier(.2,.9,.3,1),transform .9s cubic-bezier(.2,.9,.3,1),filter .9s cubic-bezier(.2,.9,.3,1);filter:blur(5px)}
+.r{transition:opacity .9s cubic-bezier(.2,.9,.3,1),transform .9s cubic-bezier(.2,.9,.3,1),filter .9s cubic-bezier(.2,.9,.3,1);filter:blur(4px);will-change:auto}
 .r.on{filter:blur(0)}
 .ph .phb img,.ph2 .phb img,.phw img{transform:scale(1.07);transition:transform 1.8s cubic-bezier(.2,.9,.3,1)}
 .ph.on .phb img,.ph2.on .phb img,.phw.on img{transform:scale(1)}
@@ -647,7 +647,10 @@ html,body{overflow-x:hidden}
  document.querySelectorAll('.fb,.kv').forEach(function(el){io.observe(el)});
  var fbs=[].slice.call(document.querySelectorAll('.fb')),t=false;
  function px(){fbs.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.setProperty('--py',(p*-44).toFixed(1)+'px')});t=false}
- if(!rm){addEventListener('scroll',function(){if(!t){requestAnimationFrame(px);t=true}},{passive:true});px()}
+ var rest=[].slice.call(document.querySelectorAll('.r,.rx,.tl,.up,.fig,.fb,.kv'));
+ function fs(){var vh=innerHeight*0.96;rest=rest.filter(function(el){if(el.classList.contains('on'))return false;var r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0){el.classList.add('on');return false}return true})}
+ function onscroll(){if(!t){requestAnimationFrame(function(){px();fs()});t=true}}
+ addEventListener('scroll',onscroll,{passive:true});addEventListener('resize',onscroll);px();fs();setTimeout(fs,1200);
  var nw=document.querySelector('.pr .nw');
  if(nw&&!rm&&nw.firstChild&&nw.firstChild.nodeType===3){var io2=new IntersectionObserver(function(es){if(es[0].isIntersecting){io2.disconnect();var st=null;nw.firstChild.nodeValue='0';function step(ts){if(!st)st=ts;var k=Math.min(1,(ts-st)/1500);k=1-Math.pow(1-k,3);nw.firstChild.nodeValue=Math.round(79800*k).toLocaleString();if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)}},{threshold:.5});io2.observe(nw)}
 })();
