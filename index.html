@@ -440,6 +440,14 @@ details{border-bottom:1px solid rgba(176,138,74,.18)!important}
 .sp th,.sp td{font-size:14.5px!important;line-height:1.9!important}
 .sp th{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;color:#8f6a2e!important;letter-spacing:.14em!important}
 .lg{font-size:11px!important;line-height:1.9!important;letter-spacing:.06em!important;color:#8a7d70!important}
+
+/* typography v2.1：折り返し・句読点・図の撤去 */
+body{letter-spacing:.045em!important;font-feature-settings:"palt" 1!important;line-break:strict;text-wrap:pretty;hanging-punctuation:allow-end}
+p,li,blockquote,.an,.wn{text-wrap:pretty;word-break:normal;overflow-wrap:anywhere}
+.fig{display:none!important}
+.tl .dd{font-family:"Zen Old Mincho",serif!important;letter-spacing:.16em!important;font-size:13px!important}
+.case,.cq,.q,.wn,blockquote,[class*="case"]{border-left-color:#b08a4a!important}
+.case,[class*="case"]{border-left-width:1px!important}
 </style></head><body>
 <div class="prog" id="pg"></div>
 <div class="spk" id="sk"></div>
