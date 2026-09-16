@@ -105,3 +105,17 @@ body{position:relative;width:100%;max-width:480px;margin-inline:auto;box-shadow:
 @media(min-width:431px){.hero-image img{bottom:-55px}}
 
 .hero{height:780px;min-height:780px;max-height:780px}
+
+/* Editorial hierarchy: section titles, chapter titles, body and supporting notes. */
+h2,.letter-opening h2,.sales-letter .story-intro h2,.after-layout h2{font-size:30px;font-weight:500;line-height:1.65;letter-spacing:.035em;text-wrap:initial}
+.letter-chapter h3{font-size:24px;font-weight:500;line-height:1.7;letter-spacing:.02em}
+.heading-emphasis{display:block;margin-top:.4em;color:#80612f}
+.letter-copy,.letter-chapter,.chapter-body{font-family:var(--sans);font-weight:400;font-size:16px;line-height:2}
+.letter-copy p+p,.letter-chapter p+p{margin-top:1.35em}
+.letter-copy strong,.letter-chapter strong{font-weight:600}
+.letter-copy blockquote,.letter-chapter blockquote{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.85;margin-block:32px}
+.quote-pause{display:block;margin-top:.8em}
+.letter-aside{font-family:var(--sans);font-size:14px;color:#526358}
+.eyebrow,.chapter-number{font-size:12px;letter-spacing:.13em}
+.note,.gallery>.note{font-size:13px;line-height:1.9}
+@media(max-width:360px){h2,.letter-opening h2,.sales-letter .story-intro h2,.after-layout h2{font-size:26px}.letter-chapter h3{font-size:22px}.letter-copy blockquote,.letter-chapter blockquote{font-size:20px}}
