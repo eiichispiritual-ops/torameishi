@@ -103,3 +103,5 @@ body{position:relative;width:100%;max-width:480px;margin-inline:auto;box-shadow:
 .reading-progress{left:calc((100% - min(100%,480px))/2);right:auto;width:min(100%,480px)}
 
 @media(min-width:431px){.hero-image img{bottom:-55px}}
+
+.hero{height:780px;min-height:780px;max-height:780px}
