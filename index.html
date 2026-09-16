@@ -1,853 +1,150 @@
 <!doctype html>
-<html lang="ja"><head>
+<html lang="ja">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#faf8f4">
+<meta name="theme-color" content="#0b1723">
 <meta name="robots" content="noindex">
+<meta name="description" content="七夜の器。クリスタルクォーツのブレスレットを、いっしーからあなたへ。商品の特徴、お迎えの流れ、ご購入前のご案内をご覧いただけます。">
 <title>七夜の器｜置き場所を、渡します</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-
-:root{
-  --bk:#faf8f4;--bk2:#f3efe8;--bk3:#ebe5db;
-  --tx:#2a2420;--tx2:#6b6058;
-  --am:#b08a4a;--am-hi:#8f6a2e;--em:#c4643a;--deep:#5e2011;
-  --pad:22px;
-}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bk);color:var(--tx);font-family:"Zen Old Mincho",serif;font-size:15.5px;line-height:1.95;letter-spacing:.03em;font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;padding-bottom:88px;overflow-x:hidden}
-img{max-width:100%;display:block}
-p{margin-bottom:1.5em}p:last-child{margin-bottom:0}
-strong{color:var(--am-hi);font-weight:600}
-em{font-style:normal;color:var(--em)}
-.w{max-width:560px;margin:0 auto;padding:0 var(--pad)}
-.lat{font-family:"Cormorant Garamond",serif;letter-spacing:.18em}
-
-/* 進捗バー */
-.prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--am),var(--em));z-index:100;width:0;transition:width .1s linear}
-
-/* 炎グラデ */
-.fire{background:linear-gradient(100deg,#f9dcae,#e0a24e 30%,#d0913f 48%,#f7ce85 62%,#e0562a 82%,#f9dcae);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bn 8s ease-in-out infinite}
-@keyframes bn{0%,100%{background-position:0 0}50%{background-position:100% 0}}
-
-/* 出現（軽量・transformのみ） */
-.r{opacity:0;transform:translate3d(0,22px,0);transition:opacity .75s cubic-bezier(.2,.9,.3,1),transform .75s cubic-bezier(.2,.9,.3,1);will-change:opacity,transform}
-.r.on{opacity:1;transform:none}
-.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}
-.rx{opacity:0;transform:translate3d(-22px,0,0);transition:opacity .7s cubic-bezier(.2,.9,.3,1),transform .7s cubic-bezier(.2,.9,.3,1)}
-.rx.on{opacity:1;transform:none}
-.up span{display:inline-block;opacity:0;transform:translate3d(0,18px,0);transition:opacity .6s cubic-bezier(.2,.9,.3,1),transform .6s cubic-bezier(.2,.9,.3,1)}
-.up.on span{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.r,.rx,.up span{opacity:1;transform:none;transition:none}*{animation:none!important}}
-
-section{padding:64px 0;position:relative}
-@media(min-width:600px){section{padding:84px 0}}
-.sa{background:var(--bk)}
-.sb{background:var(--bk2)}
-.sc{background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(208,145,63,.10),transparent 70%),var(--bk)}
-
-.eb{text-align:center;font-size:10px;letter-spacing:.5em;color:var(--am);margin-bottom:12px;font-family:"Cormorant Garamond",serif}
-h2{font-size:22px;font-weight:700;text-align:center;letter-spacing:.1em;line-height:1.75;margin-bottom:8px}
-@media(min-width:600px){h2{font-size:25px}}
-.rl{width:1px;height:40px;background:linear-gradient(180deg,transparent,var(--am),transparent);margin:20px auto}
-.orn{display:flex;align-items:center;gap:12px;justify-content:center;margin:28px auto}
-.orn::before,.orn::after{content:"";width:52px;height:1px;background:linear-gradient(90deg,transparent,rgba(208,145,63,.55))}
-.orn::after{background:linear-gradient(90deg,rgba(208,145,63,.55),transparent)}
-.orn i{width:5px;height:5px;background:var(--am);border-radius:50%;box-shadow:0 0 12px var(--em)}
-
-/* 火の粉：軽量化（8個・GPU） */
-.spk{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;opacity:.75}
-.spk i{position:absolute;bottom:-10px;width:2.5px;height:2.5px;border-radius:50%;background:var(--am-hi);box-shadow:0 0 6px 1.5px rgba(224,86,42,.5);opacity:0;animation:up linear infinite;will-change:transform,opacity}
-@keyframes up{0%{opacity:0;transform:translate3d(0,0,0) scale(.6)}15%{opacity:.9}75%{opacity:.4}100%{opacity:0;transform:translate3d(var(--dx),-102vh,0) scale(.2)}}
-
-/* HERO */
-.hero{min-height:100svh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse 110% 55% at 50% 106%,#3f1c0d,#1c1008 42%,var(--bk) 78%)}
-.hero .gl{position:absolute;left:50%;bottom:-20vh;transform:translateX(-50%);width:140vw;height:52vh;background:radial-gradient(ellipse at center,rgba(224,86,42,.3),rgba(208,145,63,.09) 40%,transparent 66%);filter:blur(24px);animation:br 6s ease-in-out infinite}
-@keyframes br{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
-.hero .st{position:relative;z-index:3;text-align:center;padding:0 var(--pad)}
-.hero .kj{font-size:clamp(54px,16vw,92px);font-weight:700;letter-spacing:.2em;text-indent:.2em;line-height:1.1;margin-bottom:18px}
-.hero .ym{font-size:10px;letter-spacing:.55em;color:var(--am);margin-bottom:26px;font-family:"Cormorant Garamond",serif}
-.hero .ld{font-size:14.5px;color:var(--tx2);letter-spacing:.1em;line-height:2.2}
-.hero .bg{display:inline-block;margin-top:30px;font-size:10.5px;letter-spacing:.32em;color:var(--am-hi);border:1px solid rgba(208,145,63,.42);padding:10px 22px;background:rgba(208,145,63,.05)}
-.hero .sc{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;font-size:9px;letter-spacing:.38em;color:var(--tx2);font-family:"Cormorant Garamond",serif}
-.hero .sc::after{content:"";display:block;width:1px;height:36px;background:linear-gradient(180deg,var(--am),transparent);margin:10px auto 0;animation:dr 2.2s ease-in-out infinite}
-@keyframes dr{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-.bd{height:1px;background:linear-gradient(90deg,transparent,rgba(208,145,63,.45),transparent)}
-.bw{height:88px;background:radial-gradient(ellipse 55% 100% at 50% 100%,rgba(224,86,42,.13),transparent 68%)}
-
-/* 年表 */
-.tl{position:relative;padding-left:22px;margin-top:16px}
-.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--am),rgba(208,145,63,.1));transform-origin:top;transform:scaleY(0);transition:transform 1.4s cubic-bezier(.2,.9,.3,1) .15s}
-.tl.on::before{transform:scaleY(1)}
-.tl .ti{position:relative;padding:0 0 24px 16px}
-.tl .ti::before{content:"";position:absolute;left:-21px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--bk);border:1.5px solid var(--am)}
-.tl .ti.now::before{background:var(--em);border-color:var(--em);box-shadow:0 0 14px var(--em);animation:ps 2.2s ease-in-out infinite}
-@keyframes ps{0%,100%{box-shadow:0 0 8px var(--em)}50%{box-shadow:0 0 20px var(--em)}}
-.tl .dd{font-size:11.5px;color:var(--am-hi);letter-spacing:.2em;margin-bottom:2px;font-weight:600}
-.tl p{font-size:13.5px;color:var(--tx2);margin-bottom:0;line-height:1.85}
-
-blockquote{position:relative;padding:16px 0 16px 20px;margin:26px 0;font-size:15px;color:var(--tx2);line-height:2.1}
-blockquote::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--em),var(--am),transparent)}
-blockquote em{color:var(--am-hi)}
-
-.fig{margin:30px auto;max-width:290px}
-.fig svg{width:100%;height:auto;overflow:visible}
-.rt{stroke-dasharray:280;stroke-dashoffset:280;transition:stroke-dashoffset 1.8s ease .25s}
-.on .rt{stroke-dashoffset:0}
-
-.ph{margin:30px auto}
-.phb{position:relative;background:var(--bk2);padding:7px;border:1px solid rgba(208,145,63,.25)}
-.ph img{width:100%}
-.ph .cap{font-size:11px;color:var(--tx2);text-align:center;letter-spacing:.14em;padding:11px 4px 0}
-
-.sp{width:100%;border-collapse:collapse;margin:24px 0;font-size:13.5px}
-.sp th{width:74px;text-align:left;color:var(--am-hi);font-weight:500;padding:13px 6px;border-bottom:1px solid rgba(236,230,220,.07);vertical-align:top;letter-spacing:.1em;font-size:12px}
-.sp td{padding:13px 6px;border-bottom:1px solid rgba(236,230,220,.07);color:var(--tx2);line-height:1.8}
-
-.pr{position:relative;border:1px solid rgba(208,145,63,.38);padding:44px 20px 36px;text-align:center;background:radial-gradient(ellipse 100% 70% at 50% 0%,rgba(224,86,42,.11),transparent 58%),var(--bk2);overflow:hidden}
-.pr::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(247,206,133,.09),transparent);animation:sw 5s ease-in-out infinite}
-@keyframes sw{0%,74%{left:-100%}100%{left:100%}}
-.pr .tg{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--em);color:#fff;font-size:10px;letter-spacing:.26em;padding:6px 18px;white-space:nowrap}
-.pr .ws{font-size:14px;color:var(--tx2);text-decoration:line-through;opacity:.7}
-.pr .nw{font-size:clamp(44px,13vw,58px);font-weight:700;line-height:1.2;font-family:"Cormorant Garamond","Zen Old Mincho",serif}
-.pr .nw small{font-size:18px}
-.pr .mt{font-size:11.5px;color:var(--tx2);letter-spacing:.14em;margin-top:4px}
-.pr .lm{display:inline-block;margin-top:16px;border:1px solid var(--em);font-size:11px;letter-spacing:.22em;padding:5px 16px;color:#f3a882}
-
-.ul li{list-style:none;padding:14px 4px 14px 30px;position:relative;border-bottom:1px solid rgba(236,230,220,.06);font-size:14.5px;line-height:1.85}
-.ul li::before{content:"";position:absolute;left:5px;top:22px;width:6px;height:6px;background:var(--am);border-radius:50%;box-shadow:0 0 8px rgba(224,86,42,.5)}
-
-.st2{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start}
-.st2 .n{flex:none;width:36px;height:36px;border:1px solid var(--am);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--am-hi);font-size:14px;background:rgba(208,145,63,.05);margin-top:2px;font-family:"Cormorant Garamond",serif}
-.st2 h3{font-size:15.5px;font-weight:600;margin-bottom:3px;letter-spacing:.06em}
-.st2 p{font-size:13px;color:var(--tx2);margin-bottom:0;line-height:1.85}
-
-.py{border:1px solid rgba(208,145,63,.22);background:var(--bk2);padding:20px;font-size:12.5px;color:var(--tx2);line-height:1.95;margin-top:24px}
-.py b{color:var(--am-hi);font-weight:600;display:block;letter-spacing:.2em;font-size:11px;margin-bottom:6px}
-
-.cd{border:1px solid rgba(208,145,63,.32);background:linear-gradient(180deg,rgba(208,145,63,.06),transparent);padding:30px 20px}
-.cd h3{color:var(--am-hi);font-size:15px;letter-spacing:.2em;margin-bottom:14px;text-align:center}
-.cd ol{margin:0 0 16px;padding:0;counter-reset:s}
-.cd ol li{list-style:none;counter-increment:s;position:relative;padding:12px 0 12px 38px;font-size:14.5px;border-bottom:1px solid rgba(236,230,220,.07)}
-.cd ol li::before{content:counter(s);position:absolute;left:0;top:50%;transform:translateY(-50%);width:26px;height:26px;border:1px solid var(--am);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--am-hi);font-size:12px;font-family:"Cormorant Garamond",serif}
-.wn{font-size:12.5px;color:#e6b5a0;border-left:2px solid var(--em);padding-left:14px;margin-top:18px;line-height:1.95}
-
-details{border-bottom:1px solid rgba(236,230,220,.07)}
-summary{cursor:pointer;list-style:none;padding:19px 34px 19px 2px;font-size:14.5px;font-weight:600;position:relative;letter-spacing:.04em;line-height:1.7}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"";position:absolute;right:8px;top:26px;width:8px;height:8px;border-right:1.5px solid var(--am);border-bottom:1.5px solid var(--am);transform:rotate(45deg);transition:transform .35s cubic-bezier(.2,.9,.3,1)}
-details[open] summary::after{transform:rotate(225deg)}
-.an{padding:0 2px 22px;font-size:13.5px;color:var(--tx2);line-height:2}
-.an b{color:var(--am-hi);font-weight:600}
-
-.lastc{text-align:center}
-.seal{margin:28px auto 0;width:46px;height:74px;background:linear-gradient(150deg,var(--deep),#7d2b16);color:#f3e6d6;font-size:13px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;letter-spacing:.12em;border-radius:4px;transform:rotate(-2deg);box-shadow:inset 0 0 0 1.4px rgba(243,230,214,.8),0 3px 10px rgba(0,0,0,.55);font-weight:600}
-
-.cta{display:block;text-align:center;background:linear-gradient(150deg,#f4c982,#d0913f 55%,#ad6a2c);color:#1c1008;font-weight:700;font-size:16px;letter-spacing:.18em;padding:20px 12px;text-decoration:none;box-shadow:0 8px 32px rgba(224,86,42,.28);margin:32px auto 10px;max-width:400px;position:relative;overflow:hidden;transition:transform .25s ease}
-.cta::after{content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);animation:sh 3.2s ease-in-out infinite}
-@keyframes sh{0%,68%{left:-120%}100%{left:130%}}
-.cta:active{transform:scale(.985)}
-.cs{text-align:center;font-size:11px;color:var(--tx2);letter-spacing:.1em}
-
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(11,8,6,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(208,145,63,.3);padding:10px 12px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .45s cubic-bezier(.2,.9,.3,1)}
-.bar.on{transform:none}
-.bar a{display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(150deg,#f4c982,#d0913f 55%,#ad6a2c);color:#1c1008;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;padding:14px 10px}
-.bar .s{font-size:10px;font-weight:500;opacity:.82}
-
-footer{padding:42px 0 58px;text-align:center;font-size:10.5px;color:rgba(157,145,132,.5);letter-spacing:.08em;line-height:2.3}
-footer a{color:rgba(157,145,132,.72)}
-.lg{font-size:10.5px;color:rgba(157,145,132,.5);line-height:2;margin-top:26px;text-align:center}
-
-.cal .mo{font-size:13px;letter-spacing:.3em;color:var(--am-hi);text-align:center;margin:36px 0 4px;position:relative}
-.cal .mo::before,.cal .mo::after{content:"";position:absolute;top:50%;width:44px;height:1px;background:linear-gradient(90deg,transparent,rgba(208,145,63,.45))}
-.cal .mo::before{left:0}.cal .mo::after{right:0;background:linear-gradient(90deg,rgba(208,145,63,.45),transparent)}
-.cal .rw{display:flex;gap:13px;padding:16px 4px;border-bottom:1px solid rgba(236,230,220,.055);align-items:flex-start}
-.cal .dt{flex:none;width:64px;font-size:14px;color:var(--am-hi);font-weight:600;letter-spacing:.02em}
-.cal .bd2{flex:1}
-.cal .tg2{font-size:10px;letter-spacing:.16em;color:var(--am);margin-bottom:5px}
-.cal .ds{font-size:13px;color:var(--tx2);line-height:1.9}
-.cal .rw.top{background:linear-gradient(90deg,rgba(224,86,42,.09),transparent 72%);border-left:2px solid var(--em);padding-left:12px}
-
-.stn{width:100%;aspect-ratio:16/10;overflow:hidden}
-.stn svg{width:100%;height:100%;display:block}
-.hero-ph{background-size:cover;background-position:center 40%}
-.hero-ph::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,8,6,.55),rgba(11,8,6,.35) 45%,rgba(11,8,6,.92))}
-.ph2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px auto}
-.ph2 .phb{padding:5px}
-.phw{margin:26px -20px}.phw img{width:100%;display:block}
-
-body{font-size:17px;line-height:2.05}
-@media(min-width:600px){body{font-size:18px}}
-h2{font-size:25px}
-@media(min-width:600px){h2{font-size:29px}}
-.hero .kj{color:var(--tx)}
-.hero .ld{font-size:16px;color:var(--tx2)}
-.hero .bg{color:var(--am-hi);border-color:rgba(176,138,74,.5);background:rgba(255,255,255,.55)}
-.hero-ph::before{background:linear-gradient(180deg,rgba(250,248,244,.72),rgba(250,248,244,.55) 45%,rgba(250,248,244,.96))}
-.fire{background:linear-gradient(100deg,#8f6a2e,#b08a4a 40%,#c4643a 70%,#8f6a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
-strong{color:var(--am-hi)}
-em{color:var(--em)}
-blockquote{color:var(--tx)}
-blockquote::before{background:linear-gradient(180deg,var(--em),var(--am),transparent)}
-.phb{background:#fff;border:1px solid rgba(176,138,74,.28);box-shadow:0 8px 28px rgba(42,36,32,.08)}
-.ph .cap,.cap{color:var(--tx2)}
-.sp th{color:var(--am-hi)}.sp td{color:var(--tx)}.sp th,.sp td{border-bottom-color:rgba(42,36,32,.08)}
-.pr{background:#fff;border-color:rgba(176,138,74,.45)}
-.pr .nw{color:var(--tx)}.pr .mt{color:var(--tx2)}
-.cd{background:#fff;border-color:rgba(176,138,74,.35)}
-.cd ol li{border-bottom-color:rgba(42,36,32,.08)}
-.ul li{border-bottom-color:rgba(42,36,32,.08)}
-.st2 h3{color:var(--tx)}.st2 p{color:var(--tx2)}
-.tl .ti p{color:var(--tx2)}.tl .ti::before{background:var(--bk)}
-.py{background:#fff;border-color:rgba(176,138,74,.3);color:var(--tx2)}
-.wn{color:#8a4a2c;border-left-color:var(--em)}
-details{border-bottom-color:rgba(42,36,32,.08)}
-summary{color:var(--tx)}
-.an{color:var(--tx2)}
-.bd{background:linear-gradient(90deg,transparent,rgba(176,138,74,.5),transparent)}
-.bw{background:radial-gradient(ellipse 55% 100% at 50% 100%,rgba(196,100,58,.10),transparent 68%)}
-.sc{background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(176,138,74,.10),transparent 70%),var(--bk)}
-.hero{background:var(--bk2)}
-.hero .gl{background:radial-gradient(ellipse at center,rgba(196,100,58,.16),rgba(176,138,74,.06) 40%,transparent 66%)}
-.spk i{background:var(--am);box-shadow:0 0 6px 1.5px rgba(196,100,58,.35)}
-.seal{background:linear-gradient(150deg,#7d2b16,#a8412a);color:#fff}
-.cal .mo{color:var(--am-hi)}.cal .dt{color:var(--am-hi)}.cal .tg2{color:var(--am)}.cal .ds{color:var(--tx)}
-.cal .rw{border-bottom-color:rgba(42,36,32,.07)}
-.cal .rw.top{background:linear-gradient(90deg,rgba(196,100,58,.08),transparent 72%)}
-.bar{background:#fff;border-top:1px solid rgba(176,138,74,.35)}
-.bar a{color:var(--tx)}
-.cta{background:linear-gradient(135deg,#8f6a2e,#c4643a);color:#fff;box-shadow:0 8px 24px rgba(196,100,58,.28)}
-footer{color:var(--tx2)}
-.lg{color:var(--tx2)}
-
-.hero .sc{background:none!important;color:var(--tx2)}
-.hero .ym{color:var(--am-hi);opacity:.85;font-size:11px;letter-spacing:.5em}
-.hero .kj{text-shadow:0 2px 24px rgba(250,248,244,.9)}
-
-/* フルブリード：写真の上にコピー */
-.fb{position:relative;margin:0;padding:0;min-height:62vh;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center;overflow:hidden}
-.fb::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,8,6,.25),rgba(11,8,6,.45) 50%,rgba(11,8,6,.25))}
-.fb .in{position:relative;z-index:2;text-align:center;padding:64px 28px;max-width:560px}
-.fb .k{font-size:11px;letter-spacing:.5em;color:#e8cf9a;margin-bottom:18px;font-family:"Cormorant Garamond",serif}
-.fb h3{font-size:clamp(24px,6.4vw,34px);font-weight:700;line-height:1.7;letter-spacing:.08em;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.5);margin:0 0 16px}
-.fb p{font-size:15px;line-height:2;color:rgba(255,255,255,.88);margin:0;text-shadow:0 1px 10px rgba(0,0,0,.5)}
-.fb.sq{min-height:auto}
-.fb.sq .in{padding:88px 28px}
-@media(min-width:600px){.fb{min-height:70vh}.fb h3{font-size:36px}}
-.after-box{background:#fff;border:1.5px solid var(--am);padding:28px 22px;margin:26px 0;border-radius:4px}
-.after-box h3{text-align:center;color:var(--am-hi);font-size:14px;letter-spacing:.2em;margin:0 0 18px}
-.after-box ol{counter-reset:a;margin:0 0 18px;padding:0}
-.after-box ol li{list-style:none;counter-increment:a;position:relative;padding:12px 0 12px 44px;font-size:16px;border-bottom:1px solid rgba(42,36,32,.08)}
-.after-box ol li::before{content:counter(a);position:absolute;left:0;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:var(--am-hi);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
-.after-box .warn{color:#8a4a2c;font-size:14px;border-left:3px solid var(--em);padding-left:12px;margin-top:14px;line-height:1.9}
-.pay{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0}
-.pay span{font-size:12px;padding:6px 12px;border:1px solid rgba(176,138,74,.4);border-radius:20px;color:var(--tx2);background:#fff}
-.perday{text-align:center;margin:22px 0;padding:18px;background:#fff;border:1px solid rgba(176,138,74,.3)}
-.perday b{display:block;font-size:30px;color:var(--am-hi);font-family:"Cormorant Garamond",serif;line-height:1.2}
-.perday small{font-size:12px;color:var(--tx2)}
-.case{background:#fff;border-left:3px solid var(--em);padding:22px 20px;margin:22px 0}
-.case p{margin-bottom:1em}
-.case .q{font-size:20px;font-weight:700;color:var(--tx);text-align:center;margin:18px 0}
-.illust{margin:34px -22px;border:none;padding:0;background:transparent}
-.illust svg{border-top:1px solid rgba(176,138,74,.3);border-bottom:1px solid rgba(176,138,74,.3)}
-.illust svg{width:100%;height:auto;display:block}
-.illcap{font-size:12px;color:var(--tx2);text-align:center;letter-spacing:.14em;padding:12px 6px 4px}
-.flame{transform-origin:292px 262px;animation:fl 1.8s ease-in-out infinite}
-@keyframes fl{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.08) translateY(-2px)}}
-.cloth-move{animation:cm 4s ease-in-out infinite}
-@keyframes cm{0%,100%{transform:translate(0,0)}50%{transform:translate(220px,40px) rotate(6deg);opacity:.6}}
-/* みづき品質の細部 */
-.after-box{border:1.5px solid var(--am);background:linear-gradient(180deg,rgba(176,138,74,.08),rgba(176,138,74,.02));padding:34px 26px;border-radius:0}
-.after-box h3{font-size:16px;letter-spacing:.2em}
-.after-box ol li::before{background:transparent;border:1px solid var(--am);color:var(--am-hi);width:28px;height:28px;font-size:13px;font-weight:400}
-.st2 .n{width:40px;height:40px;font-size:15px;border-color:var(--am);color:var(--am-hi);background:rgba(176,138,74,.06)}
-.st2 h3{font-size:16.5px;font-weight:600}
-.cta{font-size:17px;letter-spacing:.2em;padding:21px 12px;border-radius:3px;max-width:420px;margin:36px auto 10px;font-weight:800}
-.eb{letter-spacing:.55em;font-size:11px}
-.rl{width:54px}
-
-/* ===== 高級感・タイポ・スマホ最適化 ===== */
-body{font-size:16.5px;line-height:2.15;letter-spacing:.04em;word-break:keep-all;overflow-wrap:anywhere}
-@media(min-width:600px){body{font-size:17.5px}}
-p{margin-bottom:1.7em}
-.w{max-width:540px;padding:0 24px}
-h2{font-size:24px;line-height:1.85;letter-spacing:.12em;font-weight:600}
-@media(min-width:600px){h2{font-size:28px}}
-.eb{font-size:10px;letter-spacing:.6em;margin-bottom:16px}
-.rl{height:44px;margin:22px auto}
-strong{font-weight:600;background:linear-gradient(transparent 62%,rgba(176,138,74,.22) 62%)}
-blockquote{padding:20px 0 20px 22px;margin:30px 0;font-size:16px;line-height:2.1}
-blockquote::before{width:1.5px}
-section{padding:72px 0}
-@media(min-width:600px){section{padding:96px 0}}
-.hero .kj{font-size:clamp(50px,15vw,88px);letter-spacing:.22em;font-weight:600}
-.hero .ld{font-size:15px;line-height:2.3;letter-spacing:.12em}
-.hero .bg{font-size:10px;letter-spacing:.36em;padding:11px 24px}
-.fb .in{padding:76px 28px}
-.fb h3{font-size:clamp(25px,6.6vw,36px);line-height:1.75;letter-spacing:.1em;font-weight:600}
-.fb p{font-size:14.5px;line-height:2.1;letter-spacing:.06em}
-.fb .k{font-size:10px;letter-spacing:.6em}
-/* いっしー：プロフィール */
-.prof{display:flex;flex-direction:column;align-items:center;gap:18px;margin:34px auto 10px}
-.prof .av{width:132px;height:132px;border-radius:50%;overflow:hidden;border:1.5px solid rgba(176,138,74,.5);box-shadow:0 10px 30px rgba(42,36,32,.12)}
-.prof .av img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.prof .nm{text-align:center}
-.prof .nm b{display:block;font-size:19px;letter-spacing:.2em;font-weight:600;color:var(--tx)}
-.prof .nm small{display:block;font-size:11px;letter-spacing:.2em;color:var(--tx2);margin-top:4px}
-/* いっしー：横長・テキスト載せ */
-.fb.person{min-height:auto}
-.fb.person::before{background:linear-gradient(90deg,rgba(11,8,6,.72),rgba(11,8,6,.35) 60%,rgba(11,8,6,.15))}
-.fb.person .in{text-align:left;padding:76px 28px;max-width:600px;margin-right:auto}
-.fb.person h3{font-size:clamp(22px,5.8vw,30px)}
-/* 署名ブロック */
-.sig{display:flex;align-items:center;gap:16px;justify-content:center;margin:30px auto 8px}
-.sig .av{width:64px;height:64px;border-radius:50%;overflow:hidden;border:1px solid rgba(176,138,74,.5)}
-.sig .av img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.sig .t{font-size:13px;letter-spacing:.14em;color:var(--tx2);line-height:1.8}
-.sig .t b{display:block;font-size:16px;color:var(--tx);letter-spacing:.2em;font-weight:600}
-.seal{display:none}
-.cta{font-size:16.5px;letter-spacing:.24em;padding:22px 12px;font-weight:600;border-radius:2px}
-.bar a{font-size:15px;letter-spacing:.18em}
-.cd,.after-box,.pr,.perday,.py,.case{border-radius:2px}
-.sp th{letter-spacing:.14em;font-size:11.5px}
-.sp td{font-size:15px}
-details summary{font-size:15.5px;padding:20px 34px 20px 2px;letter-spacing:.05em;font-weight:600}
-.an{font-size:14.5px;line-height:2}
-
-/* ===== スマホ可読性 ===== */
-body{font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;font-size:16px;line-height:2.0;letter-spacing:.03em;word-break:normal;overflow-wrap:break-word;font-weight:400}
-h2,.hero .kj,.fb h3,.case .q,.pr .nw,.perday b{font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif}
-p{margin-bottom:1.5em}
-.w{max-width:520px;padding:0 22px}
-strong{font-weight:600;background:none;color:var(--am-hi)}
-blockquote{font-family:"Zen Old Mincho",serif;font-size:15.5px}
-.an,.st2 p,.tl .ti p,.sp td,.cd ol li,.after-box ol li,.ul li,.cal .ds{font-family:"Noto Sans JP","Hiragino Sans",sans-serif}
-.rl{width:1px!important;height:40px!important;background:linear-gradient(180deg,transparent,var(--am),transparent)!important;margin:20px auto!important}
-.illust{margin-bottom:12px}
-section:has(> .w > .illust:last-child){padding-bottom:40px}
-
-/* ===== 二重価格（実売150,000円→今回79,800円） ===== */
-.hero .pb{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin-top:16px;padding:12px 22px;border:1px solid rgba(196,100,58,.5);background:rgba(255,255,255,.72);backdrop-filter:blur(6px);position:relative}
-.hero .pb::before{content:"";position:absolute;inset:4px;border:1px solid rgba(176,138,74,.3);pointer-events:none}
-.hero .pb s{font-size:12px;color:var(--tx2);letter-spacing:.12em;text-decoration:line-through;text-decoration-color:var(--em);text-decoration-thickness:1.5px}
-.hero .pb b{font-size:13px;letter-spacing:.14em;color:var(--deep);font-weight:600;display:flex;align-items:baseline;gap:4px}
-.hero .pb b em{font-style:normal;font-size:30px;line-height:1;font-family:"Cormorant Garamond","Zen Old Mincho",serif;font-weight:700;color:var(--em);letter-spacing:.02em}
-.hero .pb b small{font-size:13px}
-.hero .pb span{font-size:10px;letter-spacing:.24em;color:var(--am-hi)}
-.pr .ws{font-size:15px;color:var(--tx2);opacity:1;text-decoration:none;letter-spacing:.08em;margin-bottom:6px}
-.pr .ws b{font-weight:500;text-decoration:line-through;text-decoration-color:var(--em);text-decoration-thickness:2px;font-size:20px;color:var(--tx);font-family:"Cormorant Garamond","Zen Old Mincho",serif}
-.pr .nw{color:var(--em)!important}
-.pr .off{display:inline-block;margin:8px 0 6px;background:var(--em);color:#fff;font-size:11px;letter-spacing:.2em;padding:5px 14px}
-.pr .nt{font-size:10px;color:var(--tx2);letter-spacing:.06em;margin-top:12px;opacity:.8}
-
-/* ===== motion+ 2026-09-05（追加のみ・レイアウト非依存） ===== */
-.r{transition:opacity .9s cubic-bezier(.2,.9,.3,1),transform .9s cubic-bezier(.2,.9,.3,1),filter .9s cubic-bezier(.2,.9,.3,1);filter:blur(4px);will-change:auto}
-.r.on{filter:blur(0)}
-.ph .phb img,.ph2 .phb img,.phw img{transform:scale(1.07);transition:transform 1.8s cubic-bezier(.2,.9,.3,1)}
-.ph.on .phb img,.ph2.on .phb img,.phw.on img{transform:scale(1)}
-.fb{background-position:center calc(50% + var(--py,0px))}
-.fb .k,.fb h3,.fb p{opacity:0;transform:translateY(18px);transition:opacity 1s cubic-bezier(.2,.9,.3,1),transform 1s cubic-bezier(.2,.9,.3,1)}
-.fb.on .k{opacity:1;transform:none}.fb.on h3{opacity:1;transform:none;transition-delay:.15s}.fb.on p{opacity:1;transform:none;transition-delay:.3s}
-.kv{margin:0;padding:0;position:relative;overflow:hidden;background:#0b0f1c}
-.kv img{display:block;width:100%;height:auto;transform:scale(1.08);clip-path:inset(10% 0 10% 0);opacity:.55;transition:transform 2s cubic-bezier(.2,.9,.3,1),clip-path 1.4s cubic-bezier(.2,.9,.3,1),opacity 1.2s}
-.kv.on img{transform:none;clip-path:inset(0);opacity:1}
-/* ヒーロー：月明かりの実写＋金箔タイトル */
-.hero.hero-ph{background-image:none!important;background:#0b0f1c!important}
-.hero .hbg{position:absolute;inset:-6%;background:url(moon_hero.jpg) center 42%/cover no-repeat;z-index:0;animation:kb 22s cubic-bezier(.2,.6,.2,1) both;transform-origin:center}
-@keyframes kb{from{transform:scale(1.16)}to{transform:scale(1)}}
-.hero-ph::before{background:linear-gradient(180deg,rgba(8,12,24,.28),rgba(8,12,24,.12) 42%,rgba(8,12,24,.72) 80%,var(--bk) 100%)!important;z-index:1}
-.hero .gl{display:none}
-.hero .hsp{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
-.hero .hsp i{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:#f4dc9a;box-shadow:0 0 8px 2px rgba(244,220,154,.7);opacity:0;animation:hup linear infinite}
-@keyframes hup{0%{opacity:0;transform:translate3d(0,0,0) scale(.6)}15%{opacity:.9}75%{opacity:.4}100%{opacity:0;transform:translate3d(var(--dx),-100vh,0) scale(.2)}}
-.hero .kj{color:transparent!important;background:linear-gradient(100deg,#8a6420 0%,#f6e3b0 18%,#d4a852 34%,#fff4cf 50%,#c99a3f 64%,#f9e7b8 80%,#8a6420 100%)!important;background-size:260% 100%!important;-webkit-background-clip:text!important;background-clip:text!important;animation:foil 7s ease-in-out infinite;text-shadow:none!important;filter:drop-shadow(0 6px 24px rgba(232,192,114,.32));font-weight:700}
-@keyframes foil{0%,100%{background-position:0 0}50%{background-position:100% 0}}
-.hero .ym{color:#e8c072!important;opacity:.95!important}
-.hero .ld{color:#efe7d6!important;text-shadow:0 2px 14px rgba(0,0,0,.55)}
-.hero .bg{color:#f3d48a!important;border-color:rgba(232,192,114,.55)!important;background:rgba(10,14,28,.38)!important;backdrop-filter:blur(6px)}
-.hero .pb{background:rgba(10,14,28,.5)!important;border-color:rgba(232,192,114,.6)!important;backdrop-filter:blur(8px)}
-.hero .pb::before{border-color:rgba(232,192,114,.25)!important}
-.hero .pb s{color:rgba(239,231,214,.72)!important}.hero .pb b{color:#f3d48a!important}.hero .pb b em{color:#f6c58a!important}.hero .pb span{color:#e8c072!important}
-.hero .sc{color:#e8c072!important}.hero .sc::after{background:linear-gradient(180deg,#e8c072,transparent)!important}
-
-/* 横はみ出し防止（写真ズーム演出のクリップ） */
-html,body{overflow-x:hidden}
-.ph .phb,.ph2 .phb,.phw,.kv,.hero{overflow:hidden}
-
-/* ===== typography v2 2026-09-05：本文を明朝に統一・強調1色・枠線を減らす ===== */
-body,.an,.st2 p,.tl .ti p,.sp td,.cd ol li,.after-box ol li,.ul li,.cal .ds,p,summary,.cs,.ph .cap,.cap,.perday small,.pay span,.wn,.q,.tl p{font-family:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif!important}
-body{font-size:16.5px!important;line-height:2.08!important;letter-spacing:.055em!important;color:#2b2623!important;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-p{margin-bottom:1.65em!important;font-weight:400}
-.w{max-width:520px!important;padding:0 26px!important}
-section{padding:76px 0!important}
-strong{font-weight:500!important;color:#8f6a2e!important;background:none!important;letter-spacing:.06em}
-h2{font-family:"Zen Old Mincho",serif!important;font-size:25px!important;font-weight:500!important;letter-spacing:.16em!important;line-height:1.8!important;color:#2b2623!important;margin-bottom:6px!important}
-h2 .fire,h2 span.fire{background:none!important;-webkit-text-fill-color:#8f6a2e;color:#8f6a2e!important;animation:none!important}
-.eb{font-size:10px!important;letter-spacing:.6em!important;color:#b08a4a!important;margin-bottom:18px!important;font-weight:500}
-.rl{width:1px!important;height:36px!important;margin:22px auto 34px!important;background:linear-gradient(180deg,transparent,#b08a4a,transparent)!important}
-.orn{margin:34px auto!important}
-blockquote{font-size:16px!important;line-height:2.1!important;color:#3a332e!important;padding:6px 0 6px 22px!important;margin:34px 0!important}
-blockquote::before{width:1px!important;background:linear-gradient(180deg,#b08a4a,rgba(176,138,74,.15))!important}
-blockquote em{color:#8f6a2e!important;font-style:normal}
-.wn{font-size:14.5px!important;line-height:2!important;color:#5a4a3c!important;border-left:1px solid #b08a4a!important;padding-left:18px!important;margin-top:26px!important}
-.cd{border:none!important;background:#fff!important;box-shadow:0 10px 40px -24px rgba(60,40,10,.25)!important;padding:34px 24px!important}
-.cd h3{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.18em!important;font-size:15px!important}
-.cd ol li,.after-box ol li{font-size:15.5px!important;line-height:1.9!important;border-bottom:1px solid rgba(176,138,74,.18)!important}
-.st2 h3{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;font-size:16.5px!important;letter-spacing:.1em!important}
-.st2 p{font-size:14.5px!important;line-height:1.95!important}
-.st2 .n{font-family:"Cormorant Garamond",serif!important;font-weight:500!important;border-color:rgba(176,138,74,.5)!important;background:none!important}
-.tl .dd{font-family:"Cormorant Garamond","Zen Old Mincho",serif!important;font-size:12.5px!important;letter-spacing:.24em!important;font-weight:500!important}
-.tl .ti p{font-size:15px!important;line-height:1.95!important}
-.ph{border:none!important;box-shadow:0 18px 50px -30px rgba(40,25,5,.45)!important;padding:0!important;background:none!important}
-.ph .phb{border-radius:2px;overflow:hidden}
-.ph .cap,.cap{font-size:11.5px!important;letter-spacing:.2em!important;color:#8a7d70!important;padding:14px 4px 0!important}
-.illust{display:none!important}
-.fb{min-height:56vh!important}
-.fb::before{background:linear-gradient(180deg,rgba(11,8,6,.42),rgba(11,8,6,.55) 50%,rgba(11,8,6,.42))!important}
-.fb .k{font-size:10px!important;letter-spacing:.6em!important;color:#e0c68e!important;margin-bottom:22px!important}
-.fb h3{font-family:"Zen Old Mincho",serif!important;font-weight:400!important;font-size:clamp(24px,6.4vw,32px)!important;letter-spacing:.16em!important;line-height:1.85!important;text-shadow:0 2px 24px rgba(0,0,0,.6)!important}
-.fb p{font-family:"Zen Old Mincho",serif!important;font-size:15px!important;line-height:2.15!important;letter-spacing:.06em!important;color:rgba(255,255,255,.9)!important}
-.pr{border:none!important;background:#fff!important;box-shadow:0 22px 60px -34px rgba(60,40,10,.35)!important;padding:48px 22px 38px!important}
-.pr .tg{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.3em!important;font-size:10.5px!important;background:#8f6a2e!important}
-.pr .ws{font-family:"Zen Old Mincho",serif!important;font-size:14px!important;color:#6b6058!important}
-.pr .ws b{font-family:"Cormorant Garamond",serif!important;font-size:22px!important;font-weight:500!important;color:#3a332e!important;text-decoration-color:#8f6a2e!important;text-decoration-thickness:1.5px!important}
-.pr .nw{font-family:"Cormorant Garamond",serif!important;font-weight:500!important;color:#8f6a2e!important;letter-spacing:.02em;font-size:clamp(56px,17vw,72px)!important;line-height:1.1!important}
-.pr .nw small{font-family:"Zen Old Mincho",serif!important;font-size:18px!important;margin-left:4px}
-.pr .off{background:none!important;color:#8f6a2e!important;border:1px solid rgba(143,106,46,.5)!important;font-family:"Zen Old Mincho",serif!important;letter-spacing:.24em!important;font-size:11px!important;padding:7px 18px!important}
-.pr .mt,.pr .nt{font-family:"Zen Old Mincho",serif!important;letter-spacing:.14em!important}
-.pr .lm{border-color:rgba(143,106,46,.45)!important;color:#8f6a2e!important;font-family:"Zen Old Mincho",serif!important;letter-spacing:.24em!important;font-size:11px!important}
-.perday{border:none!important;background:#fff!important;box-shadow:0 10px 40px -26px rgba(60,40,10,.25)!important;padding:26px 20px!important}
-.perday b{font-family:"Cormorant Garamond","Zen Old Mincho",serif!important;font-weight:500!important;font-size:30px!important;color:#8f6a2e!important;letter-spacing:.04em}
-.perday small{font-size:13px!important;line-height:1.95!important;color:#6b6058!important;display:block;margin-top:6px}
-.pay span{font-size:11.5px!important;letter-spacing:.1em!important;border-color:rgba(176,138,74,.3)!important;color:#6b6058!important;padding:6px 13px!important}
-.cta{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.34em!important;font-size:16px!important;background:linear-gradient(135deg,#a67c32,#8f6a2e 55%,#6e4f20)!important;color:#fff!important;border-radius:2px!important;box-shadow:0 14px 34px -14px rgba(90,60,20,.6)!important;padding:22px 12px!important}
-.cs{font-size:11px!important;letter-spacing:.2em!important;color:#8a7d70!important}
-.bar a{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.2em!important;background:linear-gradient(135deg,#a67c32,#8f6a2e 55%,#6e4f20)!important;color:#fff!important}
-.bar .s{font-size:10.5px!important;letter-spacing:.12em!important;opacity:.9!important}
-summary{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;font-size:15px!important;letter-spacing:.06em!important;padding:20px 34px 20px 2px!important}
-.an{font-size:15px!important;line-height:2.05!important;color:#4a423b!important}
-.an b{font-weight:500!important;color:#8f6a2e!important}
-details{border-bottom:1px solid rgba(176,138,74,.18)!important}
-.prof .nm b,.sig .t b{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;letter-spacing:.2em!important;font-size:18px!important}
-.prof .nm small,.sig .t{font-family:"Zen Old Mincho",serif!important;letter-spacing:.16em!important;font-size:11px!important}
-.hero .ld{font-family:"Zen Old Mincho",serif!important;font-size:16px!important;letter-spacing:.12em!important;line-height:2.3!important;font-weight:400}
-.hero .ym{font-size:10px!important;letter-spacing:.5em!important}
-.hero .bg,.hero .pb{font-family:"Zen Old Mincho",serif!important}
-.hero .pb b{font-weight:500!important}
-.sp th,.sp td{font-size:14.5px!important;line-height:1.9!important}
-.sp th{font-family:"Zen Old Mincho",serif!important;font-weight:500!important;color:#8f6a2e!important;letter-spacing:.14em!important}
-.lg{font-size:11px!important;line-height:1.9!important;letter-spacing:.06em!important;color:#8a7d70!important}
-
-/* typography v2.1：折り返し・句読点・図の撤去 */
-body{letter-spacing:.045em!important;font-feature-settings:"palt" 1!important;line-break:strict;text-wrap:pretty;hanging-punctuation:allow-end}
-p,li,blockquote,.an,.wn{text-wrap:pretty;word-break:normal;overflow-wrap:anywhere}
-.fig{display:none!important}
-.tl .dd{font-family:"Zen Old Mincho",serif!important;letter-spacing:.16em!important;font-size:13px!important}
-.case,.cq,.q,.wn,blockquote,[class*="case"]{border-left-color:#b08a4a!important}
-.case,[class*="case"]{border-left-width:1px!important}
-
-/* typography v2.2：見出しの折り返し・注意枠の色 */
-h2,h3,.fb h3{text-wrap:balance}
-.after-box{border:1px solid rgba(176,138,74,.35)!important;box-shadow:0 10px 40px -26px rgba(60,40,10,.25)!important;border-radius:2px!important}
-.warn{color:#5a4a3c!important;border-left:1px solid #b08a4a!important;font-size:14.5px!important;line-height:2!important;padding-left:18px!important}
-.warn strong{color:#8f6a2e!important}
-</style></head><body>
-<div class="prog" id="pg"></div>
-<div class="spk" id="sk"></div>
-
-<header class="hero hero-ph" style="background-image:url(stone_hero_light.jpg)">
- <div class="hbg"></div><div class="hsp" id="hsp"></div>
- <div class="gl"></div>
- <div class="st">
-  <div class="kj fire up">七夜の器</div>
-  <div class="ym">N A N A Y O &nbsp; N O &nbsp; U T S U W A</div>
-  <p class="ld r d1">七夜、火のそばに置いていました。<br>剥がしたものを、受けるために。</p>
-  <div class="bg r d2">2026.09.26 彼岸明け</div>
-  <div class="pb r d3"><s>通常価格 150,000円</s><b>今回限り <em>79,800</em><small>円</small></b><span>七夜を通した30個だけ</span></div>
- </div>
- <div class="sc lat">SCROLL</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/premium/hero-editorial.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/premium/style.css">
+<script src="assets/premium/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+<div class="reading-progress" aria-hidden="true"></div>
+<header class="site-header">
+ <a class="wordmark" href="#top" aria-label="七夜の器 トップへ"><span class="brand-ring" aria-hidden="true"></span>七夜の器</a>
+ <nav aria-label="ページ内ナビゲーション"><a href="#stone">商品について</a><a href="#story" class="nav-story">物語</a><a href="#order">お迎えする<span aria-hidden="true">↗</span></a></nav>
 </header>
-
-<section class="sc"><div class="w">
- <div class="eb">FOR YOU</div>
- <h2 class="r">ここまで見てくださった<br><span class="fire">あなたへ</span></h2>
- <div class="rl"></div>
- <div class="prof r"><div class="av"><img src="isshi.jpg" alt="いっしー"></div><div class="nm"><b>いっしー</b><small>スピリチュアルヒーラー ／ 37カ国・8万人</small></div></div>
- <p class="r">昨夜、お伝えしましたよね。</p>
- <p class="r d1"><strong>7枚。うち5枚は、あなたのものではなかった。</strong></p>
- <p class="r d2">そして、10人に1人。剥がしたら、とんでもなく動く方。あなたは、そのお一人でした。</p>
- <div class="orn"><i></i></div>
- <p class="r">2000人の中から、視えた方だけに、この場所を開いています。</p>
- <p class="r d1">その方たちのために、七夜、火のそばに置いてきたものがあります。</p>
- <p class="r d2"><strong>それが、これです。</strong></p>
- <div class="ph r d3"><div class="phb"><img src="stone.jpg" alt="七夜の器"></div><div class="cap">七夜が明けた朝に</div></div>
-</div></section>
-
-<section class="fb" style="background-image:url(fb_top.jpg)"><div class="in">
- <div class="k">2026.09.26</div>
- <h3>38年ぶり。<br>次は、2150年。</h3>
- <p>彼岸が明ける日に、大安と一粒万倍日が重なる。<br>あなたの人生で、一度きりです。</p>
-</div></section>
-
-<section class="sa"><div class="w">
- <div class="eb">WHY</div>
- <h2 class="r">なぜ、何度祓っても<br><span class="fire">戻ってきたのか</span></h2>
- <div class="rl"></div>
- <p class="r">邪気とか、念とか、いろんな呼び方があります。でも、実際にどう視えているかは、誰も言いません。</p>
- <p class="r d1">私には、<strong>濡れた布</strong>に視えます。</p>
- <p class="r d1">背中に、何枚も重なって張りついている。我慢するたびに、外から一枚ずつかぶさってくるものです。</p>
- <p class="r d2">1枚なら、そう重くありません。2枚でも、まだ動けます。<strong>でも、5枚を超えると。</strong></p>
- <div class="fig" style="max-width:250px">
-  <svg viewBox="0 0 260 180" fill="none">
-   <path class="rt" d="M70 44 h120 v22 h-120 z" stroke="#9d9184" stroke-width="1.4" opacity=".5"/>
-   <path class="rt" d="M64 68 h120 v22 h-120 z" stroke="#d0913f" stroke-width="1.4" opacity=".7"/>
-   <path class="rt" d="M70 92 h120 v22 h-120 z" stroke="#e0562a" stroke-width="1.6"/>
-   <path class="rt" d="M64 116 h120 v22 h-120 z" stroke="#e0562a" stroke-width="1.6"/>
-   <path d="M196 40 L228 26" stroke="#9d9184" stroke-width="1" stroke-dasharray="3 3"/>
-   <text x="196" y="22" fill="#9d9184" font-size="10.5">剥がした1枚</text>
-   <text x="60" y="160" fill="#f7ce85" font-size="10.5">その下に、また1枚</text>
-  </svg>
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title">
+ <div class="hero-image"><img src="assets/premium/hero-editorial.jpg" alt="深い紺の背景に光を受ける、クラック水晶のブレスレット" width="1024" height="1536" fetchpriority="high"></div>
+ <div class="hero-content">
+  <p class="eyebrow">ISSHI · CRYSTAL QUARTZ</p>
+  <p class="hero-intro">置き場所を、渡します。</p>
+  <h1 id="hero-title">七夜の器</h1>
+  <p class="hero-roman" lang="en">Nanayo no Utsuwa</p>
+  <p class="hero-copy">七夜、火のそばに置いていました。<br>剥がしたものを、受けるために。</p>
+  <div class="hero-edition"><span class="edition-line"></span>2026.09.26 彼岸明け<span>30個限定</span></div>
  </div>
- <p class="r">1枚剥がすと、その日は軽くなります。<strong>でも、剥がした場所に、別の1枚が入るんです。</strong></p>
- <blockquote class="r">何度も人に話してきた。話すたびに、一瞬は楽になる。でも次の日にはもう戻ってる。<br><em>それ、上の1枚だけ取られてきたんです。</em></blockquote>
- <p class="r d3">それに、枚数が多い方を視ると、そのほとんどが<strong>あなたのものではありません。</strong></p>
- <p class="r d3">誰かから預かったものです。だから、自分では下ろせない。持ち主が、違うので。</p>
-</div></section>
-
-<section class="fb" style="background-image:url(fb_blur.jpg)"><div class="in">
- <div class="k">NOT YOUR FAULT</div>
- <h3>あなたのせいじゃ、<br>なかった。</h3>
- <p>心がけが足りないとか、行いが悪いとか。<br>そう思ってきたと思います。違います。<br>枚数が、多すぎただけです。</p>
-</div></section>
-
-<section class="sa"><div class="w">
- <div class="eb">WHY YOU</div>
- <h2 class="r">なぜ、あなたが<br><span class="fire">選ばれたのか</span></h2>
- <div class="rl"></div>
- <p class="r">枚数が多い方は、たくさんいます。</p>
- <p class="r d1">でも、その下に、これだけのものが溜まっている方は、8万人視てきて、見たことがない。</p>
- <p class="r d2">長く詰まっていた水路ほど、通ったときの流れは強い。<strong>あなたが報われずにきた年月は、消えていません。溜まっているだけです。</strong></p>
- <p class="r d3">選ばれたのは、いちばん重かったからじゃない。<strong>いちばん、動くからです。</strong></p>
- <blockquote class="r">剥がしたら、動きます。<br><em>それも、大きく。</em></blockquote>
-</div></section>
-
-<section class="sb"><div class="w">
- <div class="eb">THE PROBLEM</div>
- <h2 class="r">剥がした布は、<br>どこかに置かないと<br>いけない</h2>
- <div class="rl"></div>
- <p class="r">全部いっぺんに剥がすしかありません。1枚ずつだと、下から出てくるので。</p>
- <p class="r d1">ただ、ここに問題があります。</p>
- <p class="r d2"><strong>剥がした布を、そのへんに置いたら。</strong>また誰かの背中に張りつきます。</p>
- <p class="r d3">置き場所が、要るんです。</p>
- <blockquote class="r">剥がした布は、置き場所を探します。見つからなければ、いちばん近い人に戻る。<br><em>——いちばん近い人、というのは。剥がしてもらった、本人です。</em></blockquote>
- <div class="illust r">
-<svg viewBox="0 0 584 320" xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <linearGradient id="cbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3efe8"/><stop offset="1" stop-color="#e6dfd3"/></linearGradient>
-  <radialGradient id="cst" cx="40%" cy="35%" r="60%"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#e8e2d8"/><stop offset="1" stop-color="#b8ae9f"/></radialGradient>
- </defs>
- <rect width="584" height="320" fill="url(#cbg)"/>
- <path d="M120 300 C120 200 150 150 200 150 C250 150 280 200 280 300Z" fill="#c9bfb2"/>
- <ellipse cx="200" cy="130" rx="34" ry="40" fill="#d6cdc0"/>
- <g opacity=".95">
-  <rect x="140" y="170" width="120" height="26" rx="6" fill="#9a9086" transform="rotate(-3 200 183)"/>
-  <rect x="146" y="196" width="120" height="26" rx="6" fill="#857b71" transform="rotate(2 206 209)"/>
-  <rect x="138" y="222" width="120" height="26" rx="6" fill="#6f665c" transform="rotate(-2 198 235)"/>
- </g>
- <g class="cloth-move">
-  <rect x="150" y="146" width="120" height="26" rx="6" fill="#b0a69a" transform="rotate(-8 210 159)"/>
- </g>
- <path class="rt" d="M300 170 C340 150 380 150 420 170" stroke="#b08a4a" stroke-width="1.4" fill="none" stroke-dasharray="4 4"/>
- <path d="M414 164 l8 6 l-9 3" stroke="#b08a4a" stroke-width="1.4" fill="none"/>
- <g transform="translate(470 210)">
-  <circle cx="0" cy="0" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
-  <circle cx="28" cy="6" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
-  <circle cx="14" cy="28" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
-  <circle cx="42" cy="32" r="14" fill="url(#cst)" stroke="#c9bfb2" stroke-width="1"/>
- </g>
- <ellipse cx="490" cy="270" rx="60" ry="8" fill="#b8ae9f" opacity=".35"/>
-</svg>
-<div class="illcap">剥がした布は、動かない物に移す。</div>
-</div>
- <p class="r">あなたが何度祓っても戻ってきたのは、祓った人が下手だったからではありません。</p>
- <p class="r d1"><strong>置き場所を、用意していなかっただけです。</strong></p>
- <p class="r d2">37カ国、どこの土地も、置き場所には必ず物を使っていました。人が受けている土地は、1つもなかった。</p>
- 
- <p class="r d3">持ったまま歩いて、行った先で落とす。だから、動かない物に置く。</p>
-</div></section>
-
-<section class="fb person" style="background-image:url(fb_isshi.jpg)"><div class="in">
- <div class="k">FROM ISSHI</div>
- <h3>私は、受けられません。<br>人は動くので。</h3>
- <p>私は、剥がすだけです。<br>受けるのは、あなたのそばに置く、この石です。</p>
-</div></section>
-
-<section class="sa"><div class="w">
- <div class="eb">CASE</div>
- <h2 class="r">62歳の方に、<br><span class="fire">起きたこと</span></h2>
- <div class="rl"></div>
- <p class="r">夫の親の介護をしながら、パートに出て、家に帰ればまた家事。誰にも文句を言わず、10年。</p>
- <p class="r d1">その方が書いてきた一行は、<strong>「もう、何も感じません」</strong>でした。</p>
- <p class="r d2">背中を視ました。布が、7枚。そのうち5枚は、その方のものではありませんでした。</p>
- <p class="r d2">ご主人の分。お義母さんの分。実のお母さんの分。それから、名前も知らない、どなたかの分。</p>
- <div class="case r">
-  <p>その方がしたことは、枕元に置いた。それだけです。</p>
-  <p>3日後、連絡が来ました。<strong>「10年ぶりに、朝まで眠れました」</strong></p>
-  <p>そして、3週間後。<strong>20年、口をきいていなかった義理の妹さん</strong>から、電話が来たそうです。理由は、なかったそうです。ただ、急に声が聞きたくなった、と。</p>
-  <p>背中の5枚のうち、いちばん下の1枚が、その妹さんのものでした。でも私は、妹さんの話を一度もしていません。</p>
-  <p class="q">「いっしーさん。私、10年ぶりに、笑いました」</p>
-  <p>その方は、何かを新しく手に入れたんじゃありません。20年、電話は来なかったんじゃなくて、来られなかった。布が、ふさいでいたので。</p>
+ <a class="hero-scroll" href="#stone"><span>この石について</span><span class="scroll-line" aria-hidden="true"></span></a>
+ <span class="hero-caption">IMAGE VISUAL</span>
+</section>
+<div class="essentials" aria-label="商品の概要"><span>クリスタルクォーツ</span><span>30個限定</span><span>税込・送料無料</span></div>
+<section class="product section" id="stone" aria-labelledby="stone-title">
+ <div class="container">
+  <div class="section-heading reveal"><p class="eyebrow"><span>01</span> THE OBJECT</p><h2 id="stone-title">透明な一粒に、<br>ひとつずつの表情。</h2><p class="section-lead">光の角度で見え方を変える、<br class="mobile-only">クラック入りのクリスタルクォーツ。</p></div>
+  <div class="product-layout">
+   <div class="gallery reveal">
+    <div class="gallery-main"><img id="gallery-image" src="assets/images/stone.jpg" alt="七夜の器の全体像" width="1400" height="1050" loading="lazy" decoding="async"></div>
+    <div class="gallery-bottom"><p id="gallery-caption" aria-live="polite">01 — 全体の佇まい</p><span>CRYSTAL QUARTZ</span></div>
+    <div class="gallery-thumbs" role="group" aria-label="商品写真を切り替える">
+     <button type="button" class="selected" aria-pressed="true" data-image="assets/images/stone.jpg" data-caption="01 — 全体の佇まい" data-alt="七夜の器の全体像" aria-label="写真1：全体の佇まい"><img src="assets/images/stone.jpg" alt="" width="1400" height="1050" loading="lazy"></button>
+     <button type="button" aria-pressed="false" data-image="assets/images/stone_close.jpg" data-caption="02 — 一粒の表情" data-alt="透明な水晶の内部に見えるクラック" aria-label="写真2：一粒の表情"><img src="assets/images/stone_close.jpg" alt="" loading="lazy"></button>
+     <button type="button" aria-pressed="false" data-image="assets/images/stone_right.jpg" data-caption="03 — 光を受ける側面" data-alt="光を受けるブレスレットの側面" aria-label="写真3：光を受ける側面"><img src="assets/images/stone_right.jpg" alt="" loading="lazy"></button>
+    </div>
+    <p class="note">天然石のため、色・模様・クラックの入り方は一点ずつ異なります。商品写真は参考画像です。</p>
+   </div>
+   <div class="product-description reveal">
+    <p class="small-label">七夜の器について</p><h3>選び、確かめ、<br>あなたのもとへ。</h3>
+    <p>現地で選定した石を、動画で全数確認。さらに手に取り、一つずつ選別しています。</p>
+    <dl class="specs"><div><dt>石</dt><dd>クリスタルクォーツ（水晶）<br>クラック入り</dd></div><div><dt>形状</dt><dd>ブレスレット</dd></div><div><dt>選定基準</dt><dd>濁りのないもの。<br>色を帯びたものは使いません。</dd></div><div><dt>七夜の期間</dt><dd>2026年9月20日〜26日</dd></div></dl>
+    <a class="text-link" href="#order">価格とお迎えのご案内を見る <span aria-hidden="true">↓</span></a>
+   </div>
+  </div>
  </div>
- <p class="r">流れは、切れていません。あなたにも、ずっと通っています。</p>
- <p class="r d1">次にこの石を手にするのは、鑑定で選ばれた、あなたです。</p>
-</div></section>
-
-<section class="fb" style="background-image:url(stone_sepia.jpg)"><div class="in">
- <div class="k">20 YEARS</div>
- <h3>来なかったんじゃない。<br>来られなかった。</h3>
- <p>布が、ふさいでいたので。<br>剥がすだけで、いい。</p>
-</div></section>
-<section class="sc"><div class="w">
- <div class="eb">THE STONE</div>
- <h2 class="r"><span class="fire">七夜の器</span></h2>
- <div class="rl"></div>
- <p class="r">クリスタルクォーツ。水晶です。<strong>何の色も、持っていません。</strong></p>
- <p class="r d1">色があるということは、もう何かを受けている、ということです。</p>
- <p class="r d2"><strong>何も持っていないから、受ける側になれます。</strong></p>
- <div class="ph2 r"><div class="phb"><img src="stone_close.jpg" alt="クラック"></div><div class="phb"><img src="stone_right.jpg" alt="七夜の器"></div></div><div class="cap" style="text-align:center;font-size:11px;color:var(--tx2);letter-spacing:.14em;margin-top:-14px">中のひびは、受けた跡です</div>
- <table class="sp r">
-  <tr><th>石</th><td>クリスタルクォーツ（水晶）／クラック入り</td></tr>
-  <tr><th>形状</th><td>ブレスレット</td></tr>
-  <tr><th>選定</th><td>現地で選定後、動画で全数確認。手に取って再度選別</td></tr>
-  <tr><th>基準</th><td>濁りのないもの。色を帯びたものは使いません</td></tr>
-  <tr><th>期間</th><td>2026年9月20日〜26日</td></tr>
- </table>
- <div class="illust r">
-<svg viewBox="0 0 584 320" xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <linearGradient id="isky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a120c"/><stop offset="1" stop-color="#3a2415"/></linearGradient>
-  <radialGradient id="ifire" cx="50%" cy="100%" r="55%"><stop offset="0" stop-color="#f7ce85" stop-opacity=".95"/><stop offset=".35" stop-color="#e0562a" stop-opacity=".55"/><stop offset="1" stop-color="#e0562a" stop-opacity="0"/></radialGradient>
-  <radialGradient id="istone" cx="40%" cy="35%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".6" stop-color="#e8e2d8" stop-opacity=".5"/><stop offset="1" stop-color="#9d9184" stop-opacity=".2"/></radialGradient>
- </defs>
- <rect width="584" height="320" fill="url(#isky)"/>
- <ellipse cx="292" cy="300" rx="260" ry="60" fill="url(#ifire)"/>
- <g class="flame">
-  <path d="M292 262 C270 236 268 214 292 190 C316 214 314 236 292 262Z" fill="#e0562a" opacity=".85"/>
-  <path d="M292 254 C280 238 280 224 292 208 C304 224 304 238 292 254Z" fill="#f7ce85" opacity=".9"/>
- </g>
- <g opacity=".85"><rect x="150" y="254" width="72" height="44" rx="2" fill="#f3efe8" transform="rotate(-6 186 276)"/><rect x="164" y="258" width="72" height="44" rx="2" fill="#ebe5db" transform="rotate(3 200 280)"/></g>
- <g transform="translate(372 262)">
-  <circle cx="0" cy="0" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
-  <circle cx="22" cy="4" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
-  <circle cx="44" cy="0" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
-  <circle cx="11" cy="20" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
-  <circle cx="33" cy="22" r="11" fill="url(#istone)" stroke="#ece6dc" stroke-width=".8"/>
- </g>
- <g fill="#f7ce85" opacity=".7"><circle cx="230" cy="120" r="1.2"/><circle cx="350" cy="90" r="1"/><circle cx="410" cy="150" r="1.4"/><circle cx="180" cy="170" r=".9"/><circle cx="300" cy="60" r="1.1"/></g>
-</svg>
-<div class="illcap">七夜、2000の一行を燃やした火のそばに。</div>
-</div>
-</div></section>
-<section class="sc"><div class="w">
- <p class="r d1">中に入っているひびは、割れているのではありません。<strong>受けた跡です。</strong></p>
- <p class="r d1">濁りのあるもの、うっすら色を帯びたものは、置き場所になりません。すでに何かを受けているので、受けきれずに割れます。</p>
- <p class="r d2"><strong>残ったのは、30個でした。</strong></p>
- <p class="r">弾いたぶんは、数百個になりました。</p>
- <p class="r d1">売れば、数百万円にはなります。でも、処分しました。</p>
- <p class="r d2">七夜は、昨夜で終わりました。<strong>あとから買ってきて、同じ場所に置くことはできません。</strong></p>
- <blockquote class="r">置き場所にならないものを、誰かが手にすることになるので。<br><em></em></blockquote>
-</div></section>
-
-<div class="bd"></div>
-
-<section class="fb" style="background-image:url(fb_dark.jpg)"><div class="in">
- <div class="k">HONESTLY</div>
- <h3>値段じゃ、ありません。<br>通ったかどうか。</h3>
- <p>水晶は、どこでも買えます。<br>でも、七夜を通した石は、これだけです。</p>
-</div></section>
-
-<section class="sa"><div class="w">
- <div class="eb">PRICE</div>
- <h2 class="r">価格について</h2>
- <div class="rl"></div>
- <p class="r d1">高くすると、いちばん重い人に届かなくなる。</p>
- <div class="orn"><i></i></div>
- <p class="r">この石は、これまで<strong>150,000円</strong>でお渡ししてきました。</p>
- <p class="r d1">今回は、七夜を通した30個だけ、<strong>79,800円</strong>にします。半額以下です。</p>
- <p class="r d2">理由は、ひとつだけ。38年ぶりの彼岸に、いちばん重い方へ届けたいからです。次の彼岸に、この値段はありません。</p>
- <div class="orn"><i></i></div>
- <div class="ph r"><div class="phb"><img src="stone_sepia.jpg" alt="七夜の器"></div><div class="cap">七夜を過ごした、30のうちの1つ</div></div>
- <div class="pr r">
-  <div class="tg">今回限りの価格</div>
-  <div class="ws">通常価格 <b>150,000</b>円（税込）</div>
-  <div class="nw">79,800<small>円</small></div>
-  <div class="off">70,200円引き ｜ 半額以下</div>
-  <div class="mt">税込・送料無料</div>
-  <div class="nt">通常価格は、当ストアでの過去の販売価格です。</div>
-  <div class="lm">30個限定 ｜ なくなり次第終了</div>
+</section>
+<section class="story section" id="story" aria-labelledby="story-title">
+ <div class="container story-layout">
+  <div class="story-intro reveal"><p class="eyebrow"><span>02</span> THE STORY</p><h2 id="story-title">ここまで見てくださった<br>あなたへ。</h2><p class="story-lead">七夜、火のそばに<br>置いてきたものがあります。</p><p>この石に込めた想いと、<br>「置き場所」を用意するということ。<br>いっしーの言葉で、お伝えします。</p><div class="signature"><img src="assets/images/isshi.jpg" alt="いっしー" width="120" height="120" loading="lazy"><div><span>スピリチュアルヒーラー</span><strong>いっしー</strong><small>37カ国・8万人</small></div></div></div>
+  <div class="story-reading reveal"><p class="reading-label">読みたい章を開いてご覧ください</p><details class="story-chapter"><summary>ここまで見てくださった、あなたへ<span class="plus" aria-hidden="true"></span></summary><div class="chapter-body"><p>昨夜、お伝えしましたよね。</p>
+<p><strong>7枚。うち5枚は、あなたのものではなかった。</strong></p>
+<p>そして、10人に1人。剥がしたら、とんでもなく動く方。あなたは、そのお一人でした。</p>
+<p>2000人の中から、視えた方だけに、この場所を開いています。</p>
+<p>その方たちのために、七夜、火のそばに置いてきたものがあります。</p>
+<p><strong>それが、これです。</strong></p></div></details>
+<details class="story-chapter"><summary>「置き場所」を用意するということ<span class="plus" aria-hidden="true"></span></summary><div class="chapter-body"><h4>なぜ、何度祓っても戻ってきたのか</h4><p>邪気とか、念とか、いろんな呼び方があります。でも、実際にどう視えているかは、誰も言いません。</p>
+<p>私には、<strong>濡れた布</strong>に視えます。</p>
+<p>背中に、何枚も重なって張りついている。我慢するたびに、外から一枚ずつかぶさってくるものです。</p>
+<p>1枚なら、そう重くありません。2枚でも、まだ動けます。<strong>でも、5枚を超えると。</strong></p>
+<p>1枚剥がすと、その日は軽くなります。<strong>でも、剥がした場所に、別の1枚が入るんです。</strong></p>
+<p>それに、枚数が多い方を視ると、そのほとんどが<strong>あなたのものではありません。</strong></p>
+<p>誰かから預かったものです。だから、自分では下ろせない。持ち主が、違うので。</p><h4>なぜ、あなたが選ばれたのか</h4><p>枚数が多い方は、たくさんいます。</p>
+<p>でも、その下に、これだけのものが溜まっている方は、8万人視てきて、見たことがない。</p>
+<p>長く詰まっていた水路ほど、通ったときの流れは強い。<strong>あなたが報われずにきた年月は、消えていません。溜まっているだけです。</strong></p>
+<p>選ばれたのは、いちばん重かったからじゃない。<strong>いちばん、動くからです。</strong></p><h4>剥がした布は、どこかに置かないといけない</h4><p>全部いっぺんに剥がすしかありません。1枚ずつだと、下から出てくるので。</p>
+<p>ただ、ここに問題があります。</p>
+<p><strong>剥がした布を、そのへんに置いたら。</strong>また誰かの背中に張りつきます。</p>
+<p>置き場所が、要るんです。</p>
+<p>あなたが何度祓っても戻ってきたのは、祓った人が下手だったからではありません。</p>
+<p><strong>置き場所を、用意していなかっただけです。</strong></p>
+<p>37カ国、どこの土地も、置き場所には必ず物を使っていました。人が受けている土地は、1つもなかった。</p>
+<p>持ったまま歩いて、行った先で落とす。だから、動かない物に置く。</p></div></details>
+<details class="story-chapter"><summary>62歳の方に、起きたこと<span class="plus" aria-hidden="true"></span></summary><div class="chapter-body"><p>夫の親の介護をしながら、パートに出て、家に帰ればまた家事。誰にも文句を言わず、10年。</p>
+<p>その方が書いてきた一行は、<strong>「もう、何も感じません」</strong>でした。</p>
+<p>背中を視ました。布が、7枚。そのうち5枚は、その方のものではありませんでした。</p>
+<p>ご主人の分。お義母さんの分。実のお母さんの分。それから、名前も知らない、どなたかの分。</p>
+<p>その方がしたことは、枕元に置いた。それだけです。</p>
+<p>3日後、連絡が来ました。<strong>「10年ぶりに、朝まで眠れました」</strong></p>
+<p>そして、3週間後。<strong>20年、口をきいていなかった義理の妹さん</strong>から、電話が来たそうです。理由は、なかったそうです。ただ、急に声が聞きたくなった、と。</p>
+<p>背中の5枚のうち、いちばん下の1枚が、その妹さんのものでした。でも私は、妹さんの話を一度もしていません。</p>
+<p>「いっしーさん。私、10年ぶりに、笑いました」</p>
+<p>その方は、何かを新しく手に入れたんじゃありません。20年、電話は来なかったんじゃなくて、来られなかった。布が、ふさいでいたので。</p>
+<p>流れは、切れていません。あなたにも、ずっと通っています。</p>
+<p>次にこの石を手にするのは、鑑定で選ばれた、あなたです。</p><p class="note">個人の体験であり、同様の結果を保証するものではありません。</p></div></details>
+<details class="story-chapter"><summary>七夜を通した、30個のこと<span class="plus" aria-hidden="true"></span></summary><div class="chapter-body"><h4>38年ぶり。次は、2150年。</h4><p>彼岸が明ける日に、大安と一粒万倍日が重なる。<br>あなたの人生で、一度きりです。</p><p>中に入っているひびは、割れているのではありません。<strong>受けた跡です。</strong></p>
+<p>濁りのあるもの、うっすら色を帯びたものは、置き場所になりません。すでに何かを受けているので、受けきれずに割れます。</p>
+<p><strong>残ったのは、30個でした。</strong></p>
+<p>弾いたぶんは、数百個になりました。</p>
+<p>売れば、数百万円にはなります。でも、処分しました。</p>
+<p>七夜は、昨夜で終わりました。<strong>あとから買ってきて、同じ場所に置くことはできません。</strong></p><p>水晶は、どこでも買えます。<br>でも、七夜を通した石は、これだけです。</p></div></details>
+<details class="story-chapter"><summary>最後に、いっしーより<span class="plus" aria-hidden="true"></span></summary><div class="chapter-body"><p>あなたは、今まで何も間違っていません。</p>
+<p>盛り塩も、神社も、占いも。全部、正しかった。上の1枚は、ちゃんと剥がれていた。</p>
+<p>ただ、下に何枚あるかを、誰も見なかった。置き場所を、誰も用意しなかった。それだけです。</p>
+<p><strong>あなたのせいじゃなかった。</strong>私は、それを言いに来ました。</p>
+<p>もし今、「こんなに高いものを、私なんかが」と胸がざわついているなら。</p>
+<p>それは、いちばん下の1枚が、まだ張りついている音です。5人分を背負ってきた方ほど、自分のためにお金を使うことに、いちばん抵抗があります。</p>
+<p>でも、あなたは視えた方です。<strong>剥がしたら、大きく動く方です。</strong></p>
+<p><strong>迷っている、その気持ちごと。</strong>連れて、いきましょう。</p></div></details></div>
  </div>
- <div class="perday r"><small>3年そばに置けば</small><b>1日あたり、約73円</b><small>不安になるたびに占いに通えば、月1万円、年10万円以上。それがこの先ずっと続きます。この石は、一度きりです。</small></div>
- <div class="pay r"><span>クレジットカード</span><span>コンビニ決済</span><span>銀行振込</span><span>PayPay</span><span>楽天ペイ</span><span>PayPal</span><span>キャリア決済</span></div>
- <a class="cta" href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">受け取る</a>
- <div class="cs">30個限定 ｜ 今回限り 79,800円（通常150,000円）</div>
-</div></section>
-
-<div class="bw"></div>
-
-<section class="sb"><div class="w">
- <div class="eb">FOR / NOT FOR</div>
- <h2 class="r">こんな方に</h2>
- <div class="rl"></div>
- <ul class="ul">
-  <li class="rx">何度祓っても、また戻ってきた方</li>
-  <li class="rx">寝ても取れない疲れがある方</li>
-  <li class="rx">家族の中で、いちばん先に気づいてしまう方</li>
-  <li class="rx">誰にも言わずに、飲み込んできた方</li>
- </ul>
- <h3 class="r" style="margin-top:44px;font-size:15.5px;color:var(--am-hi);letter-spacing:.2em;text-align:center">こんな方には、お勧めしません</h3>
- <div class="rl"></div>
- <p class="r">食費や光熱費を削って、というのは、やめてください。</p>
- <p class="r d1">それをすると、また新しい重さが乗ります。本末転倒なので。</p>
- <p class="r d2">それと、「これさえあれば」と思っている方。</p>
- <p class="r d3"><strong>石は、置き場所です。あなたの代わりに生きてはくれません。</strong></p>
-</div></section>
-
-<section class="fb" style="background-image:url(fb_close.jpg)"><div class="in">
- <div class="k">YOUR TURN</div>
- <h3>今回だけは、<br>自分の順番を先に。</h3>
- <p>何十年も、後ろに回してきた方へ。<br>はじめて、自分のために置くもの。</p>
-</div></section>
-<section class="sa"><div class="w">
- <div class="eb">FLOW</div>
- <h2 class="r">お迎えの流れ</h2>
- <div class="rl"></div>
- <p class="r" style="text-align:center;font-size:14px;color:var(--tx2)">お迎えは、公式ストア（STORES）にて承ります。手順は4つだけです。</p>
- <div class="st2 rx"><div class="n lat">1</div><div><h3>「カートに入れる」を押す</h3><p>下のボタンから公式ストアへ進み、カートに入れてください。</p></div></div>
- <div class="st2 rx"><div class="n lat">2</div><div><h3>購入方法を選ぶ</h3><p>ゲスト購入でも、会員登録して購入でも、どちらでも大丈夫です。</p></div></div>
- <div class="st2 rx"><div class="n lat">3</div><div><h3>お支払い方法を選ぶ</h3><p>クレジットカード・コンビニ決済・銀行振込など、お選びいただけます。</p></div></div>
- <div class="st2 rx"><div class="n lat">4</div><div><h3>注文完了 → LINEへスクリーンショット</h3><p>ご注文確定後、購入画面のスクリーンショットをLINEへお送りください。確認でき次第、一つずつ仕上げて、1ヶ月ほどでお届けします。</p></div></div>
-</div></section>
-
-<section class="sb"><div class="w">
- <div class="eb">AFTER PURCHASE</div>
- <h2 class="r">ご購入後に、必ず<br>お願いしたいこと</h2>
- <div class="rl"></div>
- <div class="after-box r">
-  <h3>下記2点を、いっしーのLINEへ</h3>
-  <ol>
-   <li>お名前（決済されたときのお名前）</li>
-   <li>決済後、メールに届く<b>購入画面のスクリーンショット</b></li>
-  </ol>
-  <p style="font-size:15px;margin-bottom:0">お送りいただいたスクリーンショットで、あなたのご購入を確認し、<strong>あなたの一行を結んで</strong>、仕上げに入ります。</p>
-  <p class="warn">スクリーンショットの確認が取れない場合、ご購入の確認ができず、<b>発送のお手続きに進めません</b>。必ずお送りください。</p>
+</section>
+<section class="ritual section" aria-labelledby="ritual-title">
+ <div class="container ritual-layout">
+  <figure class="ritual-photo reveal"><img src="assets/images/stone_corner.jpg" alt="静かな場所に置いた七夜の器" width="1000" height="800" loading="lazy" decoding="async"><figcaption>枕元でも、玄関でも。</figcaption></figure>
+  <div class="ritual-content reveal"><p class="eyebrow"><span>03</span> THE FIRST NIGHT</p><h2 id="ritual-title">届いたら、<br>あなたのそばに。</h2><p>最初の夜にすることは、3つだけ。<br>頑張って何かをする必要は、ありません。</p><ol class="ritual-steps"><li><span>01</span>箱から出して、手のひらにのせる</li><li><span>02</span>置く場所を決める</li><li><span>03</span>そのまま、眠る</li></ol><p class="note">効果のあらわれ方には個人差があり、何かを保証するものではありません。</p></div>
  </div>
-</div></section>
-
-<div class="bd"></div>
-
-<section class="sb"><div class="w">
- <div class="eb">AFTER</div>
- <h2 class="r">届いたら、<br>これだけしてください</h2>
- <div class="rl"></div>
- <div class="ph r"><div class="phb"><img src="stone_corner.jpg" alt="置き場所"></div><div class="cap">枕元でも、玄関でも</div></div>
- <div class="cd r">
-  <h3>最初の夜に</h3>
-  <ol><li>箱から出して、手のひらにのせる</li><li>置く場所を決める（枕元でも、玄関でも）</li><li>そのまま、眠る</li></ol>
-  <p style="font-size:13.5px;color:var(--tx2);margin-bottom:0">それだけです。頑張って何かをする必要は、ありません。</p>
-  <div class="orn"><i></i></div>
+</section>
+<section class="offer section" id="order" aria-labelledby="order-title">
+ <div class="container offer-layout">
+  <div class="offer-visual reveal"><img src="assets/images/stone.jpg" alt="七夜の器 クリスタルクォーツのブレスレット" width="1400" height="1050" loading="lazy" decoding="async"><div class="offer-visual-caption"><span>七夜の器</span><span>LIMITED TO 30</span></div></div>
+  <div class="offer-details reveal"><p class="eyebrow"><span>04</span> YOUR OWN PIECE</p><h2 id="order-title">七夜の器を、<br>お迎えする。</h2><p class="offer-type">クリスタルクォーツ / ブレスレット</p><p class="normal-price">通常価格 <s>150,000円</s></p><div class="price"><span>79,800</span><small>円</small></div><p class="price-note">今回限りの価格・税込・送料無料</p><p class="availability"><span aria-hidden="true"></span>30個限定 / なくなり次第終了</p><a class="button primary" href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">公式ストアでお迎えする <span aria-hidden="true">↗</span></a><p class="secure-note">STORESの販売ページへ移動します</p><p class="delivery-note">お届けの目安：ご注文確定後、1ヶ月ほど</p>
+  <details class="offer-more"><summary>価格・お支払いについて<span class="plus" aria-hidden="true"></span></summary><div class="an"><p>通常価格は、当ストアでの過去の販売価格です。今回は79,800円でご案内しています。</p><p>クレジットカード、コンビニ決済、銀行振込、PayPay、楽天ペイ、PayPal、キャリア決済に対応しています。詳しくは販売ページでご確認ください。</p><p>銀行振込の振込手数料はお客様のご負担となります。</p></div></details>
+  </div>
  </div>
-</div></section>
-
-<section class="fb" style="background-image:url(fb_bottom.jpg)"><div class="in">
- <div class="k">AFTER</div>
- <h3>置いた人から、<br>動きます。</h3>
- <p>3日後に、眠れるようになった方。<br>3週間後に、20年止まっていたものが動いた方。<br>何が起きるかは、私にも選べません。</p>
-</div></section>
-
-<section class="sa"><div class="w">
- <div class="eb">Q &amp; A</div>
- <h2 class="r">よくあるご質問</h2>
- <div class="rl"></div>
- <details><summary>返品・交換はできますか？</summary><div class="an">申し訳ありません。この石は一つずつ、お迎えになる方を視て仕上げている1点ものです。そのため、<b>お客様のご都合による返品・交換はお受けできません</b>。だからこそ、迷いがあるうちは、無理に手にしないでください。万が一、お届けの際の破損など明らかな不備があった場合は、商品到着後7日以内にLINEでご連絡ください。</div></details>
- <details><summary>いつ届きますか？</summary><div class="an">ご注文確定後、<b>1ヶ月ほど</b>でお届けします。一つずつ仕上げるため、まとめて発送ができません。発送が完了しましたら、LINEでお知らせします。</div></details>
- <details><summary>分割払いはできますか？</summary><div class="an">当ストアでは分割払いに対応しておりません。クレジットカードでお支払いいただいた場合、お持ちのカード会社の「あとから分割」サービスをご利用いただけることがあります。詳しくはお使いのカード会社にお問い合わせください。</div></details>
- <details><summary>銀行振込について教えてください</summary><div class="an">対応しております。ご注文後、STORESからお送りするメール内に振込先情報が記載されますので、そちらにお振込みください。振込手数料はお客様ご負担となります。</div></details>
- <details><summary>写真と実物が違うことはありますか？</summary><div class="an">天然石のため、色、模様、クラックの入り方が一点ずつ異なります。<b>中のひびは、割れではなく受けた跡です。</b>掲載している商品画像は参考画像で、ご利用の画面により実物の色と異なって見えることがあります。</div></details>
- <details><summary>必ず運が良くなりますか？</summary><div class="an">正直に、お答えします。効果のあらわれ方には<b>個人差があり、何かを保証するものではありません</b>。急に何かが変わるものでもありません。ただ、ひとつ言えるのは、変わっていった方はみなさん、「そばに置いて、何もしなかった」方たちだった、ということです。</div></details>
- <details><summary>30個売り切れたあと、再販はありますか？</summary><div class="an">ありません。七夜を通した石は、七夜が終わった今、もう作れません。あとから同じ場所に置くこともできません。</div></details>
-</div></section>
-
-<div class="bw"></div>
-
-<section class="sb lastc"><div class="w">
- <h2 class="r"><span class="fire">最後に</span></h2>
- <div class="rl"></div>
- <p class="r">あなたは、今まで何も間違っていません。</p>
- <p class="r d1">盛り塩も、神社も、占いも。全部、正しかった。上の1枚は、ちゃんと剥がれていた。</p>
- <p class="r d2">ただ、下に何枚あるかを、誰も見なかった。置き場所を、誰も用意しなかった。それだけです。</p>
- <p class="r d3"><strong>あなたのせいじゃなかった。</strong>私は、それを言いに来ました。</p>
- <div class="orn"><i></i></div>
- <div class="orn"><i></i></div>
- <p class="r">もし今、「こんなに高いものを、私なんかが」と胸がざわついているなら。</p>
- <p class="r d1">それは、いちばん下の1枚が、まだ張りついている音です。5人分を背負ってきた方ほど、自分のためにお金を使うことに、いちばん抵抗があります。</p>
- <p class="r d2">でも、あなたは視えた方です。<strong>剥がしたら、大きく動く方です。</strong></p>
- <p class="r d3"><strong>迷っている、その気持ちごと。</strong>連れて、いきましょう。</p>
- <div class="phw r"><img src="stone_sepia.jpg" alt="七夜の器"></div>
- <div class="sig r"><div class="av"><img src="isshi.jpg" alt="いっしー"></div><div class="t"><b>いっしー</b>スピリチュアルヒーラー</div></div>
- <div class="seal">いっしー</div>
- <a class="cta" href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">受け取る</a>
- <div class="cs">30個限定 ｜ なくなり次第終了</div>
- <div class="lg">効果のあらわれ方には個人差があり、何かを保証するものではありません。<br>医療行為ではありません。体調に不安のある方は、専門機関にご相談ください。</div>
-</div></section>
-
-<footer><div class="w">スピリチュアルヒーラー いっしー<br>
-<a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/tokushoho">特定商取引法に基づく表記</a> ｜ <a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/privacy_policy">プライバシーポリシー</a></div></footer>
-<div class="bar"><a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">受け取る<span class="s">今回限り 79,800円 ｜ 通常150,000円</span></a></div>
-
-<script>
-(function(){
- var k=document.getElementById('sk');
- if(k&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
-  var n=window.innerWidth<600?8:14;
-  for(var i=0;i<n;i++){var s=document.createElement('i');
-   s.style.left=(Math.random()*100)+'%';
-   s.style.setProperty('--dx',(Math.random()*70-35)+'px');
-   s.style.animationDuration=(9+Math.random()*8)+'s';
-   s.style.animationDelay=(-Math.random()*16)+'s';
-   k.appendChild(s)}}
- var pg=document.getElementById('pg'),bar=document.querySelector('.bar'),h=document.querySelector('.hero'),tk=false;
- function tick(){
-  var st=window.scrollY,dh=document.body.scrollHeight-innerHeight;
-  if(pg)pg.style.width=(dh>0?st/dh*100:0)+'%';
-  if(bar&&h)bar.classList.toggle('on',st>h.offsetHeight*.65);
-  tk=false}
- addEventListener('scroll',function(){if(!tk){requestAnimationFrame(tick);tk=true}},{passive:true});
- tick();
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -8% 0px'});
- document.querySelectorAll('.r,.rx,.tl,.up,.fig').forEach(function(el){io.observe(el)});
- document.querySelectorAll('.up').forEach(function(el){
-  var t=el.textContent;el.textContent='';
-  [].forEach.call(t,function(c,i){var s=document.createElement('span');s.textContent=c;s.style.transitionDelay=(i*.05)+'s';el.appendChild(s)})});
-})();
-</script>
-<script>
-(function(){
- var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
- var hs=document.getElementById('hsp');
- if(hs&&!rm){for(var i=0;i<12;i++){var s=document.createElement('i');s.style.left=(Math.random()*100)+'%';s.style.setProperty('--dx',(Math.random()*60-30)+'px');s.style.animationDuration=(9+Math.random()*8)+'s';s.style.animationDelay=(-Math.random()*16)+'s';hs.appendChild(s)}}
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
- document.querySelectorAll('.fb,.kv').forEach(function(el){io.observe(el)});
- var fbs=[].slice.call(document.querySelectorAll('.fb')),t=false;
- function px(){fbs.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.setProperty('--py',(p*-44).toFixed(1)+'px')});t=false}
- var rest=[].slice.call(document.querySelectorAll('.r,.rx,.tl,.up,.fig,.fb,.kv'));
- function fs(){var vh=innerHeight*0.96;rest=rest.filter(function(el){if(el.classList.contains('on'))return false;var r=el.getBoundingClientRect();if(r.top<vh&&r.height>0){el.classList.add('on');return false}return true})}
- function onscroll(){if(!t){requestAnimationFrame(function(){px();fs()});t=true}}
- addEventListener('scroll',onscroll,{passive:true});addEventListener('resize',onscroll);px();fs();setTimeout(fs,1200);
- var nw=document.querySelector('.pr .nw');
- if(nw&&!rm&&nw.firstChild&&nw.firstChild.nodeType===3){var io2=new IntersectionObserver(function(es){if(es[0].isIntersecting){io2.disconnect();var st=null;nw.firstChild.nodeValue='0';function step(ts){if(!st)st=ts;var k=Math.min(1,(ts-st)/1500);k=1-Math.pow(1-k,3);nw.firstChild.nodeValue=Math.round(79800*k).toLocaleString();if(k<1)requestAnimationFrame(step)}requestAnimationFrame(step)}},{threshold:.5});io2.observe(nw)}
-})();
-</script>
+</section>
+<section class="guide section" id="guide" aria-labelledby="guide-title">
+ <div class="container guide-layout">
+  <div class="reveal"><p class="eyebrow"><span>05</span> HOW TO ORDER</p><h2 id="guide-title">お迎えから、<br>お届けまで。</h2><p class="section-lead">お手続きは公式ストアで。<br>ご購入後は、いっしーのLINEへ。</p></div>
+  <div class="reveal"><ol class="order-steps"><li><span class="step-number">01</span><div><h3>公式ストアで商品を選ぶ</h3><p>販売ページの「カートに入れる」を押します。</p></div></li><li><span class="step-number">02</span><div><h3>購入方法とお支払いを選ぶ</h3><p>ゲスト購入・会員購入のどちらでもお手続きいただけます。</p></div></li><li><span class="step-number">03</span><div><h3>ご購入後、LINEへご連絡</h3><p>決済時のお名前と、購入画面のスクリーンショットをお送りください。</p></div></li><li><span class="step-number">04</span><div><h3>一つずつ仕上げて、お届け</h3><p>ご注文確定後、1ヶ月ほどでお届けします。発送が完了しましたら、LINEでお知らせします。</p></div></li></ol>
+  <div class="purchase-notice"><h3>ご購入後にお送りいただくもの</h3><ul><li>お名前（決済されたときのお名前）</li><li>決済後、メールに届く購入画面のスクリーンショット</li></ul><p>上記2点を、いっしーのLINEへお送りください。確認後、あなたの一行を結んで仕上げに入ります。</p><p class="note">スクリーンショットの確認が取れない場合、発送のお手続きに進めません。</p></div>
+  </div>
+ </div>
+</section>
+<section class="faq section" id="faq" aria-labelledby="faq-title"><div class="container faq-layout"><div class="reveal"><p class="eyebrow"><span>06</span> QUESTIONS & ANSWERS</p><h2 id="faq-title">ご購入前の<br>ご案内。</h2><p class="section-lead">気になることを、<br>ひとつずつ。</p></div><div class="faq-list reveal"><details><summary>返品・交換はできますか？<span class="plus" aria-hidden="true"></span></summary><div class="an">申し訳ありません。この石は一つずつ、お迎えになる方を視て仕上げている1点ものです。そのため、<b>お客様のご都合による返品・交換はお受けできません</b>。だからこそ、迷いがあるうちは、無理に手にしないでください。万が一、お届けの際の破損など明らかな不備があった場合は、商品到着後7日以内にLINEでご連絡ください。</div></details>
+ <details><summary>いつ届きますか？<span class="plus" aria-hidden="true"></span></summary><div class="an">ご注文確定後、<b>1ヶ月ほど</b>でお届けします。一つずつ仕上げるため、まとめて発送ができません。発送が完了しましたら、LINEでお知らせします。</div></details>
+ <details><summary>分割払いはできますか？<span class="plus" aria-hidden="true"></span></summary><div class="an">当ストアでは分割払いに対応しておりません。クレジットカードでお支払いいただいた場合、お持ちのカード会社の「あとから分割」サービスをご利用いただけることがあります。詳しくはお使いのカード会社にお問い合わせください。</div></details>
+ <details><summary>銀行振込について教えてください<span class="plus" aria-hidden="true"></span></summary><div class="an">対応しております。ご注文後、STORESからお送りするメール内に振込先情報が記載されますので、そちらにお振込みください。振込手数料はお客様ご負担となります。</div></details>
+ <details><summary>写真と実物が違うことはありますか？<span class="plus" aria-hidden="true"></span></summary><div class="an">天然石のため、色、模様、クラックの入り方が一点ずつ異なります。<b>中のひびは、割れではなく受けた跡です。</b>掲載している商品画像は参考画像で、ご利用の画面により実物の色と異なって見えることがあります。</div></details>
+ <details><summary>必ず運が良くなりますか？<span class="plus" aria-hidden="true"></span></summary><div class="an">正直に、お答えします。効果のあらわれ方には<b>個人差があり、何かを保証するものではありません</b>。急に何かが変わるものでもありません。ただ、ひとつ言えるのは、変わっていった方はみなさん、「そばに置いて、何もしなかった」方たちだった、ということです。</div></details>
+ <details><summary>30個売り切れたあと、再販はありますか？<span class="plus" aria-hidden="true"></span></summary><div class="an">ありません。七夜を通した石は、七夜が終わった今、もう作れません。あとから同じ場所に置くこともできません。</div></details>
+</div></div></section>
+<section class="closing section"><div class="container reveal"><p class="eyebrow">A NOTE FROM ISSHI</p><h2>迷いがあるうちは、<br>無理に手にしないでください。</h2><p>食費や光熱費を削って、というのは、やめてください。<br class="desktop-only">石は、あなたの代わりに生きてはくれません。</p><a class="text-link" href="#order">お迎えのご案内に戻る <span aria-hidden="true">↑</span></a><p class="closing-name">いっしー</p></div></section>
+</main>
+<footer><div class="container footer-inner"><div><a class="wordmark" href="#top"><span class="brand-ring" aria-hidden="true"></span>七夜の器</a><p>スピリチュアルヒーラー いっしー</p></div><div class="footer-links"><a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/tokushoho">特定商取引法に基づく表記</a><a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/privacy_policy">プライバシーポリシー</a></div><p class="disclaimer">医療行為ではありません。体調に不安のある方は、専門機関にご相談ください。<br>効果のあらわれ方には個人差があり、何かを保証するものではありません。</p></div></footer>
+<div class="purchase-bar" aria-label="購入のご案内" hidden><div class="bar-price"><span>七夜の器</span><strong>79,800<small>円（税込）</small></strong></div><a href="https://pmsdqb4c2p0emj0yagvc.stores.jp/items/6a978231ebcaaf1a2f7be50d">お迎えする<span aria-hidden="true">↗</span></a></div>
 </body></html>
